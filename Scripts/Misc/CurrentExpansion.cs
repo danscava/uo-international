@@ -5,7 +5,7 @@ namespace Server
 {
 	public class CurrentExpansion
 	{
-		private static readonly Expansion Expansion = Expansion.HS;
+		private static readonly Expansion Expansion = Expansion.LBR;
 
 		public static void Configure()
 		{
