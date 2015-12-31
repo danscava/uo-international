@@ -5,13 +5,13 @@ namespace Server
 {
 	public class CurrentExpansion
 	{
-		private static readonly Expansion Expansion = Expansion.AOS;
+		private static readonly Expansion Expansion = Expansion.LBR;
 
 		public static void Configure()
 		{
 			Core.Expansion = Expansion;
 
-			bool Enabled = Core.AOS;
+			bool Enabled = Core.LBR;
 
 			Mobile.InsuranceEnabled = !Enabled;
 			ObjectPropertyList.Enabled = Enabled;
