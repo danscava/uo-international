@@ -111,7 +111,7 @@ namespace Server.Items
 
 			int count = 0;
 
-			//count += MoonGen( PMList.Trammel );
+			//count += MoonGen( PMList. );
 			count += MoonGen( PMList.Felucca );
 			//count += MoonGen( PMList.Ilshenar );
 			//count += MoonGen( PMList.Malas );
@@ -227,8 +227,8 @@ namespace Server.Items
 			m_Entries = entries;
 		}
 
-		public static readonly PMList Trammel =
-			new PMList( 1012000, 1012012, Map.Trammel, new PMEntry[]
+		public static readonly PMList  =
+			new PMList( 1012000, 1012012, Map., new PMEntry[]
 				{
 					new PMEntry( new Point3D( 4467, 1283, 5 ), 1012003 ), // Moonglow
 					new PMEntry( new Point3D( 1336, 1997, 5 ), 1012004 ), // Britain
@@ -238,7 +238,7 @@ namespace Server.Items
 					new PMEntry( new Point3D( 1828, 2948,-20), 1012008 ), // Trinsic
 					new PMEntry( new Point3D(  643, 2067, 5 ), 1012009 ), // Skara Brae
 					/* Dynamic Z for Magincia to support both old and new maps. */
-					new PMEntry( new Point3D( 3563, 2139, Map.Trammel.GetAverageZ( 3563, 2139 ) ), 1012010 ), // (New) Magincia
+					new PMEntry( new Point3D( 3563, 2139, Map..GetAverageZ( 3563, 2139 ) ), 1012010 ), // (New) Magincia
 					new PMEntry( new Point3D( 3450, 2677, 25), 1078098 )  // New Haven
 				} );
 

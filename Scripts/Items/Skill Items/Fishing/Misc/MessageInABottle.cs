@@ -34,7 +34,7 @@ namespace Server.Items
 		}
 
 		[Constructable]
-		public MessageInABottle() : this( Map.Trammel )
+		public MessageInABottle() : this( Map.Felucca )
 		{
 		}
 
@@ -86,7 +86,7 @@ namespace Server.Items
 				}
 				case 0:
 				{
-					m_TargetMap = Map.Trammel;
+					m_TargetMap = Map.Felucca;
 					break;
 				}
 			}
@@ -95,7 +95,7 @@ namespace Server.Items
 				m_Level = GetRandomLevel();
 
 			if( version < 3 && m_TargetMap == Map.Tokuno )
-				m_TargetMap = Map.Trammel;
+				m_TargetMap = Map.Felucca;
 		}
 
 		public override void OnDoubleClick( Mobile from )
