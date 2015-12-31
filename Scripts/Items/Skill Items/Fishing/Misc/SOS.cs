@@ -71,7 +71,7 @@ namespace Server.Items
 		}
 
 		[Constructable]
-		public SOS() : this( Map.Trammel )
+		public SOS() : this( Map.Felucca )
 		{
 		}
 
@@ -138,7 +138,7 @@ namespace Server.Items
 					m_TargetMap = this.Map;
 
 					if ( m_TargetMap == null || m_TargetMap == Map.Internal )
-						m_TargetMap = Map.Trammel;
+						m_TargetMap = Map.Felucca;
 
 					m_TargetLocation = FindLocation( m_TargetMap );
 					m_MessageIndex = Utility.Random( MessageEntry.Entries.Length );
@@ -154,7 +154,7 @@ namespace Server.Items
 				UpdateHue();
 
 			if( version < 4 && m_TargetMap == Map.Tokuno )
-				m_TargetMap = Map.Trammel;
+				m_TargetMap = Map.Felucca;
 		}
 		
 		public override void OnDoubleClick( Mobile from )
