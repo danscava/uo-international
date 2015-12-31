@@ -817,7 +817,7 @@ namespace Server.Items
 		{
 			base.GetProperties( list );
 
-			list.Add( m_Map == Map.Felucca ? 1041502 : 1041503 ); // for somewhere in Felucca : for somewhere in Trammel
+			list.Add( m_Map == 1041502); // for somewhere in Felucca : for somewhere in Trammel
 
 			if ( m_Completed )
 			{
