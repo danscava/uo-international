@@ -200,7 +200,7 @@ namespace Server.Items
 		public TreasureMap( int level, Map map )
 		{
 			m_Level = level;
-			m_Map = map;
+			m_Map = Map.Felucca;
 
 			if ( level == 0 )
 				m_Location = GetRandomHavenLocation();
@@ -817,7 +817,7 @@ namespace Server.Items
 		{
 			base.GetProperties( list );
 
-			list.Add( m_Map == 1041502); // for somewhere in Felucca : for somewhere in Trammel
+			list.Add( m_Map == Map.Felucca ? 1041502 : 1041503 );  // for somewhere in Felucca : for somewhere in Trammel
 
 			if ( m_Completed )
 			{
