@@ -89,7 +89,7 @@ namespace Server.Items
 			if ( from.Map == Map.Trammel )
 			{
 				banks = m_TrammelBanks;
-				moongates = PMList.Trammel;
+				moongates = PMList.Felucca;
 			}
 			else if ( from.Map == Map.Felucca )
 			{
