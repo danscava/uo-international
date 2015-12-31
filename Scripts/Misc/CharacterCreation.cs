@@ -699,7 +699,7 @@ namespace Server.Misc
 				newChar.BankBox.DropItem( ticket );
 			}
 
-			CityInfo city = GetStartLocation( args, young );
+			CityInfo city = new CityInfo ("Britain", "The first bank of Britain", 1415, 1687, 5, Map.Felucca);
 
 			newChar.MoveToWorld( city.Location, city.Map );
 
