@@ -925,9 +925,13 @@ namespace Server.Items
 
 			if ( item is Food )
 				from.RevealingAction();
-
-			if ( item != this && IsCriminalAction( from ) )
-				from.CriminalAction( true );
+			
+			if (item != this && IsCriminalAction (from)) {
+				if (m_Owner == null || !m_Owner.Player) {
+				}
+				else
+					from.CriminalAction (true);
+			}
 
 			if ( !m_Looters.Contains( from ) )
 				m_Looters.Add( from );
@@ -943,9 +947,12 @@ namespace Server.Items
 			if ( item != this && from != m_Owner )
 				from.RevealingAction();
 
-			if ( item != this && IsCriminalAction( from ) )
-				from.CriminalAction( true );
-
+			if (item != this && IsCriminalAction (from)) {
+				if (m_Owner == null || !m_Owner.Player) {
+				}
+				else
+					from.CriminalAction (true);
+			}
 			if ( !m_Looters.Contains( from ) )
 				m_Looters.Add( from );
 
@@ -1034,8 +1041,9 @@ namespace Server.Items
 			}
 			else if ( IsCriminalAction( from ) )
 			{
-				if ( m_Owner == null || !m_Owner.Player )
-					from.SendLocalizedMessage( 1005036 ); // Looting this monster corpse will be a criminal act!
+				if (m_Owner == null || !m_Owner.Player) {
+				}
+					//from.SendLocalizedMessage( 1005036 ); // Looting this monster corpse will be a criminal act!
 				else
 					from.SendLocalizedMessage( 1005038 ); // Looting this corpse will be a criminal act!
 			}
