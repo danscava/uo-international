@@ -32,7 +32,10 @@ namespace Server.Items
 		public MagicWand( Serial serial ) : base( serial )
 		{
 		}
-
+		public override bool AllowEquipedCast( Mobile from )
+		{
+			return true;
+		}
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );

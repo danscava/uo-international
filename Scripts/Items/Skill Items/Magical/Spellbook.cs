@@ -456,7 +456,7 @@ namespace Server.Items
 
 		public override void OnAdded(IEntity parent)
 		{
-			if ( Core.AOS && parent is Mobile )
+			if ( Core.LBR && parent is Mobile )
 			{
 				Mobile from = (Mobile)parent;
 
@@ -486,7 +486,7 @@ namespace Server.Items
 
 		public override void OnRemoved(IEntity parent)
 		{
-			if ( Core.AOS && parent is Mobile )
+			if ( Core.LBR && parent is Mobile )
 			{
 				Mobile from = (Mobile)parent;
 
@@ -573,7 +573,7 @@ namespace Server.Items
 			set{ m_Crafter = value; InvalidateProperties(); }
 		}
 
-		public override bool DisplayLootType{ get{ return Core.AOS; } }
+		public override bool DisplayLootType{ get{ return Core.LBR; } }
 
 		public override void GetProperties( ObjectPropertyList list )
 		{

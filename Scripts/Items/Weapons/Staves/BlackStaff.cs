@@ -47,5 +47,10 @@ namespace Server.Items
 
 			int version = reader.ReadInt();
 		}
+
+		public override bool AllowEquipedCast( Mobile from )
+		{
+			return true;
+		}
 	}
 }
