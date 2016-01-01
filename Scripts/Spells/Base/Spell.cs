@@ -29,8 +29,8 @@ namespace Server.Spells
 		public Item Scroll{ get{ return m_Scroll; } }
 		public long StartCastTime { get { return m_StartCastTime; } }
 
-		private static TimeSpan NextSpellDelay = TimeSpan.FromSeconds( 0.75 );
-		private static TimeSpan AnimateDelay = TimeSpan.FromSeconds( 1.5 );
+		private static TimeSpan NextSpellDelay = TimeSpan.FromSeconds( 0.6 );
+		private static TimeSpan AnimateDelay = TimeSpan.FromSeconds( 1.1 );
 
 		public virtual SkillName CastSkill{ get{ return SkillName.Magery; } }
 		public virtual SkillName DamageSkill{ get{ return SkillName.EvalInt; } }
@@ -39,7 +39,7 @@ namespace Server.Spells
 		public virtual bool ClearHandsOnCast{ get{ return true; } }
 		public virtual bool ShowHandMovement{ get{ return true; } }
 
-		public virtual bool DelayedDamage{ get{ return false; } }
+		public virtual bool DelayedDamage{ get{ return true; } }
 
         public virtual bool DelayedDamageStacking { get { return true; } }
         //In reality, it's ANY delayed Damage spell Post-AoS that can't stack, but, only 
