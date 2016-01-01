@@ -18,7 +18,7 @@ namespace Server.Items
 		public override int AosStrReq{ get{ return 95; } }
 		public override int OldStrReq{ get{ return 60; } }
 
-		public override int OldDexBonus{ get{ return -8; } }
+		public override int OldDexBonus{ get{ return 0; } }
 
 		public override int ArmorBase{ get{ return 40; } }
 

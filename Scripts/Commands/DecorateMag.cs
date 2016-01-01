@@ -25,7 +25,7 @@ namespace Server.Commands
 
 			m_Mobile.SendMessage( "Generating world decoration, please wait." );
 
-			Generate( "Data/Decoration/RuinedMaginciaTram", Map.Trammel );
+			//Generate( "Data/Decoration/RuinedMaginciaTram", Map.Trammel );
 			Generate( "Data/Decoration/RuinedMaginciaFel", Map.Felucca );
 
 
