@@ -91,6 +91,11 @@ namespace Server.Mobiles
 				Add( typeof( Nightshade ), 2 ); 
 				Add( typeof( SpidersSilk ), 2 ); 
 				Add( typeof( SulfurousAsh ), 2 ); 
+				Add( typeof( PoisonScroll ), 43);
+				Add( typeof( RecallScroll ), 55);
+				Add( typeof( EnergyBoltScroll ), 65);
+				Add( typeof( FlamestrikeScroll ), 75);
+				Add( typeof( EnergyVortexScroll ), 98);
 
 				if ( Core.AOS )
 				{
