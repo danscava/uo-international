@@ -153,14 +153,14 @@ namespace Server.Items
 
 				switch ( m_Resource )
 				{
-					case CraftResource.DullCopper:		ar += 2; break;
-					case CraftResource.ShadowIron:		ar += 4; break;
-					case CraftResource.Copper:			ar += 6; break;
-					case CraftResource.Bronze:			ar += 8; break;
-					case CraftResource.Gold:			ar += 10; break;
-					case CraftResource.Agapite:			ar += 12; break;
-					case CraftResource.Verite:			ar += 14; break;
-					case CraftResource.Valorite:		ar += 16; break;
+					case CraftResource.DullCopper:		ar += 4; break;
+					case CraftResource.ShadowIron:		ar += 6; break;
+					case CraftResource.Copper:			ar += 8; break;
+					case CraftResource.Bronze:			ar += 10; break;
+					case CraftResource.Gold:			ar += 12; break;
+					case CraftResource.Agapite:			ar += 14; break;
+					case CraftResource.Verite:			ar += 16; break;
+					case CraftResource.Valorite:		ar += 18; break;
 					case CraftResource.SpinedLeather:	ar += 10; break;
 					case CraftResource.HornedLeather:	ar += 13; break;
 					case CraftResource.BarbedLeather:	ar += 16; break;
