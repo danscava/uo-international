@@ -355,7 +355,7 @@ namespace Server.Regions
 			{
 				if ( isOwner )
 				{
-					from.SendLocalizedMessage( 502109 ); // Owners do not get a strongbox of their own.
+					m_House.AddStrongBox (from);
 				}
 				else if ( isCoOwner )
 				{
