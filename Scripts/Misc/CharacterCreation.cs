@@ -27,13 +27,10 @@ namespace Server.Misc
 				m.AddItem( pack );
 			}
 
-			PackItem( new RedBook( "a book", m.Name, 20, true ) );
-			PackItem( new Gold( 2500 ) ); // Starting gold can be customized here
+			PackItem( new Gold( 2000 ) ); // Starting gold can be customized here
 			PackItem( new Dagger() );
-			PackItem( new Candle() );
-			PackItem( new Spellbook());
-			PackItem( new BlankScroll());
-			PackItem (new PoisonScroll());
+			PackItem (new BagOfReagents ());
+			LootPackItem (new Bandage (75));
 		}
 
 		private static Item MakeNewbie( Item item )
@@ -457,11 +454,11 @@ namespace Server.Misc
 			bank.DropItem( bag );
 
 			// Treasure maps
-			bank.DropItem( new TreasureMap( 1, Map.Trammel ) );
-			bank.DropItem( new TreasureMap( 2, Map.Trammel ) );
-			bank.DropItem( new TreasureMap( 3, Map.Trammel ) );
-			bank.DropItem( new TreasureMap( 4, Map.Trammel ) );
-			bank.DropItem( new TreasureMap( 5, Map.Trammel ) );
+			bank.DropItem( new TreasureMap( 1, Map.Felucca ) );
+			bank.DropItem( new TreasureMap( 2, Map.Felucca ) );
+			bank.DropItem( new TreasureMap( 3, Map.Felucca ) );
+			bank.DropItem( new TreasureMap( 4, Map.Felucca ) );
+			bank.DropItem( new TreasureMap( 5, Map.Felucca ) );
 
 			// Bag containing 50 of each reagent
 			bank.DropItem( new BagOfReagents( 50 ) );
