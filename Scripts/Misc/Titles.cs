@@ -138,11 +138,11 @@ namespace Server.Misc
 
 			bool showSkillTitle = beheld.ShowFameTitle && ( (beholder == beheld) || (fame >= 5000) );
 
-			/*if ( beheld.Kills >= 5 )
+			if ( beheld.Kills >= 5 )
 			{
 				title.AppendFormat( beheld.Fame >= 10000 ? "The Murderer {1} {0}" : "The Murderer {0}", beheld.Name, beheld.Female ? "Lady" : "Lord" );
 			}
-			else*/if ( beheld.ShowFameTitle || (beholder == beheld) )
+			else if ( beheld.ShowFameTitle || (beholder == beheld) )
 			{
 				for ( int i = 0; i < m_FameEntries.Length; ++i )
 				{
