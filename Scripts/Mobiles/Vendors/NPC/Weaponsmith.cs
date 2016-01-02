@@ -62,10 +62,10 @@ namespace Server.Mobiles
 				else
 					pm.NextSmithBulkOrder = TimeSpan.FromHours( 1.0 );
 
-				if ( theirSkill >= 70.1 && ((theirSkill - 40.0) / 300.0) > Utility.RandomDouble() )
-					return new LargeSmithBOD();
+				if (theirSkill >= 70.1 && ((theirSkill - 40.0) / 300.0) > Utility.RandomDouble ()) {
+				}//return new LargeSmithBOD();
 
-				return SmallSmithBOD.CreateRandomFor( from );
+				//return SmallSmithBOD.CreateRandomFor( from );
 			}
 
 			return null;

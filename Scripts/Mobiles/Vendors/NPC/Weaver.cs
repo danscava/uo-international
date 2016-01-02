@@ -44,10 +44,10 @@ namespace Server.Mobiles
 				else
 					pm.NextTailorBulkOrder = TimeSpan.FromHours( 1.0 );
 
-				if ( theirSkill >= 70.1 && ((theirSkill - 40.0) / 300.0) > Utility.RandomDouble() )
-					return new LargeTailorBOD();
+				if (theirSkill >= 70.1 && ((theirSkill - 40.0) / 300.0) > Utility.RandomDouble ()) {
+				}//return new LargeTailorBOD();
 
-				return SmallTailorBOD.CreateRandomFor( from );
+				//return SmallTailorBOD.CreateRandomFor( from );
 			}
 
 			return null;

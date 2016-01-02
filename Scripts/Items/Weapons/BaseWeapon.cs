@@ -483,7 +483,7 @@ namespace Server.Items
 				case WeaponDurabilityLevel.Indestructible: bonus += 120; break;
 			}
 
-			if ( Core.AOS )
+			if ( Core.AOS || Core.LBR )
 			{
 				bonus += m_AosWeaponAttributes.DurabilityBonus;
 
@@ -2157,8 +2157,8 @@ namespace Server.Items
 
 		public virtual int GetHitChanceBonus()
 		{
-			if ( !Core.AOS )
-				return 0;
+			//if ( !Core.AOS )
+			//	return 0;
 
 			int bonus = 0;
 
@@ -3505,12 +3505,11 @@ namespace Server.Items
 					}
 				}
 			}
-			else if ( tool is BaseRunicTool )
+			else if ( tool is BaseTool )
 			{
 				CraftResource thisResource = CraftResources.GetFromType( resourceType );
 
-				if ( thisResource == ((BaseRunicTool)tool).Resource )
-				{
+
 					Resource = thisResource;
 
 					CraftContext context = craftSystem.GetContext( from );
@@ -3523,68 +3522,73 @@ namespace Server.Items
 						case CraftResource.DullCopper:
 						{
 							Identified = true;
-							DurabilityLevel = WeaponDurabilityLevel.Durable;
 							AccuracyLevel = WeaponAccuracyLevel.Accurate;
+							Hue = CraftResources.GetHue (CraftResource.DullCopper);
 							break;
 						}
 						case CraftResource.ShadowIron:
 						{
 							Identified = true;
 							DurabilityLevel = WeaponDurabilityLevel.Durable;
-							DamageLevel = WeaponDamageLevel.Ruin;
+							AccuracyLevel = WeaponAccuracyLevel.Eminently;
+							Hue = CraftResources.GetHue (CraftResource.ShadowIron);
 							break;
 						}
 						case CraftResource.Copper:
 						{
 							Identified = true;
 							DurabilityLevel = WeaponDurabilityLevel.Fortified;
-							DamageLevel = WeaponDamageLevel.Ruin;
 							AccuracyLevel = WeaponAccuracyLevel.Surpassingly;
+							Hue = CraftResources.GetHue (CraftResource.Copper);
 							break;
 						}
 						case CraftResource.Bronze:
 						{
 							Identified = true;
 							DurabilityLevel = WeaponDurabilityLevel.Fortified;
-							DamageLevel = WeaponDamageLevel.Might;
-							AccuracyLevel = WeaponAccuracyLevel.Surpassingly;
+							DamageLevel = WeaponDamageLevel.Ruin;
+							Hue = CraftResources.GetHue (CraftResource.Bronze);
 							break;
 						}
 						case CraftResource.Gold:
 						{
 							Identified = true;
-							DurabilityLevel = WeaponDurabilityLevel.Indestructible;
-							DamageLevel = WeaponDamageLevel.Force;
+							DurabilityLevel = WeaponDurabilityLevel.Substantial;
+							DamageLevel = WeaponDamageLevel.Ruin;
 							AccuracyLevel = WeaponAccuracyLevel.Eminently;
+							Hue = CraftResources.GetHue (CraftResource.Gold);
 							break;
 						}
 						case CraftResource.Agapite:
 						{
 							Identified = true;
 							DurabilityLevel = WeaponDurabilityLevel.Indestructible;
-							DamageLevel = WeaponDamageLevel.Power;
-							AccuracyLevel = WeaponAccuracyLevel.Eminently;
+							DamageLevel = WeaponDamageLevel.Ruin;
+							AccuracyLevel = WeaponAccuracyLevel.Supremely;
+							Hue = CraftResources.GetHue (CraftResource.Agapite);
 							break;
 						}
 						case CraftResource.Verite:
 						{
 							Identified = true;
 							DurabilityLevel = WeaponDurabilityLevel.Indestructible;
-							DamageLevel = WeaponDamageLevel.Power;
+							DamageLevel = WeaponDamageLevel.Might;
 							AccuracyLevel = WeaponAccuracyLevel.Exceedingly;
+							Hue = CraftResources.GetHue (CraftResource.Verite);
 							break;
 						}
 						case CraftResource.Valorite:
 						{
 							Identified = true;
 							DurabilityLevel = WeaponDurabilityLevel.Indestructible;
-							DamageLevel = WeaponDamageLevel.Vanq;
+							DamageLevel = WeaponDamageLevel.Might;
 							AccuracyLevel = WeaponAccuracyLevel.Supremely;
+							Hue = CraftResources.GetHue (CraftResource.Valorite);
 							break;
 						}
 					}
 				}
-			}
+
 
 			return quality;
 		}
