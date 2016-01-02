@@ -79,11 +79,11 @@ namespace Server.Items
 			AddButton( 10, 40, 4005, 4007, 1, GumpButtonType.Reply, 0 );
 			AddHtmlLocalized( 45, 40, 200, 20, 1060390, LabelColor, false, false ); // Classic Houses
 
-			AddButton( 10, 60, 4005, 4007, 2, GumpButtonType.Reply, 0 );
-			AddHtmlLocalized( 45, 60, 200, 20, 1060391, LabelColor, false, false ); // 2-Story Customizable Houses
+			//AddButton( 10, 60, 4005, 4007, 2, GumpButtonType.Reply, 0 );
+			//AddHtmlLocalized( 45, 60, 200, 20, 1060391, LabelColor, false, false ); // 2-Story Customizable Houses
 
-			AddButton( 10, 80, 4005, 4007, 3, GumpButtonType.Reply, 0 );
-			AddHtmlLocalized( 45, 80, 200, 20, 1060392, LabelColor, false, false ); // 3-Story Customizable Houses
+			//AddButton( 10, 80, 4005, 4007, 3, GumpButtonType.Reply, 0 );
+			//AddHtmlLocalized( 45, 80, 200, 20, 1060392, LabelColor, false, false ); // 3-Story Customizable Houses
 		}
 
 		public override void OnResponse( Server.Network.NetState sender, RelayInfo info )
