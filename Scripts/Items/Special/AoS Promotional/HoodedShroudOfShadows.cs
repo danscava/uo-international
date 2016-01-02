@@ -18,12 +18,6 @@ namespace Server.Items
 			Weight = 3.0;
 		}
 
-		public override bool Dye( Mobile from, DyeTub sender )
-		{
-			from.SendLocalizedMessage( sender.FailMessage );
-			return false;
-		}
-
 		public HoodedShroudOfShadows( Serial serial ) : base( serial )
 		{
 		}

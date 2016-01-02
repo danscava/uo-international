@@ -126,6 +126,11 @@ namespace Server
 				new LootPackItem( typeof( Amber ), 1 )
 			};
 
+		public static readonly LootPackItem[] NeiraSpecialHood = new LootPackItem[]
+		{
+			new LootPackItem( typeof( HoodedShroudOfShadows ), 1 )
+		};
+
 		public static readonly LootPackItem[] PotionItems = new LootPackItem[]
 			{
 				new LootPackItem( typeof( AgilityPotion ), 1 ),
@@ -427,6 +432,10 @@ namespace Server
 				new LootPackEntry( false, OldMagicItems, 10.00, 1, 1, 65, 100 ),
 				new LootPackEntry( false, OldMagicItems,  1.00, 1, 1, 70, 100 )
 			} );
+
+		public static readonly LootPack SpecialNeira = new LootPack (new LootPackEntry[] {
+			new LootPackEntry (false, NeiraSpecialHood, 0.10, 1)
+		});
 
 		public static readonly LootPack OldFilthyRich = new LootPack( new LootPackEntry[]
 			{

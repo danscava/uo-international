@@ -78,6 +78,8 @@ namespace Server.Mobiles
 		{
 			AddLoot( LootPack.UltraRich, 3 );
 			AddLoot( LootPack.Meager );
+			AddLoot (LootPack.SpecialNeira);
+
 		}
 
 		public override bool OnBeforeDeath()

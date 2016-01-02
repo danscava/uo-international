@@ -17,7 +17,7 @@ namespace Server.Items
 
 		public override int AosStrReq{ get{ return 95; } }
 
-		public override int ArmorBase{ get{ return 30; } }
+		public override int ArmorBase{ get{ return 33; } }
 
 		[Constructable]
 		public OrderShield() : base( 0x1BC4 )
@@ -25,7 +25,7 @@ namespace Server.Items
 			if ( !Core.AOS )
 				LootType = LootType.Newbied;
 
-			Weight = 7.0;
+			Weight = 5.0;
 		}
 
 		public OrderShield( Serial serial ) : base(serial)
