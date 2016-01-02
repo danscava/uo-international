@@ -30,7 +30,7 @@ namespace Server.Misc
 			PackItem( new Gold( 2000 ) ); // Starting gold can be customized here
 			PackItem( new Dagger() );
 			PackItem (new BagOfReagents ());
-			LootPackItem (new Bandage (75));
+			PackItem (new Bandage (75));
 		}
 
 		private static Item MakeNewbie( Item item )
