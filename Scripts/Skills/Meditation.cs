@@ -11,7 +11,7 @@ namespace Server.SkillHandlers
 		}
 
 		public static bool CheckOkayHolding( Item item )
-		{
+		{/*
 			if ( item == null )
 				return true;
 
@@ -23,8 +23,8 @@ namespace Server.SkillHandlers
 
 			if ( Core.AOS && item is BaseArmor && ((BaseArmor)item).Attributes.SpellChanneling != 0 )
 				return true;
-
-			return false;
+            */
+			return true;
 		}
 
 		public static TimeSpan OnUse( Mobile m )
