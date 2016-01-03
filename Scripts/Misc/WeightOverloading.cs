@@ -47,7 +47,7 @@ namespace Server.Misc
 				m.Stam -= (int)fatigue;
 		}
 
-		public const int OverloadAllowance = 4; // We can be four stones overweight without getting fatigued
+		public const int OverloadAllowance = 15; // We can be 15 stones overweight without getting fatigued
 
 		public static int GetMaxWeight( Mobile m )
 		{
