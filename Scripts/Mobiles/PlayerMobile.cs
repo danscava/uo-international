@@ -2278,10 +2278,10 @@ namespace Server.Mobiles
 
 		public override void DisruptiveAction()
 		{
-			//if( Meditating )
-			//{
-			//	RemoveBuff( BuffIcon.ActiveMeditation );
-			//}
+			if( Meditating )
+			{
+				RemoveBuff( BuffIcon.ActiveMeditation );
+			}
 
 			base.DisruptiveAction();
 		}
