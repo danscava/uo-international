@@ -10,13 +10,15 @@ namespace Server.Misc
 	{
 		private static class Settings
 		{
-			public const bool Enabled = false;
+			public const bool Enabled = true;
 			public const bool KickOnFailure = true; // It will also kick clients running without assistants
 
 			public static readonly TimeSpan HandshakeTimeout = TimeSpan.FromSeconds(30.0);
 			public static readonly TimeSpan DisconnectDelay = TimeSpan.FromSeconds(15.0);
 
 			public const string WarningMessage = "The server was unable to negotiate features with your assistant. "
+				                + "FOLLOWING RAZOR FEATURES ARE NOT ALLOWED ON THIS SERVER: "
+				                + "AutoRemount, AutolootAgent, AdvancedMacros, PoisonedChecks<BR>"
 								+ "You must download and run an updated version of <A HREF=\"http://uosteam.com\">UOSteam</A>"
 								+ " or <A HREF=\"https://bitbucket.org/msturgill/razor-releases/downloads\">Razor</A>."
 								+ "<BR><BR>Make sure you've checked the option <B>Negotiate features with server</B>, "
@@ -25,7 +27,10 @@ namespace Server.Misc
 
 			public static void Configure()
 			{
-				//DisallowFeature( Features.FilterWeather );
+				DisallowFeature (Features.AutolootAgent);
+				DisallowFeature (Features.AutoRemount);
+				DisallowFeature (Features.AdvancedMacros);
+				DisallowFeature (Features.PoisonedChecks);
 			}
 
 			[Flags]
