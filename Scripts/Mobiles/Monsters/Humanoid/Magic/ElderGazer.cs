@@ -49,6 +49,7 @@ namespace Server.Mobiles
 		public override void GenerateLoot()
 		{
 			AddLoot( LootPack.FilthyRich );
+			AddLoot (LootPack.IDWandPack);
 		}
 
 		public ElderGazer( Serial serial ) : base( serial )
