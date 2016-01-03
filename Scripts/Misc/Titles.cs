@@ -136,7 +136,7 @@ namespace Server.Misc
 			int fame = beheld.Fame;
 			int karma = beheld.Karma;
 
-			bool showSkillTitle = beheld.ShowFameTitle && ( (beholder == beheld) || (fame >= 5000) );
+			bool showSkillTitle = beheld.ShowFameTitle && ( (beholder == beheld) || (fame >= 2000) );
 
 			if ( beheld.Kills >= 5 )
 			{
