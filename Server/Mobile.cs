@@ -3278,7 +3278,7 @@ namespace Server
 					return false;
 				}
 
-				DisruptiveAction();
+				//DisruptiveAction();  Meditation while moving is not disruptive anymore
 			}
 
 			if( m_NetState != null )
@@ -11133,11 +11133,11 @@ namespace Server
 
 		public virtual void DisruptiveAction()
 		{
-			//if( Meditating )
-			//{
-			//	Meditating = false;
-			//	SendLocalizedMessage( 500134 ); // You stop meditating.
-			//}
+			if( Meditating )
+			{
+				Meditating = false;
+				SendLocalizedMessage( 500134 ); // You stop meditating.
+			}
 		}
 
 		#region Armor
