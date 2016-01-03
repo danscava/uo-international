@@ -48,6 +48,7 @@ namespace Server.Mobiles
 		{
 			AddLoot( LootPack.Rich );
 			AddLoot( LootPack.Gems );
+			AddLoot (LootPack.HighScrolls, 2);
 		}
 
 		public override bool HasBreath{ get{ return true; } } // fire breath enabled

@@ -49,7 +49,7 @@ namespace Server.Mobiles
 		{
 			AddLoot( LootPack.FilthyRich );
 			AddLoot( LootPack.Average );
-			AddLoot( LootPack.MedScrolls );
+			AddLoot( LootPack.MedScrolls, 2 );
 		}
 
 		public override int Meat{ get{ return 4; } }
