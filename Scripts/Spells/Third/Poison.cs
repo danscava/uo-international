@@ -53,7 +53,7 @@ namespace Server.Spells.Third
 					{
 						if ( Caster.InRange( m, 3 ) )
 						{
-							int spec_tot = (Caster.Skills.Magery.Fixed + Caster.Skills.Poisoning.Fixed + Caster.Skills.Inscribe.Fixed + Caster.Skills.EvalInt.Fixed + Caster.Skills.Meditation.Fixed) / 5;
+							int spec_tot = (Caster.Skills.Magery.Fixed + Caster.Skills.Poisoning.Fixed + Caster.Skills.Inscribe.Fixed + Caster.Skills.EvalInt.Fixed + Caster.Skills.Meditation.Fixed + Caster.Skills.MagicResist.Fixed) / 6;
 							int total = (Caster.Skills.Magery.Fixed + Caster.Skills.Poisoning.Fixed) / 2;
 
 							if (spec_tot >= 1000)
