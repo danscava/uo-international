@@ -76,7 +76,11 @@ namespace Server.Items
 
 		public static bool HasFreeHand( Mobile m )
 		{
-			Item handOne = m.FindItemOnLayer( Layer.OneHanded );
+			// TODO: (Emir) Decide if this is fair or not
+			// Being forced to sheath your wep to drink potion makes sense
+			// on the other hand, the object is to make the overall pvp less Bursty
+			// TEMPORARY, disable HasFreeHand check
+			/*Item handOne = m.FindItemOnLayer( Layer.OneHanded );
 			Item handTwo = m.FindItemOnLayer( Layer.TwoHanded );
 
 			if ( handTwo is BaseWeapon )
@@ -90,6 +94,8 @@ namespace Server.Items
 			}
 
 			return ( handOne == null || handTwo == null );
+			*/
+			return true;
 		}
 
 		public override void OnDoubleClick( Mobile from )

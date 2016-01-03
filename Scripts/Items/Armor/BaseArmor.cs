@@ -161,9 +161,9 @@ namespace Server.Items
 					case CraftResource.Agapite:			ar += 14; break;
 					case CraftResource.Verite:			ar += 16; break;
 					case CraftResource.Valorite:		ar += 18; break;
-					case CraftResource.SpinedLeather:	ar += 10; break;
-					case CraftResource.HornedLeather:	ar += 13; break;
-					case CraftResource.BarbedLeather:	ar += 16; break;
+					case CraftResource.SpinedLeather:	ar += 8; break;
+					case CraftResource.HornedLeather:	ar += 11; break;
+					case CraftResource.BarbedLeather:	ar += 13; break;
 				}
 
 				ar += -8 + (8 * (int)m_Quality);
@@ -1288,7 +1288,7 @@ namespace Server.Items
 
 		public virtual int OnHit( BaseWeapon weapon, int damageTaken )
 		{
-			double HalfAr = ArmorRating / 2.0;
+			double HalfAr = ArmorRating / 4.0;
 			int Absorbed = (int)(HalfAr + HalfAr*Utility.RandomDouble());
 
 			damageTaken -= Absorbed;
