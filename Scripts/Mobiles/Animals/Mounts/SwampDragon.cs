@@ -120,6 +120,7 @@ namespace Server.Mobiles
 			Tamable = true;
 			ControlSlots = 1;
 			MinTameSkill = 93.9;
+			MinLoreSkill = 93.9;
 		}
 
 		public override bool OverrideBondingReqs()

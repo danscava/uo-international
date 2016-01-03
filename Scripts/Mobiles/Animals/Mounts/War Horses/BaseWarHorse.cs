@@ -40,6 +40,7 @@ namespace Server.Mobiles
 			Tamable = true;
 			ControlSlots = 1;
 			MinTameSkill = 29.1;
+			MinLoreSkill = 29.1;
 		}
 
 		public override FoodType FavoriteFood{ get{ return FoodType.FruitsAndVegies | FoodType.GrainsAndHay; } }

@@ -66,7 +66,7 @@ namespace Server.Mobiles
 			SetDex( 96, 115 );
 			SetInt( 186, 225 );
 
-			SetHits( 191, 210 );
+			SetHits( 213, 250 );
 
 			SetDamage( 16, 22 );
 
@@ -91,7 +91,8 @@ namespace Server.Mobiles
 
 			Tamable = true;
 			ControlSlots = 2;
-			MinTameSkill = 95.1;
+			MinTameSkill = 92.1;
+			MinLoreSkill = 92.1;
 		}
 
 		public override void GenerateLoot()

@@ -41,8 +41,9 @@ namespace Server.Mobiles
 			Karma = 0;
 
 			Tamable = true;
-			ControlSlots = 1;
+			ControlSlots = 0;
 			MinTameSkill = 83.1;
+			MinLoreSkill = 83.1;
 		}
 
 		public override bool OverrideBondingReqs()

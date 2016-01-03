@@ -20,7 +20,7 @@ namespace Server.Mobiles
 			SetDex( 56, 75 );
 			SetInt( 6, 10 );
 
-			SetHits( 71, 88 );
+			SetHits( 91, 109 );
 			SetMana( 0 );
 
 			SetDamage( 5, 11 );
@@ -38,8 +38,9 @@ namespace Server.Mobiles
 			Karma = 0;
 
 			Tamable = true;
-			ControlSlots = 1;
-			MinTameSkill = 29.1;
+			ControlSlots = 0;
+			MinTameSkill = 59.1;
+			MinLoreSkill = 59.1;
 		}
 
 		public override int Meat{ get{ return 3; } }

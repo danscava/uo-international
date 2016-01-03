@@ -135,9 +135,14 @@ namespace Server.SkillHandlers
 					{
 						BaseCreature creature = (BaseCreature)targeted;
 
+						double minLore = creature.MinLoreSkill;
+						int currLore = from.Skills.AnimalLore.Fixed;
+
 						if ( !creature.Tamable )
 						{
 							creature.PrivateOverheadMessage( MessageType.Regular, 0x3B2, 1049655, from.NetState ); // That creature cannot be tamed.
+						}else if (currLore < (int)minLore) {
+							from.SendMessage("You do not have the required Animal Lore skill to tame this creature. Required Skill: " + minLore.ToString);
 						}
 						else if ( creature.Controlled )
 						{
@@ -350,6 +355,7 @@ namespace Server.SkillHandlers
 
 						double minSkill = m_Creature.MinTameSkill + (m_Creature.Owners.Count * 6.0);
 
+							
 						if ( minSkill > -24.9 && CheckMastery( m_Tamer, m_Creature ) )
 							minSkill = -24.9; // 50% at 0.0?
 

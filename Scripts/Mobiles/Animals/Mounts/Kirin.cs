@@ -29,7 +29,7 @@ namespace Server.Mobiles
 			{
 				attacker.BoltEffect( 0 );
 				// 35~100 damage, unresistable, by the Ki-rin.
-				attacker.Damage( Utility.RandomMinMax( 35, 100 ), this, false );	//Don't inform mount about this damage, Still unsure wether or not it's flagged as the mount doing damage or the player.  If changed to player, without the extra bool it'd be an infinite loop
+				attacker.Damage( Utility.RandomMinMax( 30, 38 ), this, false );	//Don't inform mount about this damage, Still unsure wether or not it's flagged as the mount doing damage or the player.  If changed to player, without the extra bool it'd be an infinite loop
 
 				Rider.LocalOverheadMessage( MessageType.Regular, 0x3B2, 1042534 );	// Your mount calls down the forces of nature on your opponent.
 				Rider.FixedParticles( 0, 0, 0, 0x13A7, EffectLayer.Waist );
@@ -81,6 +81,7 @@ namespace Server.Mobiles
 
 			Tamable = true;
 			ControlSlots = 2;
+			MinTameSkill = 95.1;
 			MinTameSkill = 95.1;
 		}
 

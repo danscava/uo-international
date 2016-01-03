@@ -44,6 +44,7 @@ namespace Server.Mobiles
 			Tamable = true;
 			ControlSlots = 1;
 			MinTameSkill = 77.1;
+			MinLoreSkill = 77.1;
 		}
 
 		public override int Meat{ get{ return 3; } }

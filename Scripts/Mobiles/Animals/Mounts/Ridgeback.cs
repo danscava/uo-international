@@ -20,7 +20,7 @@ namespace Server.Mobiles
 			SetDex( 56, 75 );
 			SetInt( 16, 30 );
 
-			SetHits( 41, 54 );
+			SetHits( 71, 94 );
 			SetMana( 0 );
 
 			SetDamage( 3, 5 );
@@ -41,8 +41,9 @@ namespace Server.Mobiles
 			Karma = 0;
 
 			Tamable = true;
-			ControlSlots = 1;
+			ControlSlots = 0;
 			MinTameSkill = 83.1;
+			MinLoreSkill = 83.1;
 		}
 
 		public override bool OverrideBondingReqs()

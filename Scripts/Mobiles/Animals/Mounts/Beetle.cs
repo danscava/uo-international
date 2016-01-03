@@ -49,7 +49,8 @@ namespace Server.Mobiles
 
 			Tamable = true;
 			ControlSlots = 3;
-			MinTameSkill = 29.1;
+			MinTameSkill = 49.1;
+			MinLoreSkill = 49.1;
 
 			Container pack = Backpack;
 

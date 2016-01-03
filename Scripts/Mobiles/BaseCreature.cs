@@ -211,6 +211,7 @@ namespace Server.Mobiles
 		private int			m_Loyalty;
 
 		private double		m_dMinTameSkill;
+		private double      m_dMinLoreSkill;
 		private bool		m_bTamable;
 
 		private bool		m_bSummoned = false;
@@ -1050,6 +1051,8 @@ namespace Server.Mobiles
 
 		public virtual double GetControlChance( Mobile m, bool useBaseSkill )
 		{
+			return 1.0;
+			/*
 			if ( m_dMinTameSkill <= 29.1 || m_bSummoned || m.AccessLevel >= AccessLevel.GameMaster )
 				return 1.0;
 
@@ -1101,6 +1104,7 @@ namespace Server.Mobiles
 			chance -= (MaxLoyalty - m_Loyalty) * 10;
 
 			return ( (double)chance / 1000 );
+			*/
 		}
 
 		private static Type[] m_AnimateDeadTypes = new Type[]
@@ -1791,6 +1795,7 @@ namespace Server.Mobiles
 			writer.Write( (Point3D) m_ControlDest );
 			writer.Write( (int) m_ControlOrder );
 			writer.Write( (double) m_dMinTameSkill );
+			writer.Write( (double) m_dMinLoreSkill );
 			// Removed in version 9
 			//writer.Write( (double) m_dMaxTameSkill );
 			writer.Write( (bool) m_bTamable );
@@ -1949,6 +1954,8 @@ namespace Server.Mobiles
 				m_ControlOrder = (OrderType) reader.ReadInt();
 
 				m_dMinTameSkill = reader.ReadDouble();
+
+				m_dMinLoreSkill = reader.ReadDouble();
 
 				if ( version < 9 )
 					reader.ReadDouble();
@@ -2865,6 +2872,18 @@ namespace Server.Mobiles
 			set
 			{
 				m_dMinTameSkill = value;
+			}
+		}
+		[CommandProperty( AccessLevel.GameMaster )]
+		public double MinLoreSkill
+		{
+			get
+			{
+				return m_dMinLoreSkill;
+			}
+			set
+			{
+				m_dMinLoreSkill = value;
 			}
 		}
 

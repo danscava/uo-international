@@ -65,6 +65,7 @@ namespace Server.Mobiles
 					Name = "a skeletal steed";
 					Tamable = false;
 					MinTameSkill = 0.0;
+					MinLoreSkill = 0.0;
 					ControlSlots = 0;
 					break;
 				}

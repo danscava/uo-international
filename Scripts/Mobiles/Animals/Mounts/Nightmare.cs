@@ -50,6 +50,7 @@ namespace Server.Mobiles
 			Tamable = true;
 			ControlSlots = 2;
 			MinTameSkill = 95.1;
+			MinLoreSkill = 95.1;
 
 			switch ( Utility.Random( 3 ) )
 			{

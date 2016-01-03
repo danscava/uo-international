@@ -50,8 +50,9 @@ namespace Server.Mobiles
 			Karma = 300;
 
 			Tamable = true;
-			ControlSlots = 1;
+			ControlSlots = 0;
 			MinTameSkill = 29.1;
+			MinLoreSkill = 30.0;
 		}
 
 		public override int Meat{ get{ return 3; } }

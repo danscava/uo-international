@@ -21,7 +21,8 @@ namespace Server.Mobiles
 
 			ControlSlots = 1;
 			Tamable = true;
-			MinTameSkill = 103.1;
+			MinTameSkill = 89.1;
+			MinLoreSkill = 89.1;
 		}
 
 		public SilverSteed( Serial serial ) : base( serial )
