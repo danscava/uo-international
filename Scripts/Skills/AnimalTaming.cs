@@ -142,7 +142,7 @@ namespace Server.SkillHandlers
 						{
 							creature.PrivateOverheadMessage( MessageType.Regular, 0x3B2, 1049655, from.NetState ); // That creature cannot be tamed.
 						}else if (currLore < (int)minLore) {
-							from.SendMessage("You do not have the required Animal Lore skill to tame this creature. Required Skill: " + minLore.ToString);
+							from.SendMessage("You do not have the required Animal Lore skill to tame this creature. Required Skill : " + minLore.ToString());
 						}
 						else if ( creature.Controlled )
 						{
