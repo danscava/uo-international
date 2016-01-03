@@ -22,7 +22,7 @@ namespace Server.Mobiles
 			{
 				Add( new GenericBuyInfo( typeof( Spellbook ), 18, 10, 0xEFA, 0 ) );
 				Add( new GenericBuyInfo( typeof( ScribesPen ), 8, 10, 0xFBF, 0 ) );
-				Add( new GenericBuyInfo( typeof( BlankScroll ), 5, 20, 0x0E34, 0 ) );
+				Add( new GenericBuyInfo( typeof( BlankScroll ), 5, 200, 0x0E34, 0 ) );
 
 				Add( new GenericBuyInfo( "1041072", typeof( MagicWizardsHat ), 11, 10, 0x1718, Utility.RandomDyedHue() ) );
 
@@ -35,14 +35,14 @@ namespace Server.Mobiles
 				Add( new GenericBuyInfo( typeof( StrengthPotion ), 15, 20, 0xF09, 0 ) );
 				Add( new GenericBuyInfo( typeof( LesserCurePotion ), 15, 20, 0xF07, 0 ) );
 
-				Add( new GenericBuyInfo( typeof( BlackPearl ), 5, 20, 0xF7A, 0 ) );
-				Add( new GenericBuyInfo( typeof( Bloodmoss ), 5, 20, 0xF7B, 0 ) );
-				Add( new GenericBuyInfo( typeof( Garlic ), 3, 20, 0xF84, 0 ) );
-				Add( new GenericBuyInfo( typeof( Ginseng ), 3, 20, 0xF85, 0 ) );
-				Add( new GenericBuyInfo( typeof( MandrakeRoot ), 3, 20, 0xF86, 0 ) );
-				Add( new GenericBuyInfo( typeof( Nightshade ), 3, 20, 0xF88, 0 ) );
-				Add( new GenericBuyInfo( typeof( SpidersSilk ), 3, 20, 0xF8D, 0 ) );
-				Add( new GenericBuyInfo( typeof( SulfurousAsh ), 3, 20, 0xF8C, 0 ) );
+				Add( new GenericBuyInfo( typeof( BlackPearl ), 5, 200, 0xF7A, 0 ) );
+				Add( new GenericBuyInfo( typeof( Bloodmoss ), 5, 200, 0xF7B, 0 ) );
+				Add( new GenericBuyInfo( typeof( Garlic ), 3, 200, 0xF84, 0 ) );
+				Add( new GenericBuyInfo( typeof( Ginseng ), 3, 200, 0xF85, 0 ) );
+				Add( new GenericBuyInfo( typeof( MandrakeRoot ), 3, 200, 0xF86, 0 ) );
+				Add( new GenericBuyInfo( typeof( Nightshade ), 3, 200, 0xF88, 0 ) );
+				Add( new GenericBuyInfo( typeof( SpidersSilk ), 3, 200, 0xF8D, 0 ) );
+				Add( new GenericBuyInfo( typeof( SulfurousAsh ), 3, 200, 0xF8C, 0 ) );
 
 				Type[] types = Loot.RegularScrollTypes;
 

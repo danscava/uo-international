@@ -49,6 +49,7 @@ namespace Server.Mobiles
 				Add( typeof( Fish ), 1 );
 				//TODO: Add( typeof( SmallFish ), 1 );
 				Add( typeof( FishingPole ), 7 );
+				Add (typeof (FishSteak), 5);
 			} 
 		} 
 	} 

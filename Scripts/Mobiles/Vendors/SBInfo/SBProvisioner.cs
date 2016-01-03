@@ -40,7 +40,7 @@ namespace Server.Mobiles
 					
 				//TODO: Oil Flask @ 8GP
 
-				Add( new GenericBuyInfo( typeof( Lockpick ), 12, 20, 0x14FC, 0 ) );
+				Add( new GenericBuyInfo( typeof( Lockpick ), 12, 250, 0x14FC, 0 ) );
 
 				Add( new GenericBuyInfo( typeof( FloppyHat ), 7, 20, 0x1713, Utility.RandomDyedHue() ) );
 				Add( new GenericBuyInfo( typeof( WideBrimHat ), 8, 20, 0x1714, Utility.RandomDyedHue() ) );
@@ -84,7 +84,7 @@ namespace Server.Mobiles
 				Add( new GenericBuyInfo( typeof( Bedroll ), 5, 20, 0xA59, 0 ) );
 				Add( new GenericBuyInfo( typeof( Kindling ), 2, 20, 0xDE1, 0 ) );
 
-				Add( new GenericBuyInfo( "1041205", typeof( Multis.SmallBoatDeed ), 10177, 20, 0x14F2, 0 ) );
+				Add( new GenericBuyInfo( "1041205", typeof( Multis.SmallBoatDeed ), 20177, 20, 0x14F2, 0 ) );
 
 				Add( new GenericBuyInfo( "1041060", typeof( HairDye ), 60, 20, 0xEFF, 0 ) );
 
@@ -102,7 +102,7 @@ namespace Server.Mobiles
 				}
 
 				if( !Guild.NewGuildSystem )
-					Add( new GenericBuyInfo( "1041055", typeof( GuildDeed ), 12450, 20, 0x14F0, 0 ) );
+					Add( new GenericBuyInfo( "1041055", typeof( GuildDeed ), 55000, 20, 0x14F0, 0 ) );
 			}
 		}
 

@@ -20,8 +20,8 @@ namespace Server.Mobiles
 		{
 			public InternalBuyInfo()
 			{
-				Add( new GenericBuyInfo( typeof( ScribesPen ), 8,  20, 0xFBF, 0 ) );
-				Add( new GenericBuyInfo( typeof( BlankScroll ), 5, 999, 0x0E34, 0 ) );
+				Add( new GenericBuyInfo( typeof( ScribesPen ), 8,  100, 0xFBF, 0 ) );
+				Add( new GenericBuyInfo( typeof( BlankScroll ), 5, 350, 0x0E34, 0 ) );
 				Add( new GenericBuyInfo( typeof( ScribesPen ), 8,  20, 0xFC0, 0 ) );
 				Add( new GenericBuyInfo( typeof( BrownBook ), 15, 10, 0xFEF, 0 ) );
 				Add( new GenericBuyInfo( typeof( TanBook ), 15, 10, 0xFF0, 0 ) );
@@ -39,11 +39,11 @@ namespace Server.Mobiles
 				Add( typeof( TanBook ), 7 );
 				Add( typeof( BlueBook ), 7 );
 				Add( typeof( BlankScroll ), 3 );
-				Add( typeof( PoisonScroll ), 43);
-				Add( typeof( RecallScroll ), 55);
-				Add( typeof( EnergyBoltScroll ), 65);
-				Add( typeof( FlamestrikeScroll ), 75);
-				Add( typeof( EnergyVortexScroll ), 98);
+				Add( typeof( PoisonScroll ), 35);
+				Add( typeof( RecallScroll ), 40);
+				Add( typeof( EnergyBoltScroll ), 45);
+				Add( typeof( FlamestrikeScroll ), 50);
+				Add( typeof( EnergyVortexScroll ), 55);
 			}
 		}
 	}
