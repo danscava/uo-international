@@ -48,6 +48,7 @@ namespace Server.Mobiles
 		{
 			AddLoot( LootPack.Average );
 			AddLoot( LootPack.Potions );
+			AddLoot( LootPack.IDWandDropper );
 		}
 
 		public override int TreasureMapLevel{ get{ return 1; } }

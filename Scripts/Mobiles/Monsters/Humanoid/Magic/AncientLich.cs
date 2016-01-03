@@ -84,6 +84,7 @@ namespace Server.Mobiles
 		{
 			AddLoot( LootPack.FilthyRich, 3 );
 			AddLoot( LootPack.MedScrolls, 2 );
+			AddLoot( LootPack.IDWandDropper );
 		}
 
 		public override bool Unprovokable{ get{ return true; } }

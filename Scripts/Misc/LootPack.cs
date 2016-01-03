@@ -131,6 +131,12 @@ namespace Server
 			new LootPackItem( typeof( HoodedShroudOfShadows ), 1 )
 		};
 
+
+		public static readonly LootPackItem[] IDWandPack = new LootPackItem[]
+		{
+			new LootPackItem( typeof( IDWand ), 1 )
+		};
+
 		public static readonly LootPackItem[] PotionItems = new LootPackItem[]
 			{
 				new LootPackItem( typeof( AgilityPotion ), 1 ),
@@ -435,6 +441,11 @@ namespace Server
 
 		public static readonly LootPack SpecialNeira = new LootPack (new LootPackEntry[] {
 			new LootPackEntry (false, NeiraSpecialHood, 0.10, 1)
+		});
+
+
+		public static readonly LootPack IDWandDropper = new LootPack (new LootPackEntry[] {
+			new LootPackEntry (false, IDWandPack, 7.0, 1)
 		});
 
 		public static readonly LootPack OldFilthyRich = new LootPack( new LootPackEntry[]
