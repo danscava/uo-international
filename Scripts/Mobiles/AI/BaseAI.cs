@@ -323,7 +323,8 @@ namespace Server.Mobiles
 				m_Mobile.Say( 502002 ); // Very well.
 			
 			if( order == OrderType.Transfer ) // This MSG is send by Hires and Pets in OSI
-				from.SendLocalizedMessage( 502054 ); // That's a silly thing to do.
+				from.SendMessage("Be careful, you are trading your pet!");
+				//from.SendLocalizedMessage( 502054 ); // That's a silly thing to do.
 // end 6th
 
 			if (order == OrderType.Attack)

@@ -2091,11 +2091,11 @@ namespace Server.Multis
 			if ( !IsCoOwner( from ) || !IsActive )
 				return;
 
-			if ( from == Owner )
-			{
-				from.SendLocalizedMessage( 502109 ); // Owners don't get a strong box
-				return;
-			}
+			//if ( from == Owner )
+			//{
+			//	from.SendLocalizedMessage( 502109 ); // Owners don't get a strong box
+			//	return;
+			//}
 
 			if ( IsAosRules ? !CheckAosLockdowns( 1 ) : ((LockDownCount + 1) > m_MaxLockDowns) )
 			{
@@ -2126,8 +2126,8 @@ namespace Server.Multis
 				{
 					if ( from.InRange( p, 1 ) )
 					{
-						from.SendLocalizedMessage( 502113 ); // You cannot place a strongbox near a door or near steps.
-						return;
+						//from.SendLocalizedMessage( 502113 ); // You cannot place a strongbox near a door or near steps.
+						//return;
 					}
 				}
 			}

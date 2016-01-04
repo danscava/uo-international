@@ -653,7 +653,7 @@ namespace Server.Items
 				new HousePlacementEntry( typeof( SmallOldHouse ),		1011308,	425,	212,	489,	244,	10,	76750,		0,	4,	0,	0x006E	),
 				new HousePlacementEntry( typeof( SmallShop ),			1011321,	425,	212,	489,	244,	10,	80500,	   -1,	4,	0,	0x00A0	),
 				new HousePlacementEntry( typeof( SmallShop ),			1011322,	425,	212,	489,	244,	10,	82500,		0,	4,	0,	0x00A2	),
-				new HousePlacementEntry( typeof( SmallTower ),			1011317,	580,	290,	667,	333,	14,	93500,		3,	4,	0,	0x0098	),
+				new HousePlacementEntry( typeof( SmallTower ),			1011317,	580,	290,	667,	333,	14,	103500,		3,	4,	0,	0x0098	),
 				new HousePlacementEntry( typeof( TwoStoryVilla ),		1011319,	1100,	550,	1265,	632,	24,	219750,		3,	6,	0,	0x009E	),
 				new HousePlacementEntry( typeof( SandStonePatio ),		1011320,	850,	425,	1265,	632,	24,	125500,	   -1,	4,	0,	0x009C	),
 				new HousePlacementEntry( typeof( LogCabin ),			1011318,	1100,	550,	1265,	632,	24,	129750,		1,	6,	0,	0x009A	),
