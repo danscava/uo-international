@@ -27,8 +27,9 @@ namespace Server.Misc
 				} :
 			new string[]
 				{	//Yes, this message is a pathetic message, It's suggested that you change it.
-					"Welcome to this shard.",
-					"Please enjoy your stay."
+					"Welcome to UO: International",
+					"Please enjoy your stay." +
+					"Website: http://ultimaonline.international"
 				} );
 
 		public WelcomeTimer( Mobile m ) : this( m, m_Messages.Length )

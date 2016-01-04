@@ -696,7 +696,7 @@ namespace Server.Misc
 				newChar.BankBox.DropItem( ticket );
 			}
 
-			CityInfo city = new CityInfo ("Britain", "The first bank of Britain", 1415, 1687, 5, Map.Felucca);
+			CityInfo city = new CityInfo ("Moonglow", "The Scholar's Inn", 4395, 1162, 5, Map.Felucca);
 
 			newChar.MoveToWorld( city.Location, city.Map );
 
