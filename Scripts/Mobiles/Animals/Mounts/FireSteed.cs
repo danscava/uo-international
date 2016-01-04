@@ -7,6 +7,28 @@ namespace Server.Mobiles
 	[CorpseName( "a fire steed corpse" )]
 	public class FireSteed : BaseMount
 	{
+		public int m_Stage;   
+
+		public bool m_S1;
+		public bool m_S2;
+
+		public bool S1
+		{
+			get{ return m_S1; }
+			set{ m_S1 = value; }
+		}
+		public bool S2
+		{
+			get{ return m_S2; }
+			set{ m_S2 = value; }
+		}
+
+		[CommandProperty( AccessLevel.GameMaster )]
+		public int Stage
+		{
+			get{ return m_Stage; }
+			set{ m_Stage = value; }
+		}
 		[Constructable]
 		public FireSteed() : this( "a fire steed" )
 		{
@@ -46,6 +68,19 @@ namespace Server.Mobiles
 			MinTameSkill = 96.0;
 			MinLoreSkill = 96.0;
 		}
+		public override void OnThink()
+		{
+			if ( Controlled == true )
+			{               
+				if ( this.S1 == true )
+				{
+					this.S1 = false;
+					this.Tamable = true;
+					this.ControlSlots = 2;
+					this.MinTameSkill = 0;
+				}
+			}
+		}
 
 		public override void GenerateLoot()
 		{
@@ -64,7 +99,10 @@ namespace Server.Mobiles
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
-
+			writer.Write((int) 1);
+			writer.Write( m_S1 );
+			writer.Write( m_S2 );
+			writer.Write( (int) m_Stage );
 			writer.Write( (int) 1 ); // version
 		}
 
@@ -73,7 +111,11 @@ namespace Server.Mobiles
 			base.Deserialize( reader );
 
 			int version = reader.ReadInt();
-
+			{
+				m_S1 = reader.ReadBool ();
+				m_S2 = reader.ReadBool ();
+				m_Stage = reader.ReadInt ();
+			}
 			if ( BaseSoundID <= 0 )
 				BaseSoundID = 0xA8;
 

@@ -6,6 +6,29 @@ namespace Server.Mobiles
 	[CorpseName( "a silver steed corpse" )]
 	public class SilverSteed : BaseMount
 	{
+		public int m_Stage;   
+
+		public bool m_S1;
+		public bool m_S2;
+
+		public bool S1
+		{
+			get{ return m_S1; }
+			set{ m_S1 = value; }
+		}
+		public bool S2
+		{
+			get{ return m_S2; }
+			set{ m_S2 = value; }
+		}
+
+		[CommandProperty( AccessLevel.GameMaster )]
+		public int Stage
+		{
+			get{ return m_Stage; }
+			set{ m_Stage = value; }
+		}
+			
 		[Constructable]
 		public SilverSteed() : this( "a silver steed" )
 		{
@@ -24,15 +47,30 @@ namespace Server.Mobiles
 			MinTameSkill = 89.1;
 			MinLoreSkill = 89.1;
 		}
-
+		public override void OnThink()
+		{
+			if ( Controlled == true )
+			{               
+				if ( this.S1 == true )
+				{
+					this.S1 = false;
+					this.Tamable = true;
+					this.ControlSlots = 1;
+					this.MinTameSkill = 0;
+				}
+			}
+		}
 		public SilverSteed( Serial serial ) : base( serial )
 		{
 		}
-
+			
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
-
+			writer.Write((int) 1);
+			writer.Write( m_S1 );
+			writer.Write( m_S2 );
+			writer.Write( (int) m_Stage );
 			writer.Write( (int) 0 ); // version
 		}
 
@@ -41,6 +79,11 @@ namespace Server.Mobiles
 			base.Deserialize( reader );
 
 			int version = reader.ReadInt();
+			{
+				m_S1 = reader.ReadBool ();
+				m_S2 = reader.ReadBool ();
+				m_Stage = reader.ReadInt ();
+			}
 		}
 	}
 }

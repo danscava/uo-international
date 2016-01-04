@@ -11,6 +11,28 @@ namespace Server.Mobiles
 	[CorpseName( "a giant beetle corpse" )]
 	public class Beetle : BaseMount
 	{
+		public int m_Stage;   
+
+		public bool m_S1;
+		public bool m_S2;
+
+		public bool S1
+		{
+			get{ return m_S1; }
+			set{ m_S1 = value; }
+		}
+		public bool S2
+		{
+			get{ return m_S2; }
+			set{ m_S2 = value; }
+		}
+
+		[CommandProperty( AccessLevel.GameMaster )]
+		public int Stage
+		{
+			get{ return m_Stage; }
+			set{ m_Stage = value; }
+		}
 		public virtual double BoostedSpeed{ get{ return 0.1; } }
 
 		[Constructable]
@@ -63,6 +85,19 @@ namespace Server.Mobiles
 			AddItem( pack );
 		}
 
+		public override void OnThink()
+		{
+			if ( Controlled == true )
+			{               
+				if ( this.S1 == true )
+				{
+					this.S1 = false;
+					this.Tamable = true;
+					this.ControlSlots = 3;
+					this.MinTameSkill = 0;
+				}
+			}
+		}
 		public override int GetAngerSound()
 		{
 			return 0x21D;
@@ -165,7 +200,10 @@ namespace Server.Mobiles
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
-
+			writer.Write((int) 1);
+			writer.Write( m_S1 );
+			writer.Write( m_S2 );
+			writer.Write( (int) m_Stage );
 			writer.Write( (int) 0 ); // version
 		}
 
@@ -174,6 +212,11 @@ namespace Server.Mobiles
 			base.Deserialize( reader );
 
 			int version = reader.ReadInt();
+			{
+				m_S1 = reader.ReadBool ();
+				m_S2 = reader.ReadBool ();
+				m_Stage = reader.ReadInt ();
+			}
 		}
 	}
 }

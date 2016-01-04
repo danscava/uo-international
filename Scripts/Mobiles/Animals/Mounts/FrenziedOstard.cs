@@ -79,7 +79,7 @@ namespace Server.Mobiles
 				{
 					this.S1 = false;
 					this.Tamable = true;
-					this.ControlSlots = 2;
+					this.ControlSlots = 1;
 					this.MinTameSkill = 0;
 				}
 			}

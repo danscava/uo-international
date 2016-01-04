@@ -8,6 +8,28 @@ namespace Server.Mobiles
 	[CorpseName( "a hiryu corpse" )]
 	public class Hiryu : BaseMount
 	{
+		public int m_Stage;   
+
+		public bool m_S1;
+		public bool m_S2;
+
+		public bool S1
+		{
+			get{ return m_S1; }
+			set{ m_S1 = value; }
+		}
+		public bool S2
+		{
+			get{ return m_S2; }
+			set{ m_S2 = value; }
+		}
+
+		[CommandProperty( AccessLevel.GameMaster )]
+		public int Stage
+		{
+			get{ return m_Stage; }
+			set{ m_Stage = value; }
+		}
 		public override double WeaponAbilityChance { get { return 0.07; } } /* 1 in 15 chance of using per landed hit */
 
 		public override WeaponAbility GetWeaponAbility()
@@ -117,7 +139,19 @@ namespace Server.Mobiles
 			if ( Core.ML && Utility.RandomDouble() < .33 )
 				PackItem( Engines.Plants.Seed.RandomPeculiarSeed(3) );
 		}
-
+		public override void OnThink()
+		{
+			if ( Controlled == true )
+			{               
+				if ( this.S1 == true )
+				{
+					this.S1 = false;
+					this.Tamable = true;
+					this.ControlSlots = 4;
+					this.MinTameSkill = 0;
+				}
+			}
+		}
 
 		public override int GetAngerSound()
 		{
@@ -229,6 +263,10 @@ namespace Server.Mobiles
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
+			writer.Write((int) 1);
+			writer.Write( m_S1 );
+			writer.Write( m_S2 );
+			writer.Write( (int) m_Stage );
 			writer.Write( (int)2 );
 		}
 
@@ -236,6 +274,11 @@ namespace Server.Mobiles
 		{
 			base.Deserialize( reader );
 			int version = reader.ReadInt();
+			{
+				m_S1 = reader.ReadBool ();
+				m_S2 = reader.ReadBool ();
+				m_Stage = reader.ReadInt ();
+			}
 
 			if( version == 0 )
 				Timer.DelayCall( TimeSpan.Zero, delegate { Hue = GetHue(); } );
