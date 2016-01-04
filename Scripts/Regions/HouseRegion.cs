@@ -376,10 +376,6 @@ namespace Server.Regions
 				{
 					m_House.AddTrashBarrel( from );
 				}
-				else if ( isFriend )
-				{
-					from.SendLocalizedMessage( 1010587 ); // You are not a co-owner of this house.
-				}
 				else
 				{
 					from.SendLocalizedMessage( 502094 ); // You must be in your house to do this.

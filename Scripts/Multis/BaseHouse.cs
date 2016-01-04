@@ -1510,8 +1510,8 @@ namespace Server.Multis
 				{
 					if ( from.InRange( p, 1 ) )
 					{
-						from.SendLocalizedMessage( 502120 ); // You cannot place a trash barrel near a door or near steps.
-						return;
+						//from.SendLocalizedMessage( 502120 ); // You cannot place a trash barrel near a door or near steps.
+						//return;
 					}
 				}
 			}
