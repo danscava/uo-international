@@ -104,7 +104,7 @@ namespace Server.Items
 				if ( !Core.SE )
 					return false;
 
-				return ( DateTime.UtcNow < (m_TimeOfDeath + InstancedCorpseTime) );
+				return ( DateTime.Now < (m_TimeOfDeath + InstancedCorpseTime) );
 			}
 		}
 
@@ -403,7 +403,7 @@ namespace Server.Items
 			if ( m_DecayTimer != null )
 				m_DecayTimer.Stop();
 
-			m_DecayTime = DateTime.UtcNow + delay;
+			m_DecayTime = DateTime.Now + delay;
 
 			m_DecayTimer = new InternalTimer( this, delay );
 			m_DecayTimer.Start();
@@ -496,7 +496,7 @@ namespace Server.Items
 						c.SetRestoreInfo( item, item.Location );
 				}
 
-				if ( Core.SE && !owner.Player )
+				if ( !owner.Player )
 				{
 					c.AssignInstancedLoot();
 				}
@@ -527,8 +527,7 @@ namespace Server.Items
 			return c;
 		}
 
-		// Why was this public?
-		// public override bool IsPublicContainer{ get{ return true; } }
+		public override bool IsPublicContainer{ get{ return true; } }
 
 		public Corpse( Mobile owner, List<Item> equipItems ) : this( owner, null, null, equipItems )
 		{
@@ -551,7 +550,7 @@ namespace Server.Items
 
 			m_CorpseName = GetCorpseName( owner );
 
-			m_TimeOfDeath = DateTime.UtcNow;
+			m_TimeOfDeath = DateTime.Now;
 
 			m_AccessLevel = owner.AccessLevel;
 			m_Guild = owner.Guild as Guild;
@@ -578,10 +577,10 @@ namespace Server.Items
 			{
 				AggressorInfo info = owner.Aggressors[i];
 
-				if ( (DateTime.UtcNow - info.LastCombatTime) < lastTime )
+				if ( (DateTime.Now - info.LastCombatTime) < lastTime )
 				{
 					m_Killer = info.Attacker;
-					lastTime = (DateTime.UtcNow - info.LastCombatTime);
+					lastTime = (DateTime.Now - info.LastCombatTime);
 				}
 
 				if ( !isBaseCreature && !info.CriminalAggression )
@@ -592,10 +591,10 @@ namespace Server.Items
 			{
 				AggressorInfo info = owner.Aggressed[i];
 
-				if ( (DateTime.UtcNow - info.LastCombatTime) < lastTime )
+				if ( (DateTime.Now - info.LastCombatTime) < lastTime )
 				{
 					m_Killer = info.Defender;
-					lastTime = (DateTime.UtcNow - info.LastCombatTime);
+					lastTime = (DateTime.Now - info.LastCombatTime);
 				}
 
 				if ( !isBaseCreature )
@@ -739,7 +738,7 @@ namespace Server.Items
 					}
 
 					if( reader.ReadBool() )
-						BeginDecay( reader.ReadDeltaTime() - DateTime.UtcNow );
+						BeginDecay( reader.ReadDeltaTime() - DateTime.Now );
 
 					m_Looters = reader.ReadStrongMobileList();
 					m_Killer = reader.ReadMobile();
@@ -787,7 +786,7 @@ namespace Server.Items
 				case 7:
 				{
 					if ( reader.ReadBool() )
-						BeginDecay( reader.ReadDeltaTime() - DateTime.UtcNow );
+						BeginDecay( reader.ReadDeltaTime() - DateTime.Now );
 
 					goto case 6;
 				}
@@ -831,7 +830,7 @@ namespace Server.Items
 				case 0:
 				{
 					if ( version < 10 )
-						m_TimeOfDeath = DateTime.UtcNow;
+						m_TimeOfDeath = DateTime.Now;
 
 					if ( version < 7 )
 						BeginDecay( m_DefaultDecayTime );
@@ -867,18 +866,10 @@ namespace Server.Items
 		{
 			base.SendInfoTo( state, sendOplPacket );
 
-			if (((Body)Amount).IsHuman && ItemID == 0x2006)
+			if ( ItemID == 0x2006 )
 			{
-				if (state.ContainerGridLines)
-				{
-					state.Send(new CorpseContent6017(state.Mobile, this));
-				}
-				else
-				{
-					state.Send(new CorpseContent(state.Mobile, this));
-				}
-
-				state.Send(new CorpseEquip(state.Mobile, this));
+				state.Send( new CorpseContent( state.Mobile, this ) );
+				state.Send( new CorpseEquip( state.Mobile, this ) );
 			}
 		}
 
@@ -925,13 +916,9 @@ namespace Server.Items
 
 			if ( item is Food )
 				from.RevealingAction();
-			
-			if (item != this && IsCriminalAction (from)) {
-				if (m_Owner == null || !m_Owner.Player) {
-				}
-				else
-					from.CriminalAction (true);
-			}
+
+			if ( item != this && IsCriminalAction( from ) )
+				from.CriminalAction( true );
 
 			if ( !m_Looters.Contains( from ) )
 				m_Looters.Add( from );
@@ -947,12 +934,9 @@ namespace Server.Items
 			if ( item != this && from != m_Owner )
 				from.RevealingAction();
 
-			if (item != this && IsCriminalAction (from)) {
-				if (m_Owner == null || !m_Owner.Player) {
-				}
-				else
-					from.CriminalAction (true);
-			}
+			if ( item != this && IsCriminalAction( from ) )
+				from.CriminalAction( true );
+
 			if ( !m_Looters.Contains( from ) )
 				m_Looters.Add( from );
 
@@ -1041,9 +1025,8 @@ namespace Server.Items
 			}
 			else if ( IsCriminalAction( from ) )
 			{
-				if (m_Owner == null || !m_Owner.Player) {
-				}
-					//from.SendLocalizedMessage( 1005036 ); // Looting this monster corpse will be a criminal act!
+				if ( m_Owner == null || !m_Owner.Player )
+					from.SendLocalizedMessage( 1005036 ); // Looting this monster corpse will be a criminal act!
 				else
 					from.SendLocalizedMessage( 1005038 ); // Looting this corpse will be a criminal act!
 			}
@@ -1287,7 +1270,16 @@ namespace Server.Items
 				new LeftArm().MoveToWorld( Location, Map );
 				new RightLeg().MoveToWorld( Location, Map );
 				new RightArm().MoveToWorld( Location, Map );
-				new Head( dead.Name ).MoveToWorld( Location, Map );
+				
+				if ( dead is PlayerMobile )
+				{
+					string name = String.Format( "the head of {0}", dead.Name );
+					new BountyHead( name, m_Owner, m_Killer, m_TimeOfDeath ).MoveToWorld( Location, Map );
+				}
+				else
+				{
+					new Head( String.Format( "the head of {0}", dead.Name ) ).MoveToWorld( Location, Map );
+				}
 
 				SetFlag( CorpseFlag.Carved, true );
 

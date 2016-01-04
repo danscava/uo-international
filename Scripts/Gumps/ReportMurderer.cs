@@ -36,13 +36,13 @@ namespace Server.Gumps
 					}
 				}
 
-				if ( ai.Attacker.Player && (DateTime.UtcNow - ai.LastCombatTime) < TimeSpan.FromSeconds( 30.0 ) && !toGive.Contains( ai.Attacker ) )
+				if ( ai.Attacker.Player && (DateTime.Now - ai.LastCombatTime) < TimeSpan.FromSeconds( 30.0 ) && !toGive.Contains( ai.Attacker ) )
 					toGive.Add( ai.Attacker );
 			}
 
 			foreach ( AggressorInfo ai in m.Aggressed )
 			{
-				if ( ai.Defender.Player && (DateTime.UtcNow - ai.LastCombatTime) < TimeSpan.FromSeconds( 30.0 ) && !toGive.Contains( ai.Defender ) )
+				if ( ai.Defender.Player && (DateTime.Now - ai.LastCombatTime) < TimeSpan.FromSeconds( 30.0 ) && !toGive.Contains( ai.Defender ) )
 					toGive.Add( ai.Defender );
 			}
 
@@ -179,11 +179,15 @@ namespace Server.Gumps
 								pk.SendLocalizedMessage(501562); // You have been suspended by the Thieves Guild.
 							}
 						}
+						
+						from.SendGump( new CreateBountyGump( from, killer ) );
 					}
 					break;
 				}
 				case 2:
 				{
+					Mobile killer = (Mobile)m_Killers[m_Idx];
+					from.SendGump( new CreateBountyGump( from, killer ) );
 					break;
 				}
 			}
