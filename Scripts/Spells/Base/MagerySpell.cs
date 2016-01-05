@@ -42,11 +42,10 @@ namespace Server.Spells
 
         public override bool OnCasterMoving(Direction d)
         {
-            //In sphere, you are not froze while casting
-            if (UseSphereSystem)
-            {
-                return true;
-            }
+            //if (UseSphereSystem)
+            //{
+            //   return true;
+            //}
 
             return base.OnCasterMoving(d);
         }
