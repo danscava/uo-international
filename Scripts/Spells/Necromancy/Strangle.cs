@@ -67,7 +67,7 @@ namespace Server.Spells.Necromancy
 					m_Table[m] = t;
 				}
 
-				HarmfulSpell( m );
+				//HarmfulSpell( m );
 			}
 
             //Calculations for the buff bar

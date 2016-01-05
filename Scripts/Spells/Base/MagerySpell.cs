@@ -24,6 +24,37 @@ namespace Server.Spells
 			return false;
 		}
 
+        public virtual bool UseSphereSystem { get { return true; } }
+
+        public bool CheckLineOfSight(object o)
+        {
+            if (!Caster.InLOS(o))
+            {
+                return false;
+            }
+
+            if (!Caster.InRange((IPoint3D)o, Core.ML ? 10 : 12))
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public override bool OnCasterMoving(Direction d)
+        {
+            //In sphere, you are not froze while casting
+            if (UseSphereSystem)
+            {
+                return true;
+            }
+
+            return base.OnCasterMoving(d);
+        }
+
+	    public abstract void SelectTarget();
+
+	    public abstract void OnSphereCast();
+
 		private const double ChanceOffset = 20.0, ChanceLength = 100.0 / 7.0;
 
 		public override void GetCastSkills( out double min, out double max )
@@ -96,7 +127,7 @@ namespace Server.Spells
 
 		public override TimeSpan GetCastDelay()
 		{
-			if( !Core.ML && Scroll is BaseWand )
+			if( Scroll is BaseWand )
 				return TimeSpan.Zero;
 
 			if( !Core.AOS )

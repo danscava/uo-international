@@ -61,7 +61,7 @@ namespace Server.Spells.Necromancy
 				else
 					SetMindRotScalar( Caster, m, 2.00, duration );
 
-				HarmfulSpell( m );
+				//HarmfulSpell( m );
 			}
 
 			FinishSequence();

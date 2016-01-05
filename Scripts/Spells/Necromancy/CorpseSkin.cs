@@ -85,7 +85,7 @@ namespace Server.Spells.Necromancy
 				for ( int i = 0; i < mods.Length; ++i )
 					m.AddResistanceMod( mods[i] );
 
-				HarmfulSpell( m );
+				//HarmfulSpell( m );
 			}
 
 			FinishSequence();

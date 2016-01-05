@@ -69,7 +69,7 @@ namespace Server.Spells.Necromancy
 
 				Timer.DelayCall(duration, new TimerStateCallback(EffectExpire_Callback), m);
 
-				HarmfulSpell( m );
+				//HarmfulSpell( m );
 
                 BuffInfo.AddBuff(m, new BuffInfo(BuffIcon.EvilOmen, 1075647, 1075648, duration, m));
 

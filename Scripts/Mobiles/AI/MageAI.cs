@@ -959,7 +959,7 @@ namespace Server.Mobiles
 			if( targ == null )
 				return false;
 
-			bool isReveal = ( targ is RevealSpell.InternalTarget );
+			bool isReveal = false;//( targ is RevealSpell.InternalTarget );
 			bool isDispel = ( targ is DispelSpell.InternalTarget );
 			bool isParalyze = ( targ is ParalyzeSpell.InternalTarget );
 			bool isTeleport = ( targ is TeleportSpell.InternalTarget );

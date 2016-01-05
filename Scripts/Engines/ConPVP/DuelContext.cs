@@ -1697,7 +1697,7 @@ namespace Server.Engines.ConPVP
 				mob.MeleeDamageAbsorb = 0;
 				Spells.Second.ProtectionSpell.Registry.Remove( mob );
 
-				Spells.Fourth.ArchProtectionSpell.RemoveEntry( mob );
+				//Spells.Fourth.ArchProtectionSpell.RemoveEntry( mob );
 
 				mob.EndAction( typeof( DefensiveSpell ) );
 			}
