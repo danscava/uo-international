@@ -169,14 +169,14 @@ namespace Server.Spells
 
 			if ( IsCasting )
 			{
-				object o = ProtectionSpell.Registry[m_Caster];
+				//object o = ProtectionSpell.Registry[m_Caster];
 				bool disturb = true;
 
-				if ( o != null && o is double )
-				{
-					if ( ((double)o) > Utility.RandomDouble()*100.0 )
-						disturb = false;
-				}
+				//if ( o != null && o is double )
+				//{
+				//	if ( ((double)o) > Utility.RandomDouble()*100.0 )
+				//		disturb = false;
+				//}
 
 				if ( disturb )
 					Disturb( DisturbType.Hurt, false, true );
@@ -400,14 +400,13 @@ namespace Server.Spells
 
 		public void Disturb( DisturbType type, bool firstCircle, bool resistable )
 		{
-			if ( !CheckDisturb( type, firstCircle, resistable ) )
-				return;
+			//if ( !CheckDisturb( type, firstCircle, resistable ) )
+			//	return;
 
 			if ( m_State == SpellState.Casting )
 			{
-				if( !firstCircle && !Core.AOS && this is MagerySpell &&  ((MagerySpell)this).Circle == SpellCircle.First )
-					return;
-
+				//if( !firstCircle && !Core.AOS && this is MagerySpell &&  ((MagerySpell)this).Circle == SpellCircle.First )
+				//	return;
 				m_State = SpellState.None;
 				m_Caster.Spell = null;
 
@@ -419,15 +418,15 @@ namespace Server.Spells
 				if ( m_AnimTimer != null )
 					m_AnimTimer.Stop();
 
-				if ( Core.AOS && m_Caster.Player && type == DisturbType.Hurt )
+				if ( Core.LBR && m_Caster.Player && type == DisturbType.Hurt )
 					DoHurtFizzle();
 
 				m_Caster.NextSpellTime = DateTime.Now.Ticks + GetDisturbRecovery().Ticks;
 			}
 			else if ( m_State == SpellState.Sequencing )
 			{
-				if( !firstCircle && !Core.AOS && this is MagerySpell &&  ((MagerySpell)this).Circle == SpellCircle.First )
-					return;
+				//if( !firstCircle && !Core.AOS && this is MagerySpell &&  ((MagerySpell)this).Circle == SpellCircle.First )
+				//	return;
 
 				m_State = SpellState.None;
 				m_Caster.Spell = null;
@@ -436,7 +435,7 @@ namespace Server.Spells
 
 				Targeting.Target.Cancel( m_Caster );
 
-				if ( Core.AOS && m_Caster.Player && type == DisturbType.Hurt )
+				if ( Core.LBR && m_Caster.Player && type == DisturbType.Hurt )
 					DoHurtFizzle();
 			}
 		}
@@ -692,8 +691,8 @@ namespace Server.Spells
 			if ( fc > fcMax )
 				fc = fcMax;
 
-			if ( ProtectionSpell.Registry.Contains( m_Caster ) )
-				fc -= 2;
+			//if ( ProtectionSpell.Registry.Contains( m_Caster ) )
+			//	fc -= 2;
 
 			if( EssenceOfWindSpell.IsDebuffed( m_Caster ) )
 				fc -= EssenceOfWindSpell.GetFCMalus( m_Caster );
