@@ -114,9 +114,13 @@ namespace Server.Engines.Craft
 			AddCraft( typeof( Crossbow ), 1044566, 1023919, 60.0, 100.0, typeof( Log ), 1044041, 7, 1044351 );
 			AddCraft( typeof( HeavyCrossbow ), 1044566, 1025117, 80.0, 120.0, typeof( Log ), 1044041, 10, 1044351 );
 
+			index = AddCraft( typeof( CompositeBow ), 1044566, String.Format("an elven bow"), 90.0, 95.0, typeof( Log ), 1044041, 30, 1044351 );
+			AddSkill (index, SkillName.Magery, 95.0, 100.0);
+			AddRes( index, typeof( RedScales ), String.Format("red dragon scales"), 10, String.Format("red dragon scales") );
+			SetUseAllRes( index, true );
+
 			if ( Core.AOS )
 			{
-				AddCraft( typeof( CompositeBow ), 1044566, 1029922, 70.0, 110.0, typeof( Log ), 1044041, 7, 1044351 );
 				AddCraft( typeof( RepeatingCrossbow ), 1044566, 1029923, 90.0, 130.0, typeof( Log ), 1044041, 10, 1044351 );
 			}
 

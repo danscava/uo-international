@@ -228,6 +228,11 @@ namespace Server.Engines.Craft
 			}
 
 			AddCraft( typeof( OilCloth ), 1015283, 1041498, 74.6, 99.6, typeof( Cloth ), 1044286, 1, 1044287 );
+			index = AddCraft(typeof(MageRobe), String.Format("Misc"),String.Format("a mage's robe"),90.0, 95.0,typeof(Cloth),1044286,25, 1044287);
+			AddSkill (index, SkillName.Magery, 95.0, 100.0);
+			AddRes( index, typeof( GreenScales ), String.Format("green dragon scales"), 10, String.Format("green dragon scales") );
+			SetUseAllRes( index, true );
+
 
 			if( Core.SE )
 			{
