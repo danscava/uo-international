@@ -11,7 +11,7 @@ namespace Server.Items
 				new CureLevelInfo( Poison.Regular, 1.00 ), // 100% chance to cure regular poison
 				new CureLevelInfo( Poison.Greater, 1.00 ), // 100% chance to cure greater poison
 				new CureLevelInfo( Poison.Deadly,  0.75 ), //  75% chance to cure deadly poison
-				new CureLevelInfo( Poison.Lethal,  0.25 )  //  25% chance to cure lethal poison
+				new CureLevelInfo( Poison.Lethal,  0.30 )  //  30% chance to cure lethal poison
 			};
 
 		private static CureLevelInfo[] m_AosLevelInfo = new CureLevelInfo[]
