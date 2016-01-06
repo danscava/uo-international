@@ -53,6 +53,9 @@ namespace Server.Spells.Fourth
 
 		public void Target( IPoint3D p )
 		{
+			Caster.SendAsciiMessage("Arch Protection is Disabled (Temporary).");
+			return;
+
 			if ( !Caster.CanSee( p ) )
 			{
 				Caster.SendLocalizedMessage( 500237 ); // Target can not be seen.
@@ -96,7 +99,7 @@ namespace Server.Spells.Fourth
 						if ( m == Caster || ( party != null && party.Contains( m ) ) )
 						{
 							Caster.DoBeneficial( m );
-							Spells.Second.ProtectionSpell.Toggle( Caster, m );
+							//Spells.Second.ProtectionSpell.Toggle( Caster, m );
 						}
 					}
 				}
