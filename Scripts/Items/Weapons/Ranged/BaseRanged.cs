@@ -83,6 +83,10 @@ namespace Server.Items
 						canSwing = false;
 				}
 				#endregion
+				if (attacker.InRange (defender, 1)) {
+					canSwing = false;
+					attacker.SendAsciiMessage("You cannot aim from so close!!");
+				}
 
 				if ( canSwing && attacker.HarmfulCheck( defender ) )
 				{
