@@ -87,7 +87,10 @@ namespace Server.Spells.Fifth
                 else if (!Caster.CanBeginAction(typeof(DefensiveSpell)))
                 {
                     Caster.SendLocalizedMessage(1005385); // The spell will not adhere to you at this time.
-                }
+				}
+				else if (Caster.Name != m.Name) {
+					Caster.SendAsciiMessage ("You cannot target another person with this spell!");
+				}
                 else if (CheckSequence())
                 {
                     if (Caster.BeginAction(typeof(DefensiveSpell)))

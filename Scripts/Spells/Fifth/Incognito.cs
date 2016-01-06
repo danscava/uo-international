@@ -81,6 +81,9 @@ namespace Server.Spells.Fifth
 			{
 				DoFizzle();
 			}
+			else if (Caster.Name != m.Name) {
+				Caster.SendAsciiMessage ("You cannot target another person with this spell!");
+			}
 			else if ( CheckSequence() )
 			{
 				if ( Caster.BeginAction( typeof( IncognitoSpell ) ) )
