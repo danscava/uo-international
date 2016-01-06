@@ -62,7 +62,7 @@ namespace Server.Items
 			{
 				bool canSwing = true;
 
-				if ( Core.AOS )
+				if ( Core.AOS || Core.LBR )
 				{
 					canSwing = ( !attacker.Paralyzed && !attacker.Frozen );
 
