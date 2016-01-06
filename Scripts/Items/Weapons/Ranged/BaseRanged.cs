@@ -47,6 +47,12 @@ namespace Server.Items
 		{
 		}
 
+		[Hue, CommandProperty( AccessLevel.GameMaster )]
+		public override int Hue
+		{
+			get{ return base.Hue; }
+			set{ base.Hue = value; InvalidateProperties(); }
+		}
 		public override TimeSpan OnSwing( Mobile attacker, Mobile defender )
 		{
 			WeaponAbility a = WeaponAbility.GetCurrentAbility( attacker );

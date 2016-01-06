@@ -22,8 +22,8 @@ namespace Server.Items
 
 		public override int OldStrengthReq{ get{ return 45; } }
 		public override int OldMinDamage{ get{ return 7; } }
-		public override int OldMaxDamage{ get{ return 13; } }
-		public override int OldSpeed{ get{ return 40; } }
+		public override int OldMaxDamage{ get{ return 15; } }
+		public override int OldSpeed{ get{ return 45; } }
 
 		public override int DefMaxRange{ get{ return 15; } }
 
@@ -36,8 +36,9 @@ namespace Server.Items
 		public CompositeBow() : base( 0x26C2 )
 		{
 			Name = "an elven bow";
-			Hue = 1161;
+			Hue = 38;
 			Weight = 5.0;
+			Layer = Layer.TwoHanded;
 		}
 
 		public CompositeBow( Serial serial ) : base( serial )
