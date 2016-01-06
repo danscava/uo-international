@@ -75,7 +75,10 @@ namespace Server.Spells.Second
             {
                 this.DoFizzle();
                 Caster.SendAsciiMessage("Target is not in line of sight");
-            }
+			}
+			else if (Caster.Name != m.Name) {
+				Caster.SendAsciiMessage ("You can only use this spell on yourself.");
+			}
             else if (Core.AOS)
             {
                 if (CheckSequence())
@@ -92,14 +95,19 @@ namespace Server.Spells.Second
                         double value = (int)(Caster.Skills[SkillName.EvalInt].Value + Caster.Skills[SkillName.Meditation].Value + Caster.Skills[SkillName.Inscribe].Value);
                         value /= 4;
 
-                        if (value < 0)
+                        if (value <= 0)
                             value = 0;
-                        else if (value > 75)
+                        else if (value >= 75)
                             value = 75.0;
 
                         Registry.Add(m, value);
                         new InternalTimer(m).Start();
 
+						if (Caster.Skills.Inscribe.Fixed >= 900) {
+							Caster.VirtualArmor += 20;
+						} else {
+							Caster.VirtualArmor += 10;
+						}
                         Caster.FixedParticles(0x375A, 9, 20, 5016, EffectLayer.Waist);
                         Caster.PlaySound(0x1ED);
                     }
@@ -198,7 +206,11 @@ namespace Server.Spells.Second
 
 						Registry.Add( Caster, value );
 						new InternalTimer( Caster ).Start();
-
+						if (Caster.Skills.Inscribe.Fixed >= 900) {
+							Caster.VirtualArmor += 20;
+						} else {
+							Caster.VirtualArmor += 10;
+						}
 						Caster.FixedParticles( 0x375A, 9, 20, 5016, EffectLayer.Waist );
 						Caster.PlaySound( 0x1ED );
 					}
@@ -232,6 +244,11 @@ namespace Server.Spells.Second
 			protected override void OnTick()
 			{
 				ProtectionSpell.Registry.Remove( m_Caster );
+				if (m_Caster.Skills.Inscribe.Fixed >= 900) {
+					m_Caster.VirtualArmor -= 20;
+				} else {
+					m_Caster.VirtualArmor -= 9;
+				}
 				DefensiveSpell.Nullify( m_Caster );
 			}
 		}
