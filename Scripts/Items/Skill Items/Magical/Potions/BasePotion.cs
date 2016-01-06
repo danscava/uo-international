@@ -64,7 +64,7 @@ namespace Server.Items
 		{
 			m_PotionEffect = effect;
 
-			Stackable = Core.ML;
+			Stackable = Core.LBR;
 			Weight = 1.0;
 		}
 
