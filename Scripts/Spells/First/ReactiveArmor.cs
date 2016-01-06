@@ -54,6 +54,9 @@ namespace Server.Spells.First
                 this.DoFizzle();
                 Caster.SendAsciiMessage("Target is not in line of sight");
             }
+			else if (Caster.Name != m.Name) {
+				Caster.SendAsciiMessage ("You can only use this spell on yourself.");
+			}
             else if (CheckSequence())
             {
                 //NOT AOS
