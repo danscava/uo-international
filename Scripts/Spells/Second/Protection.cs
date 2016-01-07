@@ -104,9 +104,12 @@ namespace Server.Spells.Second
                         new InternalTimer(m).Start();
 
 						if (Caster.Skills.Inscribe.Fixed >= 900) {
-							Caster.VirtualArmor += 20;
-						} else {
-							Caster.VirtualArmor += 10;
+							Caster.VirtualArmor += 25;
+						} else if (Caster.Skills.Inscribe.Fixed >= 700){
+							Caster.VirtualArmor += 18;
+						}else 
+						{
+							Caster.VirtualArmor += 8;
 						}
                         Caster.FixedParticles(0x375A, 9, 20, 5016, EffectLayer.Waist);
                         Caster.PlaySound(0x1ED);
@@ -207,9 +210,12 @@ namespace Server.Spells.Second
 						Registry.Add( Caster, value );
 						new InternalTimer( Caster ).Start();
 						if (Caster.Skills.Inscribe.Fixed >= 900) {
-							Caster.VirtualArmor += 20;
-						} else {
-							Caster.VirtualArmor += 10;
+							Caster.VirtualArmor += 25;
+						} else if (Caster.Skills.Inscribe.Fixed >= 700){
+							Caster.VirtualArmor += 18;
+						}else 
+						{
+							Caster.VirtualArmor += 8;
 						}
 						Caster.FixedParticles( 0x375A, 9, 20, 5016, EffectLayer.Waist );
 						Caster.PlaySound( 0x1ED );
@@ -244,10 +250,13 @@ namespace Server.Spells.Second
 			protected override void OnTick()
 			{
 				ProtectionSpell.Registry.Remove( m_Caster );
-				if (m_Caster.Skills.Inscribe.Fixed >= 900) {
-					m_Caster.VirtualArmor -= 20;
-				} else {
-					m_Caster.VirtualArmor -= 9;
+				if (Caster.Skills.Inscribe.Fixed >= 900) {
+					Caster.VirtualArmor -= 25;
+				} else if (Caster.Skills.Inscribe.Fixed >= 700){
+					Caster.VirtualArmor -= 18;
+				}else 
+				{
+					Caster.VirtualArmor -= 8;
 				}
 				DefensiveSpell.Nullify( m_Caster );
 			}
