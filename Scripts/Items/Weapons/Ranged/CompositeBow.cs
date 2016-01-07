@@ -29,7 +29,14 @@ namespace Server.Items
 
 		public override int InitMinHits{ get{ return 31; } }
 		public override int InitMaxHits{ get{ return 70; } }
-
+		public override int Hue {
+			get {
+				return 38;
+			}
+			set {
+				base.Hue = 38 ;
+			}
+		}
 		public override WeaponAnimation DefAnimation{ get{ return WeaponAnimation.ShootBow; } }
 
 		[Constructable]

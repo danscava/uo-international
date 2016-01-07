@@ -445,14 +445,14 @@ namespace Server
 			} );
 
 		public static readonly LootPack SpecialNeira = new LootPack (new LootPackEntry[] {
-			new LootPackEntry (false, NeiraSpecialHood, 0.10, 1)
+			new LootPackEntry (false, NeiraSpecialHood, 0.15, 1)
 		});
 		public static readonly LootPack DaemonBloodDrops = new LootPack (new LootPackEntry[] {
 			new LootPackEntry (false, DaemonBlood, 35.0, 8)
 		});
 
 		public static readonly LootPack IDWandDropper = new LootPack (new LootPackEntry[] {
-			new LootPackEntry (false, IDWandPack, 7.0, 1)
+			new LootPackEntry (false, IDWandPack, 15.0, 1)
 		});
 
 		public static readonly LootPack OldFilthyRich = new LootPack( new LootPackEntry[]
