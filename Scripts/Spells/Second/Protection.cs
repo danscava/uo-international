@@ -250,14 +250,7 @@ namespace Server.Spells.Second
 			protected override void OnTick()
 			{
 				ProtectionSpell.Registry.Remove( m_Caster );
-				if (Caster.Skills.Inscribe.Fixed >= 900) {
-					Caster.VirtualArmor -= 25;
-				} else if (Caster.Skills.Inscribe.Fixed >= 700){
-					Caster.VirtualArmor -= 18;
-				}else 
-				{
-					Caster.VirtualArmor -= 8;
-				}
+				Caster.VirtualArmor = 0;
 				DefensiveSpell.Nullify( m_Caster );
 			}
 		}
