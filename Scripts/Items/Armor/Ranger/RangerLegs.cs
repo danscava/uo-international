@@ -18,7 +18,7 @@ namespace Server.Items
 		public override int AosStrReq{ get{ return 30; } }
 		public override int OldStrReq{ get{ return 35; } }
 
-		public override int ArmorBase{ get{ return 50; } }
+		public override int ArmorBase{ get{ return 60; } }
 
 		public override ArmorMaterialType MaterialType{ get{ return ArmorMaterialType.Studded; } }
 		public override CraftResource DefaultResource{ get{ return CraftResource.RegularLeather; } }

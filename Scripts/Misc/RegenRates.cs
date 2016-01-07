@@ -162,14 +162,16 @@ namespace Server.Misc
 			{
 				double medPoints = (from.Int + from.Skills[SkillName.Meditation].Value) * 0.5;
 
-				if ( medPoints <= 0 )
-					rate = 7.0;
+				if (medPoints <= 0)
+					rate = 6.5;
+				else if (medPoints <= 50)
+					rate = 5.5;
+				else if (medPoints <= 75)
+					rate = 4.5;
 				else if ( medPoints <= 100 )
-					rate = 7.0 - (239*medPoints/2400) + (19*medPoints*medPoints/48000);
-				else if ( medPoints < 120 )
-					rate = 1.0;
-				else
-					rate = 0.75;
+					rate = 5.0 - (239*medPoints/2400) + (19*medPoints*medPoints/48000);
+				else 
+					rate = 1;
 
 				rate += armorPenalty;
 

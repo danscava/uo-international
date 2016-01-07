@@ -39,8 +39,8 @@ namespace Server.Mobiles
 				Add( typeof( TanBook ), 7 );
 				Add( typeof( BlueBook ), 7 );
 				Add( typeof( BlankScroll ), 3 );
-				Add( typeof( PoisonScroll ), 25);
-				Add( typeof( RecallScroll ), 28);
+				Add( typeof( PoisonScroll ), 14);
+				Add( typeof( RecallScroll ), 24);
 				Add( typeof( EnergyBoltScroll ), 30);
 			}
 		}

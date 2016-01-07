@@ -46,7 +46,7 @@ namespace Server.Mobiles
 				Add( new GenericBuyInfo( typeof( Bloodmoss ), 5, 400, 0xF7B, 0 ) );
 				Add( new GenericBuyInfo( typeof( Garlic ), 3, 400, 0xF84, 0 ) );
 				Add( new GenericBuyInfo( typeof( Ginseng ), 3, 400, 0xF85, 0 ) );
-				Add( new GenericBuyInfo( typeof( MandrakeRoot ), 400, 20, 0xF86, 0 ) );
+				Add( new GenericBuyInfo( typeof( MandrakeRoot ), 3, 400, 0xF86, 0 ) );
 				Add( new GenericBuyInfo( typeof( Nightshade ), 3, 400, 0xF88, 0 ) );
 				Add( new GenericBuyInfo( typeof( SpidersSilk ), 3, 400, 0xF8D, 0 ) );
 				Add( new GenericBuyInfo( typeof( SulfurousAsh ), 3, 400, 0xF8C, 0 ) );

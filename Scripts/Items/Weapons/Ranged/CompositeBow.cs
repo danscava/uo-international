@@ -37,6 +37,7 @@ namespace Server.Items
 				base.Hue = 38 ;
 			}
 		}
+
 		public override WeaponAnimation DefAnimation{ get{ return WeaponAnimation.ShootBow; } }
 
 		[Constructable]
