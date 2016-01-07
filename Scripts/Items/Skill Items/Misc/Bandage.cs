@@ -11,7 +11,7 @@ namespace Server.Items
 {
 	public class Bandage : Item, IDyable
 	{
-		public static int Range = ( Core.AOS ? 2 : 1 ); 
+		public static int Range = ( Core.AOS ? 2 : 4 ); 
 
 		public override double DefaultWeight
 		{
@@ -130,6 +130,7 @@ namespace Server.Items
 					{
 						if ( BandageContext.BeginHeal( from, (Mobile)targeted ) != null )
 						{
+							from.PublicOverheadMessage (MessageType.Regular, 0x22, true, "** Begins healing with bandages! **");
 							from.Freeze (TimeSpan.FromSeconds( 1.5 ));
 							if (!Engines.ConPVP.DuelContext.IsFreeConsume (from))
 								m_Bandage.Consume();
@@ -178,6 +179,7 @@ namespace Server.Items
 
 		public void Slip()
 		{
+			m_Healer.PublicOverheadMessage (MessageType.Regular, 0x22, true, "** Fingers slipped! **");
 			m_Healer.SendLocalizedMessage( 500961 ); // Your fingers slip!
 			++m_Slips;
 		}
@@ -425,6 +427,7 @@ namespace Server.Items
 					if ( toHeal < 1 )
 					{
 						toHeal = 1;
+						m_Healer.PublicOverheadMessage (MessageType.Regular, 0x22, true, "** Applies the bandages, but they barely help... **");
 						healerNumber = 500968; // You apply the bandages, but they barely help.
 					}
 
@@ -432,6 +435,7 @@ namespace Server.Items
 				}
 				else
 				{
+					m_Healer.PublicOverheadMessage (MessageType.Regular, 0x22, true, "** Applies the bandages, but they barely help... **");
 					healerNumber = 500968; // You apply the bandages, but they barely help.
 					playSound = false;
 				}
@@ -497,14 +501,14 @@ namespace Server.Items
 				int dex = healer.Dex;
 
 				double seconds;
-				double resDelay = ( patient.Alive ? 0.0 : 5.0 );
+				double resDelay = ( patient.Alive ? 0.0 : 4.0 );
 
 				if ( onSelf )
 				{
 					if ( Core.AOS )
 						seconds = 5.0 + (0.5 * ((double)(120 - dex) / 10)); // TODO: Verify algorithm
 					else
-						seconds = 9.4 + (0.6 * ((double)(120 - dex) / 10));
+						seconds = 8.4 + (0.6 * ((double)(120 - dex) / 10));
 				}
 				else
 				{
