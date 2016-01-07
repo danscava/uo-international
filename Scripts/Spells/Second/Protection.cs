@@ -250,7 +250,7 @@ namespace Server.Spells.Second
 			protected override void OnTick()
 			{
 				ProtectionSpell.Registry.Remove( m_Caster );
-				Caster.VirtualArmor = 0;
+				m_Caster.VirtualArmor = 0;
 				DefensiveSpell.Nullify( m_Caster );
 			}
 		}
