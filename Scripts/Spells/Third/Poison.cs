@@ -77,25 +77,37 @@ namespace Server.Spells.Third
 
 					if ( Core.AOS || Core.LBR)
 					{
-						if ( Caster.InRange( m, 2 ) )
-						{
-							int spec_tot = (Caster.Skills.Magery.Fixed + Caster.Skills.Poisoning.Fixed + Caster.Skills.Anatomy.Fixed + Caster.Skills.EvalInt.Fixed + Caster.Skills.Meditation.Fixed + Caster.Skills.MagicResist.Fixed) / 6;
-							int total = (Caster.Skills.Magery.Fixed + Caster.Skills.Poisoning.Fixed) / 2;
+						int spec_tot = (Caster.Skills.Magery.Fixed + Caster.Skills.Poisoning.Fixed + Caster.Skills.Anatomy.Fixed + Caster.Skills.EvalInt.Fixed + Caster.Skills.Inscribe.Fixed) / 5;
+						int total = (Caster.Skills.Magery.Fixed + Caster.Skills.Poisoning.Fixed) / 2;
 
+						if (Caster.InRange (m, 2)) {
 							if (spec_tot >= 1000)
 								level = 4;
+							else if (total >= 1000)
+								level = 3;
+							else if (total > 850)
+								level = 2;
+							else if (total > 650)
+								level = 1;
 							else
-								if ( total >= 1000 )
-									level = 3;
-								else if ( total > 850 )
-									level = 2;
-								else if ( total > 650 )
-									level = 1;
-								else
-									level = 0;
-						}
-						else
-						{
+								level = 0;
+						} else if (Caster.InRange (m, 6)) {
+							if (spec_tot >= 1000)
+								level = 3;
+							else if (total >= 1000)
+								level = 2;
+							else if (total > 850)
+								level = 1;
+							else
+								level = 0;
+						}else if (Caster.InRange (m, 8)) {
+							if (spec_tot >= 1000)
+								level = 2;
+							else if (total >= 1000)
+								level = 1;
+							else
+								level = 0;
+						}else{
 							level = 0;
 						}
 					}
