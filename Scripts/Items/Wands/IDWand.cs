@@ -11,6 +11,7 @@ namespace Server.Items
 		[Constructable]
 		public IDWand() : base( WandEffect.Identification, 25, 175 )
 		{
+			Identified = true;
 		}
 
 		public IDWand( Serial serial ) : base( serial )

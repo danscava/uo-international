@@ -56,6 +56,7 @@ namespace Server.Mobiles
 			AddLoot( LootPack.Average, 2 );
 			AddLoot( LootPack.MedScrolls, 2 );
 			AddLoot (LootPack.DaemonBloodDrops, 1);
+			AddLoot (LootPack.IDWandDropper, 1);
 		}
 
 		public override bool CanRummageCorpses{ get{ return true; } }
