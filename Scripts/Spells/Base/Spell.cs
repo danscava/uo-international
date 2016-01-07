@@ -164,8 +164,9 @@ namespace Server.Spells
 		public virtual void OnCasterHurt()
 		{
 			//Confirm: Monsters and pets cannot be disturbed.
-			if ( !Caster.Player )
-				return;
+			//if ( !Caster.Player )
+			//	return;
+			// 07.01.2016 (EMIR) THEY SHOULD BE ABLE TO DISTURBED
 
 			if ( IsCasting )
 			{

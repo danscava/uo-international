@@ -114,11 +114,10 @@ namespace Server.Engines.Craft
 			AddCraft( typeof( Crossbow ), 1044566, 1023919, 60.0, 100.0, typeof( Log ), 1044041, 7, 1044351 );
 			AddCraft( typeof( HeavyCrossbow ), 1044566, 1025117, 80.0, 120.0, typeof( Log ), 1044041, 10, 1044351 );
 
-			index = AddCraft( typeof( CompositeBow ), 1044566, String.Format("an elven bow"), 90.0, 95.0, typeof( Log ), 1044041, 55, 1044351 );
+			index = AddCraft( typeof( CompositeBow ), 1044566, String.Format("an elven bow"), 90.0, 95.0,typeof( DaemonBlood ), String.Format("daemonblood"), 45, String.Format("you are missing some daemonblood"));
 			SetItemHue (index, 38);
 			AddSkill (index, SkillName.Magery, 95.0, 100.0);
-			AddRes( index, typeof( DaemonBlood ), String.Format("daemonblood"), 25, String.Format("you are missing some daemonblood") );
-			AddRes(index, typeof(CopperIngot), String.Format("copper ingot"), 10, String.Format("you are missing copper ingots") );
+			AddRes(index, typeof(Log), 1044041, 150, 1044351 );
 			ForceNonExceptional( index );
 
 			if ( Core.AOS )

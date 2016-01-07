@@ -12,11 +12,13 @@ namespace Server.Items
 		[Constructable]
 		public DaemonBlood() : this( 1 )
 		{
+			Hue = 38;
 		}
 
 		[Constructable]
 		public DaemonBlood( int amount ) : base( 0xF7D, amount )
 		{
+			Hue = 38;
 		}
 
 		public DaemonBlood( Serial serial ) : base( serial )

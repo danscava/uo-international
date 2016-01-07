@@ -3514,8 +3514,11 @@ namespace Server.Items
 
 					CraftContext context = craftSystem.GetContext( from );
 
-					if ( context != null && context.DoNotColor )
-						Hue = 0;
+				if (context != null && context.DoNotColor) {
+					Hue = 0;
+				} else {
+					Hue = resHue;
+				}
 
 					switch ( thisResource )
 					{

@@ -228,9 +228,9 @@ namespace Server.Engines.Craft
 			}
 
 			AddCraft( typeof( OilCloth ), 1015283, 1041498, 74.6, 99.6, typeof( Cloth ), 1044286, 1, 1044287 );
-			index = AddCraft(typeof(MageRobe), 1015283,String.Format("a mage's robe"),90.0, 95.0,typeof(Cloth),1044286, 100, 1044287);
+			index = AddCraft(typeof(MageRobe), 1015283,String.Format("a mage's robe"),90.0, 95.0,typeof(Cloth),1044286, 150, 1044287);
 			AddSkill (index, SkillName.Magery, 95.0, 100.0);
-			AddRes( index, typeof( GreenScales ), String.Format("green dragon scales"), 25, String.Format("you are missing green dragon scales") );
+			AddRes( index, typeof( GreenScales ), String.Format("green dragon scales"), 45, String.Format("you are missing green dragon scales") );
 			ForceNonExceptional( index );
 
 			if( Core.SE )
