@@ -2082,7 +2082,9 @@ namespace Server
 					{
 						weapon.OnBeforeSwing( m_Mobile, combatant );	//OnBeforeSwing for checking in regards to being hidden and whatnot
 						m_Mobile.RevealingAction();
+
 						m_Mobile.m_NextCombatTime = Core.TickCount + (int)weapon.OnSwing(m_Mobile, combatant).TotalMilliseconds;
+
 					}
 				}
 			}

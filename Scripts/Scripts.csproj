@@ -3268,6 +3268,11 @@
     <Compile Include="Targets\MoveTarget.cs" />
     <Compile Include="Targets\PickMoveTarget.cs" />
     <Compile Include="Items\Special\MageRobe.cs" />
+    <Compile Include="Items\Armor\Phoenix\PhoenixArms.cs" />
+    <Compile Include="Items\Armor\Phoenix\PhoenixChest.cs" />
+    <Compile Include="Items\Armor\Phoenix\PhoenixGloves.cs" />
+    <Compile Include="Items\Armor\Phoenix\PhoenixLegs.cs" />
+    <Compile Include="Items\Armor\Phoenix\PhoenixHelm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="SpecialSystems\README.TXT" />
@@ -3282,4 +3287,7 @@
   <ProjectExtensions>
     <VisualStudio AllowExistingFolder="true" />
   </ProjectExtensions>
+  <ItemGroup>
+    <Folder Include="Items\Armor\Phoenix\" />
+  </ItemGroup>
 </Project>

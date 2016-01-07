@@ -5,7 +5,7 @@ using Server.Items;
 namespace Server.Items
 {
 	// TODO: Commodity?
-	public class DaemonBone : BaseReagent
+	public class DaemonBone : BaseReagent, ICommodity
 	{
 		public override double DefaultWeight
 		{

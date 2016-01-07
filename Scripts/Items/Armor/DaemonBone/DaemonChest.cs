@@ -25,6 +25,8 @@ namespace Server.Items
 		public override ArmorMaterialType MaterialType{ get{ return ArmorMaterialType.Bone; } }
 		public override CraftResource DefaultResource{ get{ return CraftResource.RegularLeather; } }
 
+		public override ArmorMeditationAllowance DefMedAllowance{ get{ return ArmorMeditationAllowance.Half; } }
+
 		public override int LabelNumber{ get{ return 1041372; } } // daemon bone armor
 
 		[Constructable]

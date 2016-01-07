@@ -25,7 +25,7 @@ namespace Server.Items
 
 		public override ArmorMaterialType MaterialType{ get{ return ArmorMaterialType.Bone; } }
 		public override CraftResource DefaultResource{ get{ return CraftResource.RegularLeather; } }
-
+		public override ArmorMeditationAllowance DefMedAllowance{ get{ return ArmorMeditationAllowance.Half; } }
 		[Constructable]
 		public BoneChest() : base( 0x144F )
 		{
