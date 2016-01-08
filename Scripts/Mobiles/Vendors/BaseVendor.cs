@@ -998,16 +998,16 @@ namespace Server.Mobiles
 
 			bought = ( buyer.AccessLevel >= AccessLevel.GameMaster );
 
-			cont = buyer.Backpack;
-			if ( !bought && cont != null )
-			{
-				if ( cont.ConsumeTotal( typeof( Gold ), totalCost ) )
-					bought = true;
-				else if ( totalCost < 2000 )
-					SayTo( buyer, 500192 ); // Begging thy pardon, but thou canst not afford that.
-			}
+			//cont = buyer.Backpack;
+			//if ( !bought && cont != null )
+			//{
+			//	if ( cont.ConsumeTotal( typeof( Gold ), totalCost ) )
+			//		bought = true;
+				//else if ( totalCost < 2000 )
+				//	SayTo( buyer, 500192 ); // Begging thy pardon, but thou canst not afford that.
+			//}
 
-			if ( !bought && totalCost >= 2000 )
+			if ( !bought && totalCost > 0 )
 			{
 				cont = buyer.FindBankNoCreate();
 				if ( cont != null && cont.ConsumeTotal( typeof( Gold ), totalCost ) )
