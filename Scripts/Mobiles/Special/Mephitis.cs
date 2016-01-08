@@ -55,7 +55,7 @@ namespace Server.Mobiles
 		{
 			AddLoot( LootPack.UltraRich, 4 );
 			AddLoot (LootPack.RangerGorgetPack);
-			AddLoot( LootPack.PhoenixHelmDropper);
+			AddLoot( LootPack.PhoenixHelmPack);
 		}
 
 		public override Poison PoisonImmune{ get{ return Poison.Lethal; } }
