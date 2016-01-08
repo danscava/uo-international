@@ -1,6 +1,7 @@
 using System;
 using Server;
 using Server.Items;
+using Server.Network;
 
 namespace Server.Items
 {
@@ -49,8 +50,7 @@ namespace Server.Items
 			if (!Core.AOS && (attacker.Player || attacker.Body.IsHuman) && Layer == Layer.TwoHanded && attacker.Skills[SkillName.Anatomy].Value >= 80 && (attacker.Skills[SkillName.Anatomy].Value / 400.0) >= Utility.RandomDouble() && Engines.ConPVP.DuelContext.AllowSpecialAbility(attacker, "Crushing Blow", false))
 			{
 				damage *= 1.5;
-
-				attacker.SendMessage( "You deliver a crushing blow!" ); // Is this not localized?
+				attacker.PublicOverheadMessage (MessageType.Regular, 0x22, true, "** Delivers a crushing blow! **");
 				attacker.PlaySound( 0x11C );
 			}
 
