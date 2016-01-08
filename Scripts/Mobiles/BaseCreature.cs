@@ -5849,7 +5849,7 @@ namespace Server.Mobiles
 
 						if ( c.Map != Map.Internal )
 						{
-							c.Loyalty -= (BaseCreature.MaxLoyalty / 10);
+							c.Loyalty = BaseCreature.MaxLoyalty;
 
 							if( c.Loyalty < (BaseCreature.MaxLoyalty / 10) )
 							{
@@ -5884,6 +5884,9 @@ namespace Server.Mobiles
 
 			foreach ( BaseCreature c in toRelease )
 			{
+				if (c.IsStabled){
+					
+				}else{
 				c.Say( 1043255, c.Name ); // ~1_NAME~ appears to have decided that is better off without a master!
 				c.Loyalty = BaseCreature.MaxLoyalty; // Wonderfully Happy
 				c.IsBonded = false;
@@ -5893,6 +5896,7 @@ namespace Server.Mobiles
 				//c.ControlOrder = OrderType.Release;
 				c.AIObject.DoOrderRelease(); // this will prevent no release of creatures left alone with AI disabled (and consequent bug of Followers)
 				c.DropBackpack();
+				}
 			}
 
 			// added code to handle removing of wild creatures in house regions

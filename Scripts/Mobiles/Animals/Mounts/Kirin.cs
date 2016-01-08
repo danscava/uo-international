@@ -152,9 +152,8 @@ namespace Server.Mobiles
 		public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
-			writer.Write((int) 1);
-			writer.Write( m_S1 );
-			writer.Write( m_S2 );
+			writer.Write( (bool)m_S1 );
+			writer.Write( (bool)m_S2 );
 			writer.Write( (int) m_Stage );
 			writer.Write( (int) 1 ); // version
 		}
@@ -162,13 +161,11 @@ namespace Server.Mobiles
 		public override void Deserialize( GenericReader reader )
 		{
 			base.Deserialize( reader );
-
+			bool m_S1 = reader.ReadBool ();
+			bool m_S2 = reader.ReadBool ();
+			int m_Stage = reader.ReadInt ();
 			int version = reader.ReadInt();
-			{
-				m_S1 = reader.ReadBool ();
-				m_S2 = reader.ReadBool ();
-				m_Stage = reader.ReadInt ();
-			}
+
 			if ( version == 0 )
 				AI = AIType.AI_Mage;
 		}
