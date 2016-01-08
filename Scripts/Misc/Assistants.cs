@@ -18,9 +18,9 @@ namespace Server.Misc
 
 			public const string WarningMessage = "The server was unable to negotiate features with your assistant. "
 				                + "FOLLOWING RAZOR FEATURES ARE NOT ALLOWED ON THIS SERVER: "
-				                + "AutoRemount, AutolootAgent, AdvancedMacros, PoisonedChecks<BR>"
-								+ "You must download and run an updated version of <A HREF=\"http://uosteam.com\">UOSteam</A>"
-								+ " or <A HREF=\"https://bitbucket.org/msturgill/razor-releases/downloads\">Razor</A>."
+				                + "AutoRemount, AutolootAgent, AdvancedMacros, PoisonedChecks, AutoBandage<BR>"
+								+ "You must download and run an updated version of"
+								+ " <A HREF=\"https://bitbucket.org/msturgill/razor-releases/downloads\">Razor</A>."
 								+ "<BR><BR>Make sure you've checked the option <B>Negotiate features with server</B>, "
 								+ "once you have this box checked you may log in and play normally."
 								+ "<BR><BR>You will be disconnected shortly.";
@@ -31,6 +31,7 @@ namespace Server.Misc
 				DisallowFeature (Features.AutoRemount);
 				DisallowFeature (Features.AdvancedMacros);
 				DisallowFeature (Features.PoisonedChecks);
+				DisallowFeature (Features.AutoBandage);
 			}
 
 			[Flags]
