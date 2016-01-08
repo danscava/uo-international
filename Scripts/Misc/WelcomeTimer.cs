@@ -27,7 +27,7 @@ namespace Server.Misc
 				} :
 			new string[]
 				{	//Yes, this message is a pathetic message, It's suggested that you change it.
-					"Welcome to UO International",
+					"Welcome to UO: International",
 					"Please enjoy your stay." +
 					"Website: http://ultimaonline.international"
 				} );
