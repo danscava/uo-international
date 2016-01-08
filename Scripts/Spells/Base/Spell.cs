@@ -163,10 +163,15 @@ namespace Server.Spells
 
 		public virtual void OnCasterHurt()
 		{
+			// only champions cannot be disturbed.
+			if (!Caster.Player && (Caster.Name == "Barracoon" || Caster.Name == "the harrower" || Caster.Name == "Lord Oaks" || Caster.Name == "Mephitis" || Caster.Name == "Neira"|| Caster.Name == "Rikktor" || Caster.Name == "Serado"|| Caster.Name == "Semidar" )){
+				return;
+			}
 			//Confirm: Monsters and pets cannot be disturbed.
 			//if ( !Caster.Player )
 			//	return;
 			// 07.01.2016 (EMIR) THEY SHOULD BE ABLE TO DISTURBED
+
 
 			if ( IsCasting )
 			{
