@@ -131,6 +131,56 @@ namespace Server
 			new LootPackItem( typeof( HoodedShroudOfShadows ), 1 )
 		};
 
+		public static readonly LootPackItem[] RangerGlovesDropper = new LootPackItem[]
+		{
+			new LootPackItem( typeof( RangerGloves ), 1 )
+		};
+
+		public static readonly LootPackItem[] RangerChestDropper = new LootPackItem[]
+		{
+			new LootPackItem( typeof( RangerChest ), 1 )
+		};
+
+		public static readonly LootPackItem[] RangerArmsDropper = new LootPackItem[]
+		{
+			new LootPackItem( typeof( RangerArms ), 1 )
+		};
+
+		public static readonly LootPackItem[] RangerGorgetDropper = new LootPackItem[]
+		{
+			new LootPackItem( typeof( RangerGorget ), 1 )
+		};
+
+		public static readonly LootPackItem[] RangerLegsDropper = new LootPackItem[]
+		{
+			new LootPackItem( typeof( RangerLegs ), 1 )
+		};
+
+		public static readonly LootPackItem[] PhoenixGlovesDropper = new LootPackItem[]
+		{
+			new LootPackItem( typeof( PhoenixGloves ), 1 )
+		};
+
+		public static readonly LootPackItem[] PhoenixHelmDropper = new LootPackItem[]
+		{
+			new LootPackItem( typeof( PhoenixHelm ), 1 )
+		};
+
+		public static readonly LootPackItem[] PhoenixChestDropper = new LootPackItem[]
+		{
+			new LootPackItem( typeof( PhoenixChest ), 1 )
+		};
+
+		public static readonly LootPackItem[] PhoenixLegsDropper = new LootPackItem[]
+		{
+			new LootPackItem( typeof( PhoenixLegs ), 1 )
+		};
+
+		public static readonly LootPackItem[] PhoenixArmsDropper = new LootPackItem[]
+		{
+			new LootPackItem( typeof( PhoenixArms ), 1 )
+		};
+
 		public static readonly LootPackItem[] DaemonBlood = new LootPackItem[]
 		{
 			new LootPackItem( typeof( DaemonBlood ), 1 )
@@ -445,7 +495,47 @@ namespace Server
 			} );
 
 		public static readonly LootPack SpecialNeira = new LootPack (new LootPackEntry[] {
-			new LootPackEntry (false, NeiraSpecialHood, 0.15, 1)
+			new LootPackEntry (false, NeiraSpecialHood, 1.0, 1)
+		});
+
+		public static readonly LootPack RangerGlovesPack = new LootPack (new LootPackEntry[] {
+			new LootPackEntry (false, RangerGlovesDropper, 6.0, 1)
+		});
+
+		public static readonly LootPack RangerChestPack = new LootPack (new LootPackEntry[] {
+			new LootPackEntry (false, RangerChestDropper, 6.0, 1)
+		});
+
+		public static readonly LootPack RangerArmsPack = new LootPack (new LootPackEntry[] {
+			new LootPackEntry (false, RangerArmsDropper, 6.0, 1)
+		});
+
+		public static readonly LootPack RangerLegsPack = new LootPack (new LootPackEntry[] {
+			new LootPackEntry (false, RangerLegsDropper, 6.0, 1)
+		});
+
+		public static readonly LootPack RangerGorgetPack = new LootPack (new LootPackEntry[] {
+			new LootPackEntry (false, RangerGorgetDropper, 6.0, 1)
+		});
+
+		public static readonly LootPack PhoenixHelmPack = new LootPack (new LootPackEntry[] {
+			new LootPackEntry (false, PhoenixHelmDropper, 6.0, 1)
+		});
+
+		public static readonly LootPack PhoenixChestPack = new LootPack (new LootPackEntry[] {
+			new LootPackEntry (false, PhoenixChestDropper, 6.0, 1)
+		});
+
+		public static readonly LootPack PhoenixArmsPack = new LootPack (new LootPackEntry[] {
+			new LootPackEntry (false, PhoenixArmsDropper, 6.0, 1)
+		});
+
+		public static readonly LootPack PhoenixLegsPack = new LootPack (new LootPackEntry[] {
+			new LootPackEntry (false, PhoenixLegsDropper, 6.0, 1)
+		});
+
+		public static readonly LootPack PhoenixGlovesPack = new LootPack (new LootPackEntry[] {
+			new LootPackEntry (false, PhoenixGlovesDropper, 6.0, 1)
 		});
 		public static readonly LootPack DaemonBloodDrops = new LootPack (new LootPackEntry[] {
 			new LootPackEntry (false, DaemonBlood, 35.0, 8)

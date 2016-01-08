@@ -77,9 +77,10 @@ namespace Server.Mobiles
 		public override void GenerateLoot()
 		{
 			AddLoot( LootPack.UltraRich, 3 );
-			AddLoot( LootPack.Meager );
+			AddLoot( LootPack.FilthyRich );
 			AddLoot (LootPack.SpecialNeira);
-
+			AddLoot (LootPack.RangerGlovesPack);
+			AddLoot (LootPack.PhoenixGlovesPack);
 		}
 
 		public override bool OnBeforeDeath()

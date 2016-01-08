@@ -54,6 +54,8 @@ namespace Server.Mobiles
 		public override void GenerateLoot()
 		{
 			AddLoot( LootPack.UltraRich, 4 );
+			AddLoot (LootPack.RangerGorgetPack);
+			AddLoot( LootPack.PhoenixHelmDropper);
 		}
 
 		public override Poison PoisonImmune{ get{ return Poison.Lethal; } }

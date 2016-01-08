@@ -68,6 +68,9 @@ namespace Server.Mobiles
 		public override void GenerateLoot()
 		{
 			AddLoot( LootPack.UltraRich, 3 );
+			AddLoot( LootPack.FilthyRich );
+			AddLoot (LootPack.RangerChestPack);
+			AddLoot (LootPack.PhoenixChestPack);
 		}
 
 		public override bool AlwaysMurderer{ get{ return true; } }

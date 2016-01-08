@@ -26,7 +26,7 @@ namespace Server.Mobiles
 			SetDex( 102, 200 );
 			SetInt( 601, 750 );
 
-			SetHits( 1500 );
+			SetHits( 4500 );
 			SetStam( 103, 250 );
 
 			SetDamage( 29, 35 );
@@ -57,6 +57,8 @@ namespace Server.Mobiles
 		{
 			AddLoot( LootPack.UltraRich, 4 );
 			AddLoot( LootPack.FilthyRich );
+			AddLoot (LootPack.RangerArmsPack);
+			AddLoot (LootPack.PhoenixArmsPack);
 		}
 
 		public override bool Unprovokable{ get{ return true; } }
@@ -64,14 +66,15 @@ namespace Server.Mobiles
 
 		public override void CheckReflect( Mobile caster, ref bool reflect )
 		{
-			if ( caster.Body.IsMale )
-				reflect = true; // Always reflect if caster isn't female
+			reflect = false;
+			//if ( caster.Body.IsMale )
+			//	reflect = true; // Always reflect if caster isn't female
 		}
 
 		public override void AlterDamageScalarFrom( Mobile caster, ref double scalar )
 		{
-			if ( caster.Body.IsMale )
-				scalar = 20; // Male bodies always reflect.. damage scaled 20x
+			//if ( caster.Body.IsMale )
+			//	scalar = 20; // Male bodies always reflect.. damage scaled 20x
 		}
 
 		public void DrainLife()
