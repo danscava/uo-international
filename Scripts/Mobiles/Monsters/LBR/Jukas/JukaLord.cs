@@ -64,6 +64,7 @@ namespace Server.Mobiles
 		{
 			AddLoot( LootPack.Rich );
 			AddLoot( LootPack.Average );
+			AddLoot (LootPack.Potions, 2);
 		}
 
 		public override void OnDamage( int amount, Mobile from, bool willKill )

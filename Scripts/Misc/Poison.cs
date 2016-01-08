@@ -24,11 +24,11 @@ namespace Server
 			}
 			else
 			{
-				Register( new PoisonImpl( "Lesser",		0, 4, 11,  2.500, 3.5, 3.0, 10, 2 ) );
-				Register( new PoisonImpl( "Regular",	1, 5, 12,  3.125, 3.5, 3.0, 10, 2 ) );
-				Register( new PoisonImpl( "Greater",	2, 6, 13,  6.250, 3.5, 3.0, 10, 2 ) );
-				Register( new PoisonImpl( "Deadly",		3, 7, 14, 12.500, 3.5, 4.0, 10, 2 ) );
-				Register( new PoisonImpl( "Lethal",		4, 9, 15, 25.000, 3.5, 5.0, 10, 2 ) );
+				Register( new PoisonImpl( "Lesser",		0, 3, 7,  2.500, 3.5, 3.0, 10, 2 ) );
+				Register( new PoisonImpl( "Regular",	1, 4, 9,  3.125, 3.5, 3.0, 10, 2 ) );
+				Register( new PoisonImpl( "Greater",	2, 5, 10,  6.250, 3.5, 3.0, 10, 2 ) );
+				Register( new PoisonImpl( "Deadly",		3, 5, 10, 12.500, 3.5, 4.0, 10, 2 ) );
+				Register( new PoisonImpl( "Lethal",		4, 5, 10, 25.000, 3.5, 5.0, 10, 2 ) );
 			}
 		}
 
