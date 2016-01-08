@@ -1,6 +1,7 @@
 using System;
 using Server;
 using Server.Items;
+using Server.Network;
 
 namespace Server.Items
 {
@@ -42,7 +43,8 @@ namespace Server.Items
 			if ( !Core.AOS && Layer == Layer.TwoHanded && (attacker.Skills[SkillName.Anatomy].Value / 400.0) >= Utility.RandomDouble() && Engines.ConPVP.DuelContext.AllowSpecialAbility( attacker, "Paralyzing Blow", false ) )
 			{
 				defender.SendMessage( "You receive a paralyzing blow!" ); // Is this not localized?
-				defender.Freeze( TimeSpan.FromSeconds( 2.0 ) );
+				defender.PublicOverheadMessage (MessageType.Regular, 0x22, true, "** Paralyzed! **");
+				defender.Freeze( TimeSpan.FromSeconds( 2.5 ) );
 
 				attacker.SendMessage( "You deliver a paralyzing blow!" ); // Is this not localized?
 				attacker.PlaySound( 0x11C );

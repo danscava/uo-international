@@ -42,9 +42,9 @@ namespace Server.Mobiles
 
 		public override void GenerateLoot()
 		{
-			AddLoot( LootPack.FilthyRich );
+			AddLoot( LootPack.FilthyRich, 2 );
 			AddLoot( LootPack.Average );
-			AddLoot( LootPack.MedScrolls, 2 );
+			AddLoot( LootPack.HighScrolls, 2 );
 		}
 
 		public override int TreasureMapLevel{ get{ return 4; } }

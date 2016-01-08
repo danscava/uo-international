@@ -114,6 +114,7 @@ namespace Server.Items
 				if ( mod == null )
 				{
 					defender.SendMessage( "You receive a concussion blow!" );
+					defender.PublicOverheadMessage (MessageType.Regular, 0x22, true, "** Receives concussion blow! **");
 					defender.AddStatMod( new StatMod( StatType.Int, "Concussion", -(defender.RawInt / 2), TimeSpan.FromSeconds( 30.0 ) ) );
 
 					attacker.SendMessage( "You deliver a concussion blow!" );

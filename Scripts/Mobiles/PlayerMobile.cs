@@ -1664,6 +1664,9 @@ namespace Server.Mobiles
 
 		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
 		{
+			// TODO: Emir - This saves the day but just ugly..
+			return;
+
 			base.GetContextMenuEntries( from, list );
 
 			if ( from == this )

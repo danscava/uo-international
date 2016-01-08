@@ -72,7 +72,7 @@ namespace Server.Items
 			//  Magic jewelry  (not implemented)
 
 			// Gold
-			DropItem( new Gold( Utility.Random( 180, 240 ) ) );
+			DropItem( new Gold( Utility.Random( 2300, 2650 ) ) );
 
 			// Drop bolts
 			//DropItem( new Arrow( 10 ) );

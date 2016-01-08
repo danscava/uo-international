@@ -69,7 +69,7 @@ namespace Server.Items
 			//  Normal jewelry
 
 			// Gold
-			DropItem( new Gold( Utility.Random( 30, 100 ) ) );
+			DropItem( new Gold( Utility.Random( 1000, 1500 ) ) );
 
 			// Drop bolts
 			//DropItem( new Bolt( 10 ) );
