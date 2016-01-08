@@ -164,7 +164,7 @@ namespace Server.Commands
 							from.Stam = from.StamMax;
 
 							for ( int i = 0; i < targ.Skills.Length; ++i )
-								targ.Skills[i].Base = 120;
+								targ.Skills[i].Base = 100;
 						}
 
 						if(from.AccessLevel == AccessLevel.Counselor)
