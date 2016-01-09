@@ -43,7 +43,7 @@ namespace Server.Mobiles
 			SetDex( 56, 75 );
 			SetInt( 16, 30 );
 
-			SetHits( 15, 27 );
+			SetHits( 33, 44 );
 			SetMana( 0 );
 
 			SetDamage( 3, 5 );

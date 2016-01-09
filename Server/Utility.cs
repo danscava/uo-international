@@ -934,13 +934,16 @@ namespace Server
 		{
 			return Random( 2201, 24 );
 		}
-
+		
 		/// <summary>
 		/// Random hue in the range 2301-2318
 		/// </summary>
 		public static int RandomAnimalHue()
 		{
-			return Random( 2301, 18 );
+			int[] hues = new int[3] {682, 1109, 149};
+			Random rnd = new Random();
+			int randomIndex = rnd.Next(0, hues.Length);
+			return hues[randomIndex];
 		}
 
 		/// <summary>

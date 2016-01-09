@@ -37,7 +37,7 @@ namespace Server.Mobiles
 		}
 
 		[Constructable]
-		public Nightmare( string name ) : base( name, 0x74, 0x3EA7, AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4 )
+		public Nightmare( string name ) : base( name, 0x74, 0x3EA7, AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 )
 		{
 			BaseSoundID = Core.AOS ? 0xA8 : 0x16A;
 
@@ -45,9 +45,9 @@ namespace Server.Mobiles
 			SetDex( 86, 105 );
 			SetInt( 86, 125 );
 
-			SetHits( 298, 315 );
+			SetHits( 333, 366 );
 
-			SetDamage( 16, 22 );
+			SetDamage( 24, 44 );
 
 			SetDamageType( ResistanceType.Physical, 40 );
 			SetDamageType( ResistanceType.Fire, 40 );
@@ -72,8 +72,8 @@ namespace Server.Mobiles
 
 			Tamable = true;
 			ControlSlots = 2;
-			MinTameSkill = 95.1;
-			MinLoreSkill = 95.1;
+			MinTameSkill = 93.1;
+			MinLoreSkill = 93.1;
 
 			switch ( Utility.Random( 3 ) )
 			{

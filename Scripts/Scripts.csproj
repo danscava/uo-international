@@ -2489,7 +2489,6 @@
     <Compile Include="Mobiles\Animals\Misc\Walrus.cs" />
     <Compile Include="Mobiles\Animals\Mounts\BaseMount.cs" />
     <Compile Include="Mobiles\Animals\Mounts\Beetle.cs" />
-    <Compile Include="Mobiles\Animals\Mounts\DesertOstard.cs" />
     <Compile Include="Mobiles\Animals\Mounts\Ethereals.cs" />
     <Compile Include="Mobiles\Animals\Mounts\FireSteed.cs" />
     <Compile Include="Mobiles\Animals\Mounts\ForestOstard.cs" />
@@ -3273,6 +3272,8 @@
     <Compile Include="Items\Armor\Phoenix\PhoenixGloves.cs" />
     <Compile Include="Items\Armor\Phoenix\PhoenixLegs.cs" />
     <Compile Include="Items\Armor\Phoenix\PhoenixHelm.cs" />
+    <Compile Include="Mobiles\Animals\Mounts\MidOstard.cs" />
+    <Compile Include="Mobiles\Animals\Mounts\DesertOstard.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="SpecialSystems\README.TXT" />

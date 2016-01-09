@@ -50,7 +50,7 @@ namespace Server.Mobiles
 			SetHits( 121, 143 );
 			SetMana( 0 );
 
-			SetDamage( 11, 17 );
+			SetDamage( 14, 19 );
 
 			SetDamageType( ResistanceType.Physical, 100 );
 
@@ -68,8 +68,8 @@ namespace Server.Mobiles
 
 			Tamable = true;
 			ControlSlots = 1;
-			MinTameSkill = 77.1;
-			MinLoreSkill = 77.1;
+			MinTameSkill = 70.1;
+			MinLoreSkill = 70.1;
 		}
 		public override void OnThink()
 		{

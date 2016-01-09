@@ -40,7 +40,7 @@ namespace Server.Mobiles
 		{
 		}
 
-		public override bool SubdueBeforeTame{ get{ return true; } } // Must be beaten into submission
+		//public override bool SubdueBeforeTame{ get{ return true; } } // Must be beaten into submission
 		public override bool ReduceSpeedWithDamage{ get{ return false; } }
 
 		[Constructable]

@@ -43,7 +43,7 @@ namespace Server.Mobiles
 			SetDex( 56, 75 );
 			SetInt( 16, 30 );
 
-			SetHits( 71, 94 );
+			SetHits( 88, 99 );
 			SetMana( 0 );
 
 			SetDamage( 3, 5 );
@@ -65,8 +65,8 @@ namespace Server.Mobiles
 
 			Tamable = true;
 			ControlSlots = 0;
-			MinTameSkill = 83.1;
-			MinLoreSkill = 83.1;
+			MinTameSkill = 73.1;
+			MinLoreSkill = 73.1;
 		}
 		public override void OnThink()
 		{
