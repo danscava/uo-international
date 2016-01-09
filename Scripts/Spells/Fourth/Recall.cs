@@ -21,7 +21,7 @@ namespace Server.Spells.Fourth
 			);
 
 		public override SpellCircle Circle { get { return SpellCircle.Fourth; } }
-
+		public override bool UseSphereSystem { get { return false; } }
         public override void SelectTarget()
         {
             Caster.Target = new InternalSphereTarget(this);

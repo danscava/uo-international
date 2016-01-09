@@ -121,7 +121,7 @@ namespace Server.Items
 
 			m_Entries = new List<RunebookEntry>();
 
-			m_MaxCharges = maxCharges;
+			m_MaxCharges = 100;
 
 			m_DefaultIndex = -1;
 

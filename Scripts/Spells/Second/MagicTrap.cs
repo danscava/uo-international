@@ -50,11 +50,13 @@ namespace Server.Spells.Second
 
 		public void Target( TrapableContainer item )
 		{
+			Item checkBackpack = Caster.Backpack.FindItemByType( typeof( TrapableContainer ) );
+
 			if ( !Caster.CanSee( item ) )
 			{
 				Caster.SendLocalizedMessage( 500237 ); // Target can not be seen.
 			}
-            else if (!CheckLineOfSight(item))
+			else if (!CheckLineOfSight(item) && checkBackpack == null)
             {
                 this.DoFizzle();
                 Caster.SendAsciiMessage("Target is not in line of sight");
