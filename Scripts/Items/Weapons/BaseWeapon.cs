@@ -690,7 +690,7 @@ namespace Server.Items
 
 				if ( weapon != null )
 					m.NextCombatTime = Core.TickCount + (int)weapon.GetDelay(m).TotalMilliseconds;
-
+				
 				if ( UseSkillMod && m_SkillMod != null )
 				{
 					m_SkillMod.Remove();
@@ -705,8 +705,6 @@ namespace Server.Items
 
 				if ( Core.AOS )
 					m_AosSkillBonuses.Remove();
-
-				ImmolatingWeaponSpell.StopImmolating( this );
 
 				m.CheckStatTimers();
 
@@ -767,105 +765,39 @@ namespace Server.Items
 		public virtual bool CheckHit( Mobile attacker, Mobile defender )
 		{
 			BaseWeapon atkWeapon = attacker.Weapon as BaseWeapon;
-			BaseWeapon defWeapon = defender.Weapon as BaseWeapon;
 
 			Skill atkSkill = attacker.Skills[atkWeapon.Skill];
-			Skill defSkill = defender.Skills[defWeapon.Skill];
 
-			double atkValue = atkWeapon.GetAttackSkillValue( attacker, defender );
-			double defValue = defWeapon.GetDefendSkillValue( attacker, defender );
+			double bonus = GetHitChanceBonus();
 
-			double ourValue, theirValue;
+			double finalModifier = atkSkill.Value + bonus;
 
-			int bonus = GetHitChanceBonus();
-
-			if ( Core.AOS )
-			{
-				if ( atkValue <= -20.0 )
-					atkValue = -19.9;
-
-				if ( defValue <= -20.0 )
-					defValue = -19.9;
-
-				bonus += AosAttributes.GetValue( attacker, AosAttribute.AttackChance );
-
-				if ( Spells.Chivalry.DivineFurySpell.UnderEffect( attacker ) )
-					bonus += 10; // attacker gets 10% bonus when they're under divine fury
-
-				if ( CheckAnimal( attacker, typeof( GreyWolf ) ) || CheckAnimal( attacker, typeof( BakeKitsune ) ) )
-					bonus += 20; // attacker gets 20% bonus when under Wolf or Bake Kitsune form
-
-				if ( HitLower.IsUnderAttackEffect( attacker ) )
-					bonus -= 25; // Under Hit Lower Attack effect -> 25% malus
-
-				WeaponAbility ability = WeaponAbility.GetCurrentAbility( attacker );
-
-				if ( ability != null )
-					bonus += ability.AccuracyBonus;
-
-				SpecialMove move = SpecialMove.GetCurrentMove( attacker );
-
-				if ( move != null )
-					bonus += move.GetAccuracyBonus( attacker );
-
-				// Max Hit Chance Increase = 45%
-				if ( bonus > 45 )
-					bonus = 45;
-
-				ourValue = (atkValue + 20.0) * (100 + bonus);
-
-				bonus = AosAttributes.GetValue( defender, AosAttribute.DefendChance );
-
-				if ( Spells.Chivalry.DivineFurySpell.UnderEffect( defender ) )
-					bonus -= 20; // defender loses 20% bonus when they're under divine fury
-
-				if ( HitLower.IsUnderDefenseEffect( defender ) )
-					bonus -= 25; // Under Hit Lower Defense effect -> 25% malus
-					
-				int blockBonus = 0;
-
-				if ( Block.GetBonus( defender, ref blockBonus ) )
-					bonus += blockBonus;
-
-				int surpriseMalus = 0;
-
-				if ( SurpriseAttack.GetMalus( defender, ref surpriseMalus ) )
-					bonus -= surpriseMalus;
-
-				int discordanceEffect = 0;
-
-				// Defender loses -0/-28% if under the effect of Discordance.
-				if ( SkillHandlers.Discordance.GetEffect( attacker, ref discordanceEffect ) )
-					bonus -= discordanceEffect;
-
-				// Defense Chance Increase = 45%
-				if ( bonus > 45 )
-					bonus = 45;
-
-				theirValue = (defValue + 20.0) * (100 + bonus);
-
-				bonus = 0;
-			}
-			else
-			{
-				if ( atkValue <= -50.0 )
-					atkValue = -49.9;
-
-				if ( defValue <= -50.0 )
-					defValue = -49.9;
-
-				ourValue = (atkValue + 50.0);
-				theirValue = (defValue + 50.0);
+			if (finalModifier <= 50.0) {
+				return Utility.PercentageBooleanGenerator (50);
+			} else if (finalModifier <= 60.0) {
+				return Utility.PercentageBooleanGenerator (60);
+			} else if (finalModifier <= 70.0) {
+				return Utility.PercentageBooleanGenerator (70);
+			} else if (finalModifier <= 80.0) {
+				return Utility.PercentageBooleanGenerator (75);
+			} else if (finalModifier <= 90.0) {
+				return Utility.PercentageBooleanGenerator (80);
+			} else if (finalModifier <= 100.0) {
+				return Utility.PercentageBooleanGenerator (85);
+			} else if (finalModifier <= 101.0) {
+				return Utility.PercentageBooleanGenerator (86);
+			} else if (finalModifier <= 102.0) {
+				return Utility.PercentageBooleanGenerator (87);
+			} else if (finalModifier <= 103.0) {
+				return Utility.PercentageBooleanGenerator (88);
+			} else if (finalModifier <= 104.0) {
+				return Utility.PercentageBooleanGenerator (89);
+			} else if (finalModifier <= 105.0) {
+				return Utility.PercentageBooleanGenerator (90);
+			} else {
+				return false;
 			}
 
-			double chance = ourValue / (theirValue * 2.0);
-
-			chance *= 1.0 + ((double)bonus / 100);
-
-			if ( chance < 0.02 )
-				chance = 0.02;
-
-			return attacker.CheckSkill( atkSkill.SkillName, chance );
 		}
 
 		public virtual TimeSpan GetDelay( Mobile m )
@@ -1003,7 +935,7 @@ namespace Server.Items
 		{
 			bool canSwing = true;
 
-			if ( Core.AOS )
+			if ( Core.AOS || Core.LBR)
 			{
 				canSwing = ( !attacker.Paralyzed && !attacker.Frozen );
 
@@ -1266,8 +1198,9 @@ namespace Server.Items
 
 			IWearableDurability armor = armorItem as IWearableDurability;
 
-			if ( armor != null )
-				damage = armor.OnHit( this, damage );
+			if (armor != null) {
+				damage = armor.OnHit (this, damage);
+			}
 
 			int virtualArmor = defender.VirtualArmor + defender.VirtualArmorMod;
 
@@ -1363,33 +1296,6 @@ namespace Server.Items
 
 		public virtual void OnHit( Mobile attacker, Mobile defender, double damageBonus )
 		{
-			if ( MirrorImage.HasClone( defender ) && (defender.Skills.Ninjitsu.Value / 150.0) > Utility.RandomDouble() )
-			{
-				Clone bc;
-
-				IPooledEnumerable eable = defender.GetMobilesInRange( 4 );
-				foreach ( Mobile m in eable)
-				{
-					bc = m as Clone;
-
-					if ( bc != null && bc.Summoned && bc.SummonMaster == defender )
-					{
-						attacker.SendLocalizedMessage( 1063141 ); // Your attack has been diverted to a nearby mirror image of your target!
-						defender.SendLocalizedMessage( 1063140 ); // You manage to divert the attack onto one of your nearby mirror images.
-
-						/*
-						 * TODO: What happens if the Clone parries a blow?
-						 * And what about if the attacker is using Honorable Execution
-						 * and kills it?
-						 */
-
-						defender = m;
-						break;
-					}
-				}
-				eable.Free();
-			}
-
 			PlaySwingAnimation( attacker );
 			PlayHurtAnimation( defender );
 
@@ -1591,53 +1497,6 @@ namespace Server.Items
 
 			double propertyBonus = ( move == null ) ? 1.0 : move.GetPropertyBonus( attacker );
 
-			if ( Core.AOS )
-			{
-				int lifeLeech = 0;
-				int stamLeech = 0;
-				int manaLeech = 0;
-				int wraithLeech = 0;
-
-				if ( (int)(AosWeaponAttributes.GetValue( attacker, AosWeaponAttribute.HitLeechHits ) * propertyBonus) > Utility.Random( 100 ) )
-					lifeLeech += 30; // HitLeechHits% chance to leech 30% of damage as hit points
-
-				if ( (int)(AosWeaponAttributes.GetValue( attacker, AosWeaponAttribute.HitLeechStam ) * propertyBonus) > Utility.Random( 100 ) )
-					stamLeech += 100; // HitLeechStam% chance to leech 100% of damage as stamina
-
-				if ( (int)(AosWeaponAttributes.GetValue( attacker, AosWeaponAttribute.HitLeechMana ) * propertyBonus) > Utility.Random( 100 ) )
-					manaLeech += 40; // HitLeechMana% chance to leech 40% of damage as mana
-
-				if ( m_Cursed )
-					lifeLeech += 50; // Additional 50% life leech for cursed weapons (necro spell)
-
-				context = TransformationSpellHelper.GetContext( attacker );
-
-				if ( context != null && context.Type == typeof( VampiricEmbraceSpell ) )
-					lifeLeech += 20; // Vampiric embrace gives an additional 20% life leech
-
-				if ( context != null && context.Type == typeof( WraithFormSpell ) )
-				{
-					wraithLeech = (5 + (int)((15 * attacker.Skills.SpiritSpeak.Value) / 100)); // Wraith form gives an additional 5-20% mana leech
-
-					// Mana leeched by the Wraith Form spell is actually stolen, not just leeched.
-					defender.Mana -= AOS.Scale( damageGiven, wraithLeech );
-
-					manaLeech += wraithLeech;
-				}
-
-				if ( lifeLeech != 0 )
-					attacker.Hits += AOS.Scale( damageGiven, lifeLeech );
-
-				if ( stamLeech != 0 )
-					attacker.Stam += AOS.Scale( damageGiven, stamLeech );
-
-				if ( manaLeech != 0 )
-					attacker.Mana += AOS.Scale( damageGiven, manaLeech );
-
-				if ( lifeLeech != 0 || stamLeech != 0 || manaLeech != 0 )
-					attacker.PlaySound( 0x44D );
-			}
-
 			if ( m_MaxHits > 0 && ((MaxRange <= 1 && (defender is Slime || defender is AcidElemental)) || Utility.RandomDouble() < .04) ) // Stratics says 50% chance, seems more like 4%..
 			{
 				if ( MaxRange <= 1 && (defender is Slime || defender is AcidElemental) )
@@ -1681,59 +1540,7 @@ namespace Server.Items
 					bc.Hits += damage;
 			}
 
-			if ( Core.AOS )
-			{
-				int physChance = (int)(AosWeaponAttributes.GetValue( attacker, AosWeaponAttribute.HitPhysicalArea ) * propertyBonus);
-				int fireChance = (int)(AosWeaponAttributes.GetValue( attacker, AosWeaponAttribute.HitFireArea ) * propertyBonus);
-				int coldChance = (int)(AosWeaponAttributes.GetValue( attacker, AosWeaponAttribute.HitColdArea ) * propertyBonus);
-				int poisChance = (int)(AosWeaponAttributes.GetValue( attacker, AosWeaponAttribute.HitPoisonArea ) * propertyBonus);
-				int nrgyChance = (int)(AosWeaponAttributes.GetValue( attacker, AosWeaponAttribute.HitEnergyArea ) * propertyBonus);
 
-				if ( physChance != 0 && physChance > Utility.Random( 100 ) )
-					DoAreaAttack( attacker, defender, 0x10E,   50, 100, 0, 0, 0, 0 );
-
-				if ( fireChance != 0 && fireChance > Utility.Random( 100 ) )
-					DoAreaAttack( attacker, defender, 0x11D, 1160, 0, 100, 0, 0, 0 );
-
-				if ( coldChance != 0 && coldChance > Utility.Random( 100 ) )
-					DoAreaAttack( attacker, defender, 0x0FC, 2100, 0, 0, 100, 0, 0 );
-
-				if ( poisChance != 0 && poisChance > Utility.Random( 100 ) )
-					DoAreaAttack( attacker, defender, 0x205, 1166, 0, 0, 0, 100, 0 );
-
-				if ( nrgyChance != 0 && nrgyChance > Utility.Random( 100 ) )
-					DoAreaAttack( attacker, defender, 0x1F1,  120, 0, 0, 0, 0, 100 );
-
-				int maChance = (int)(AosWeaponAttributes.GetValue( attacker, AosWeaponAttribute.HitMagicArrow ) * propertyBonus);
-				int harmChance = (int)(AosWeaponAttributes.GetValue( attacker, AosWeaponAttribute.HitHarm ) * propertyBonus);
-				int fireballChance = (int)(AosWeaponAttributes.GetValue( attacker, AosWeaponAttribute.HitFireball ) * propertyBonus);
-				int lightningChance = (int)(AosWeaponAttributes.GetValue( attacker, AosWeaponAttribute.HitLightning ) * propertyBonus);
-				int dispelChance = (int)(AosWeaponAttributes.GetValue( attacker, AosWeaponAttribute.HitDispel ) * propertyBonus);
-
-				if ( maChance != 0 && maChance > Utility.Random( 100 ) )
-					DoMagicArrow( attacker, defender );
-
-				if ( harmChance != 0 && harmChance > Utility.Random( 100 ) )
-					DoHarm( attacker, defender );
-
-				if ( fireballChance != 0 && fireballChance > Utility.Random( 100 ) )
-					DoFireball( attacker, defender );
-
-				if ( lightningChance != 0 && lightningChance > Utility.Random( 100 ) )
-					DoLightning( attacker, defender );
-
-				if ( dispelChance != 0 && dispelChance > Utility.Random( 100 ) )
-					DoDispel( attacker, defender );
-
-				int laChance = (int)(AosWeaponAttributes.GetValue( attacker, AosWeaponAttribute.HitLowerAttack ) * propertyBonus);
-				int ldChance = (int)(AosWeaponAttributes.GetValue( attacker, AosWeaponAttribute.HitLowerDefend ) * propertyBonus);
-
-				if ( laChance != 0 && laChance > Utility.Random( 100 ) )
-					DoLowerAttack( attacker, defender );
-
-				if ( ldChance != 0 && ldChance > Utility.Random( 100 ) )
-					DoLowerDefense( attacker, defender );
-			}
 
 			if ( attacker is BaseCreature )
 				((BaseCreature)attacker).OnGaveMeleeAttack( defender );
@@ -2155,20 +1962,17 @@ namespace Server.Items
 			return bonus / 100;
 		}
 
-		public virtual int GetHitChanceBonus()
+		public virtual double GetHitChanceBonus()
 		{
-			//if ( !Core.AOS )
-			//	return 0;
-
-			int bonus = 0;
+			double bonus = 0.0;
 
 			switch ( m_AccuracyLevel )
 			{
-				case WeaponAccuracyLevel.Accurate:		bonus += 20; break;
-				case WeaponAccuracyLevel.Surpassingly:	bonus += 25; break;
-				case WeaponAccuracyLevel.Eminently:		bonus += 30; break;
-				case WeaponAccuracyLevel.Exceedingly:	bonus += 35; break;
-				case WeaponAccuracyLevel.Supremely:		bonus += 40; break;
+				case WeaponAccuracyLevel.Accurate:		bonus = 1.0; break;
+				case WeaponAccuracyLevel.Surpassingly:	bonus = 2.0; break;
+				case WeaponAccuracyLevel.Eminently:		bonus = 3.0; break;
+				case WeaponAccuracyLevel.Exceedingly:	bonus = 4.0; break;
+				case WeaponAccuracyLevel.Supremely:		bonus = 5.0; break;
 			}
 
 			return bonus;
@@ -2186,11 +1990,11 @@ namespace Server.Items
 
 			switch ( m_DamageLevel )
 			{
-				case WeaponDamageLevel.Ruin:	bonus += 15; break;
-				case WeaponDamageLevel.Might:	bonus += 20; break;
-				case WeaponDamageLevel.Force:	bonus += 25; break;
-				case WeaponDamageLevel.Power:	bonus += 30; break;
-				case WeaponDamageLevel.Vanq:	bonus += 35; break;
+				case WeaponDamageLevel.Ruin:	bonus += 45; break;
+				case WeaponDamageLevel.Might:	bonus += 50; break;
+				case WeaponDamageLevel.Force:	bonus += 55; break;
+				case WeaponDamageLevel.Power:	bonus += 60; break;
+				case WeaponDamageLevel.Vanq:	bonus += 70; break;
 			}
 
 			return bonus;
@@ -3210,7 +3014,7 @@ namespace Server.Items
 			if ( (prop = m_AosAttributes.CastSpeed) != 0 )
 				list.Add( 1060413, prop.ToString() ); // faster casting ~1_val~
 
-			if ( (prop = (GetHitChanceBonus() + m_AosAttributes.AttackChance)) != 0 )
+			if ( (prop = ((int)GetHitChanceBonus() + m_AosAttributes.AttackChance)) != 0 )
 				list.Add( 1060415, prop.ToString() ); // hit chance increase ~1_val~%
 
 			if ( (prop = m_AosWeaponAttributes.HitColdArea) != 0 )

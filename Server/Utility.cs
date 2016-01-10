@@ -819,6 +819,16 @@ namespace Server
 			}
 		}
 
+		public static bool PercentageBooleanGenerator(int chance){
+
+			int randomNo = RandomImpl.Next (101);
+
+			if (randomNo <= chance)
+				return true;
+			else
+				return false;
+		}
+
 		public static int Random( int count )
 		{
 			return RandomImpl.Next(count);
