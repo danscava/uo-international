@@ -862,7 +862,7 @@ namespace Server.Items
 
 			chance *= 1.0 + ((double)bonus / 100);
 
-			if ( Core.AOS && chance < 0.02 )
+			if ( chance < 0.02 )
 				chance = 0.02;
 
 			return attacker.CheckSkill( atkSkill.SkillName, chance );
@@ -2164,11 +2164,11 @@ namespace Server.Items
 
 			switch ( m_AccuracyLevel )
 			{
-				case WeaponAccuracyLevel.Accurate:		bonus += 02; break;
-				case WeaponAccuracyLevel.Surpassingly:	bonus += 04; break;
-				case WeaponAccuracyLevel.Eminently:		bonus += 06; break;
-				case WeaponAccuracyLevel.Exceedingly:	bonus += 08; break;
-				case WeaponAccuracyLevel.Supremely:		bonus += 10; break;
+				case WeaponAccuracyLevel.Accurate:		bonus += 20; break;
+				case WeaponAccuracyLevel.Surpassingly:	bonus += 25; break;
+				case WeaponAccuracyLevel.Eminently:		bonus += 30; break;
+				case WeaponAccuracyLevel.Exceedingly:	bonus += 35; break;
+				case WeaponAccuracyLevel.Supremely:		bonus += 40; break;
 			}
 
 			return bonus;
@@ -2315,6 +2315,13 @@ namespace Server.Items
 
 			if ( anatomyValue >= 100.0 )
 				modifiers += 0.1;
+
+			/* Compute armslore modifier
+			 * : 1% bonus for every 10 points of armslore
+			 * : no extra bonus
+			 */
+			double armsloreValue = attacker.Skills[SkillName.ArmsLore].Value;
+			modifiers += ( ( armsloreValue / 10.0 ) / 100.0 );
 
 			/* Compute lumberjacking bonus
 			 * : 1% bonus for every 5 points of lumberjacking
