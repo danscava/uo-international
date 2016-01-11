@@ -36,9 +36,9 @@ namespace Server.Mobiles
 			SetDex( (int)(76*scalar), (int)(100*scalar) );
 			SetInt( (int)(101*scalar), (int)(150*scalar) );
 
-			SetHits( (int)(151*scalar), (int)(210*scalar) );
+			SetHits( (int)(350*scalar), (int)(450*scalar) );
 
-			SetDamage( (int)(13*scalar), (int)(24*scalar) );
+			SetDamage( (int)(17*scalar), (int)(26*scalar) );
 
 			SetDamageType( ResistanceType.Physical, 100 );
 

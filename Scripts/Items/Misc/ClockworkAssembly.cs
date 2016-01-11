@@ -33,9 +33,9 @@ namespace Server.Items
 
 			double tinkerSkill = from.Skills[SkillName.Tinkering].Value;
 
-			if ( tinkerSkill < 60.0 )
+			if ( tinkerSkill < 70.0 )
 			{
-				from.SendMessage( "You must have at least 60.0 skill in tinkering to construct a golem." );
+				from.SendMessage( "You must have at least 70.0 skill in tinkering to construct a golem." );
 				return;
 			}
 			else if ( (from.Followers + 4) > from.FollowersMax )

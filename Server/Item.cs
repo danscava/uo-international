@@ -1482,14 +1482,14 @@ namespace Server
 
 		private static TimeSpan m_DDT = TimeSpan.FromHours( 1.0 );
 
-		public static TimeSpan DefaultDecayTime{ get{ return m_DDT; } set{ m_DDT = value; } }
+		public static TimeSpan DefaultDecayTime{ get{ return TimeSpan.FromMinutes(15); } set{ m_DDT = value; } }
 
 		[CommandProperty( AccessLevel.GameMaster )]
 		public virtual TimeSpan DecayTime
 		{
 			get
 			{
-				return m_DDT;
+				return TimeSpan.FromMinutes(15);
 			}
 		}
 

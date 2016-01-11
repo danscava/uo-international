@@ -93,7 +93,7 @@ namespace Server.Items
 			//  Gems
 
 			// Gold
-			DropItem( new Gold( Utility.Random( 1500, 2300 ) ) );
+			DropItem( new Gold( 350 ) );
 
 			// Drop bolts
 			//DropItem( new Arrow( 10 ) );

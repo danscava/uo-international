@@ -79,7 +79,7 @@ namespace Server.Items
 			//  Crystal ball (not implemented)
 
 			// Gold
-			DropItem( new Gold( Utility.Random( 2650, 2850 ) ) );
+			DropItem( new Gold(850 ) );
 
 			// Reagents
 			for( int i = Utility.Random( 1, m_Level ); i > 1; i-- )
