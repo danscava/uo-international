@@ -21,8 +21,8 @@ namespace Server.Items
 		public override float MlSpeed{ get{ return 4.00f; } }
 
 		public override int OldStrengthReq{ get{ return 45; } }
-		public override int OldMinDamage{ get{ return 10; } }
-		public override int OldMaxDamage{ get{ return 15; } }
+		public override int OldMinDamage{ get{ return 12; } }
+		public override int OldMaxDamage{ get{ return 19; } }
 		public override int OldSpeed{ get{ return 55; } }
 
 		public override int DefMaxRange{ get{ return 15; } }
