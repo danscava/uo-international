@@ -27,10 +27,11 @@ namespace Server.Misc
 				m.AddItem( pack );
 			}
 
-			PackItem( new Gold( 2000 ) ); // Starting gold can be customized here
+			PackItem( new Gold( 1500 ) ); // Starting gold can be customized here
 			PackItem( new Dagger() );
 			PackItem (new BagOfReagents ());
 			PackItem (new Bandage (75));
+			PackItem (new SpellBarScroll());
 		}
 
 		private static Item MakeNewbie( Item item )
