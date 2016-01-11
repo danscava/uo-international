@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ServerRegions>
 	<Facet name="Felucca">
-		<region type="GuardedRegion" priority="50" name="Moongates">
+		<region priority="50" name="Moongates">
 			<!-- britain -->
 			<rect x="1330" y="1991" width="13" height="13" />
 			<!-- jhelom -->
@@ -449,13 +449,14 @@
 				<logoutDelay active="false" />
 			</region>
 		</region>
-		<region type="TownRegion" priority="50" name="Magincia">
+		<region priority="50" name="Magincia">
 			<rect x="3653" y="2046" width="27" height="48" />
 			<rect x="3752" y="2046" width="52" height="48" />
 			<rect x="3680" y="2045" width="72" height="49" />
 			<rect x="3652" y="2094" width="160" height="180" />
 			<rect x="3649" y="2256" width="54" height="47" />
 			<go x="3714" y="2220" z="20" />
+			<guards disabled="true" />
 			<music name="Magincia" />
 			<region>
 				<rect x="3680" y="2152" width="24" height="8" />
@@ -646,6 +647,7 @@
 			<rect x="5147" y="4064" width="125" height="20" />
 			<rect x="5235" y="3930" width="80" height="12" />
 			<go x="5228" y="3978" z="37" />
+			<guards disabled="true" />
 			<region>
 				<rect x="5194" y="4053" width="10" height="20" />
 				<logoutDelay active="false" />
@@ -655,6 +657,7 @@
 			<rect x="5639" y="3095" width="192" height="223" />
 			<rect x="5831" y="3237" width="20" height="30" />
 			<go x="5769" y="3176" z="0" />
+			<guards disabled="true" />
 			<region>
 				<rect x="5757" y="3150" width="24" height="24" />
 				<logoutDelay active="false" />
