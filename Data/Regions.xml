@@ -343,6 +343,7 @@
 			<rect x="5252" y="178" width="20" height="5" />
 			<rect x="5252" y="183" width="10" height="10" />
 			<go x="5223" y="190" z="5" />
+                        <guards disabled="true" />
 			<music name="Wind" />
 			<region>
 				<rect x="5159" y="15" width="25" height="9" />

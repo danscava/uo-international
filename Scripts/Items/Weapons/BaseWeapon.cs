@@ -3390,8 +3390,8 @@ namespace Server.Items
 							Identified = true;
 							DurabilityLevel = WeaponDurabilityLevel.Indestructible;
 						    if (spec_tot >= 1000) {
-							DamageLevel = WeaponDamageLevel.Might;
-							AccuracyLevel = WeaponAccuracyLevel.Accurate;
+							DamageLevel = WeaponDamageLevel.Ruin;
+							AccuracyLevel = WeaponAccuracyLevel.Supremely;
 						    }
 							Hue = CraftResources.GetHue (CraftResource.Agapite);
 							break;
@@ -3402,7 +3402,6 @@ namespace Server.Items
 							DurabilityLevel = WeaponDurabilityLevel.Indestructible;
 						    if (spec_tot >= 1000) {
 							DamageLevel = WeaponDamageLevel.Might;
-							AccuracyLevel = WeaponAccuracyLevel.Exceedingly;
 						    }
 							Hue = CraftResources.GetHue (CraftResource.Verite);
 							break;
@@ -3413,7 +3412,7 @@ namespace Server.Items
 							DurabilityLevel = WeaponDurabilityLevel.Indestructible;
 						    if (spec_tot >= 1000) {
 							DamageLevel = WeaponDamageLevel.Might;
-							AccuracyLevel = WeaponAccuracyLevel.Supremely;
+							AccuracyLevel = WeaponAccuracyLevel.Accurate;
 						    }
 							Hue = CraftResources.GetHue (CraftResource.Valorite);
 							break;
