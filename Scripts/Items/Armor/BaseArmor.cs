@@ -490,10 +490,10 @@ namespace Server.Items
 		{
 			switch ( m_Protection )
 			{
-				case ArmorProtectionLevel.Guarding: return 1;
-				case ArmorProtectionLevel.Hardening: return 2;
-				case ArmorProtectionLevel.Fortification: return 3;
-				case ArmorProtectionLevel.Invulnerability: return 4;
+				case ArmorProtectionLevel.Guarding: return 2;
+				case ArmorProtectionLevel.Hardening: return 3;
+				case ArmorProtectionLevel.Fortification: return 4;
+				case ArmorProtectionLevel.Invulnerability: return 5;
 			}
 
 			return 0;
