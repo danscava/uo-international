@@ -161,17 +161,7 @@ namespace Server.Items
 			{
 				return false;
 			}
-			else if (m_CriminalCheck && m.Criminal)
-			{
-				m.SendLocalizedMessage(1005561, "", 0x22); // Thou'rt a criminal and cannot escape so easily.
-				return false;
-			}
-			else if (m_CombatCheck && SpellHelper.CheckCombat(m))
-			{
-				m.SendLocalizedMessage(1005564, "", 0x22); // Wouldst thou flee during the heat of battle??
-				return false;
-			}
-
+				
 			return true;
 		}
 

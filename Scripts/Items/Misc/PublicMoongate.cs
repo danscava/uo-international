@@ -57,17 +57,7 @@ namespace Server.Items
 
 		public bool UseGate( Mobile m )
 		{
-			if ( m.Criminal )
-			{
-				m.SendLocalizedMessage( 1005561, "", 0x22 ); // Thou'rt a criminal and cannot escape so easily.
-				return false;
-			}
-			else if ( SpellHelper.CheckCombat( m ) )
-			{
-				m.SendLocalizedMessage( 1005564, "", 0x22 ); // Wouldst thou flee during the heat of battle??
-				return false;
-			}
-			else if ( m.Spell != null )
+			if ( m.Spell != null )
 			{
 				m.SendLocalizedMessage( 1049616 ); // You are too busy to do that at the moment.
 				return false;
@@ -254,7 +244,7 @@ namespace Server.Items
 					new PMEntry( new Point3D(  643, 2067, 5 ), 1012009 ), // Skara Brae
 					/* Dynamic Z for Magincia to support both old and new maps. */
 					new PMEntry( new Point3D( 3563, 2139, Map.Felucca.GetAverageZ( 3563, 2139 ) ), 1012010 ), // (New) Magincia
-					new PMEntry( new Point3D( 2711, 2234, 0 ), 1019001 )  // Buccaneer's Den
+					//new PMEntry( new Point3D( 2711, 2234, 0 ), 1019001 )  // Buccaneer's Den
 				} );
 
 		public static readonly PMList Ilshenar =
