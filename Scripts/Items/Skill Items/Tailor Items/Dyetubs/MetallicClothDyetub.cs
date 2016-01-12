@@ -11,6 +11,7 @@ namespace Server.Items
 		[Constructable]
 		public MetallicClothDyetub()
 		{
+			Name = "A metallic cloth dye tub";
 			LootType = LootType.Blessed;
 		}
 

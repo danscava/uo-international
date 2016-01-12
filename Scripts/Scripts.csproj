@@ -3274,6 +3274,8 @@
     <Compile Include="Items\Armor\Phoenix\PhoenixHelm.cs" />
     <Compile Include="Mobiles\Animals\Mounts\MidOstard.cs" />
     <Compile Include="Mobiles\Animals\Mounts\DesertOstard.cs" />
+    <Compile Include="Mobiles\Vendors\NPC\Specials.cs" />
+    <Compile Include="Mobiles\Vendors\SBInfo\SBSpecials.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="SpecialSystems\README.TXT" />

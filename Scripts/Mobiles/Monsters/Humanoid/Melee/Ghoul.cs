@@ -19,7 +19,7 @@ namespace Server.Mobiles
 			SetDex( 76, 95 );
 			SetInt( 36, 60 );
 
-			SetHits( 46, 60 );
+			SetHits( 56, 70 );
 			SetMana( 0 );
 
 			SetDamage( 7, 9 );
