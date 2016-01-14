@@ -77,7 +77,7 @@ namespace Server.Spells.Third
 
 					if ( Core.AOS || Core.LBR)
 					{
-						int spec_tot = (Caster.Skills.Magery.Fixed + Caster.Skills.Poisoning.Fixed + Caster.Skills.Anatomy.Fixed + Caster.Skills.EvalInt.Fixed + Caster.Skills.Inscribe.Fixed) / 5;
+						int spec_tot = (Caster.Skills.Magery.Fixed + Caster.Skills.Poisoning.Fixed + Caster.Skills.Meditation.Fixed + Caster.Skills.EvalInt.Fixed + Caster.Skills.MagicResist.Fixed) / 5;
 						int total = (Caster.Skills.Magery.Fixed + Caster.Skills.Poisoning.Fixed) / 2;
 
 						if (Caster.InRange (m, 2)) {
