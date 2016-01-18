@@ -164,19 +164,17 @@ namespace Server.Misc
 
 				if (medPoints <= 0)
 					rate = 7.0;
-				else if (medPoints <= 50)
-					rate = 6.2;
-				else if (medPoints <= 75)
-					rate = 5.5;
 				else if ( medPoints <= 100 )
-					rate = 6.2 - (239*medPoints/2400) + (19*medPoints*medPoints/48000);
+					rate = 7.0 - (239*medPoints/2400) + (19*medPoints*medPoints/48000);
+				else if ( medPoints < 120 )
+					rate = 1.0;
 				else 
-					rate = 1;
+					rate = 0.75;
 
 				rate += armorPenalty;
 
 				if ( from.Meditating )
-					rate *= 0.5;
+					rate *= 0.30;
 
 				if ( rate < 0.5 )
 					rate = 0.5;

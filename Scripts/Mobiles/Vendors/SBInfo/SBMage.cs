@@ -107,7 +107,7 @@ namespace Server.Mobiles
 				Type[] types = Loot.RegularScrollTypes;
 
 				for ( int i = 0; i < types.Length; ++i )
-					Add( types[i], ((i / 8) + 2) * 2 );
+					Add( types[i], ((i / 2) + 2) * 2 );
 
 				if ( Core.SE )
 				{

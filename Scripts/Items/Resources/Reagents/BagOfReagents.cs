@@ -9,6 +9,7 @@ namespace Server.Items
 		[Constructable]
 		public BagOfReagents() : this( 50 )
 		{
+			LootType = LootType.Regular;
 		}
 
 		[Constructable]

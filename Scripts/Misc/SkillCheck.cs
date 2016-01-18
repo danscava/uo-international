@@ -79,6 +79,12 @@ namespace Server.Misc
 
 			Mobile.SkillCheckTargetHandler = new SkillCheckTargetHandler( Mobile_SkillCheckTarget );
 			Mobile.SkillCheckDirectTargetHandler = new SkillCheckDirectTargetHandler( Mobile_SkillCheckDirectTarget );
+			SkillInfo.Table[((int)SkillName.AnimalTaming)].GainFactor = 0.4;
+			SkillInfo.Table[((int)SkillName.Poisoning)].GainFactor = 0.6;
+			SkillInfo.Table[((int)SkillName.Blacksmith)].GainFactor = 0.6;
+			SkillInfo.Table[((int)SkillName.MagicResist)].GainFactor = 0.7;
+			SkillInfo.Table[((int)SkillName.Inscribe)].GainFactor = 0.8;
+			SkillInfo.Table[((int)SkillName.Stealing)].GainFactor = 0.5;
 		}
 
 		public static bool Mobile_SkillCheckLocation( Mobile from, SkillName skillName, double minSkill, double maxSkill )
@@ -242,11 +248,11 @@ namespace Server.Misc
 			{
 				SkillInfo info = skill.Info;
 
-				if ( from.StrLock == StatLockType.Up && (info.StrGain / 33.3) > Utility.RandomDouble() )
+				if ( from.StrLock == StatLockType.Up)
 					GainStat( from, Stat.Str );
-				else if ( from.DexLock == StatLockType.Up && (info.DexGain / 33.3) > Utility.RandomDouble() )
+				if ( from.DexLock == StatLockType.Up )
 					GainStat( from, Stat.Dex );
-				else if ( from.IntLock == StatLockType.Up && (info.IntGain / 33.3) > Utility.RandomDouble() )
+				if ( from.IntLock == StatLockType.Up )
 					GainStat( from, Stat.Int );
 			}
 		}
@@ -273,9 +279,9 @@ namespace Server.Misc
 
 			switch ( stat )
 			{
-				case Stat.Str: return ( from.StrLock == StatLockType.Up && from.RawStr < 125 );
-				case Stat.Dex: return ( from.DexLock == StatLockType.Up && from.RawDex < 125 );
-				case Stat.Int: return ( from.IntLock == StatLockType.Up && from.RawInt < 125 );
+				case Stat.Str: return ( from.StrLock == StatLockType.Up && from.RawStr < 100 );
+				case Stat.Dex: return ( from.DexLock == StatLockType.Up && from.RawDex < 100 );
+				case Stat.Int: return ( from.IntLock == StatLockType.Up && from.RawInt < 100 );
 			}
 
 			return false;
@@ -335,8 +341,8 @@ namespace Server.Misc
 			}
 		}
 
-		private static TimeSpan m_StatGainDelay = TimeSpan.FromMinutes( ( Core.ML ) ? 0.05 : 15 );
-		private static TimeSpan m_PetStatGainDelay = TimeSpan.FromMinutes( 5.0 );
+		private static TimeSpan m_StatGainDelay = TimeSpan.FromSeconds( 15 );
+		private static TimeSpan m_PetStatGainDelay = TimeSpan.FromMinutes( 1.0 );
 
 		public static void GainStat( Mobile from, Stat stat )
 		{

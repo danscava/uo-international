@@ -19,7 +19,7 @@ namespace Server.Spells.Eighth
 			);
 
 		public override SpellCircle Circle { get { return SpellCircle.Eighth; } }
-
+		public override bool UseSphereSystem { get { return false; } }
         public override void SelectTarget()
         {
             Caster.Target = new InternalSphereTarget(this);

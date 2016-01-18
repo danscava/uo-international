@@ -11,6 +11,7 @@ namespace Server.Items
 
 		public BaseShield( int itemID ) : base( itemID )
 		{
+			MeditationAllowance = ArmorMeditationAllowance.Half;
 		}
 
 		public BaseShield( Serial serial ) : base(serial)

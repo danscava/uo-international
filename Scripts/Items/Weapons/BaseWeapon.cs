@@ -769,6 +769,7 @@ namespace Server.Items
 			Skill atkSkill = attacker.Skills[atkWeapon.Skill];
 
 			double bonus = GetHitChanceBonus();
+			attacker.CheckSkill (atkSkill.SkillName, 0.0, 100.0);
 
 			double finalModifier = atkSkill.Value + bonus;
 
@@ -794,7 +795,10 @@ namespace Server.Items
 				return Utility.PercentageBooleanGenerator (89);
 			} else if (finalModifier <= 105.0) {
 				return Utility.PercentageBooleanGenerator (90);
-			} else {
+			} else if (finalModifier > 105.0) {
+				return Utility.PercentageBooleanGenerator (90);
+			} 
+			else {
 				return false;
 			}
 

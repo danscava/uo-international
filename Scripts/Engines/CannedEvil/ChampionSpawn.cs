@@ -421,6 +421,7 @@ namespace Server.Engines.CannedEvil
 
 		public static void GiveScrollTo( Mobile killer, SpecialScroll scroll )
 		{
+			return;
 			if( scroll == null || killer == null )	//sanity
 				return;
 

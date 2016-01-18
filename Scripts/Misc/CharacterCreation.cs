@@ -29,16 +29,15 @@ namespace Server.Misc
 
 			PackItem( new Gold( 1500 ) ); // Starting gold can be customized here
 			PackItem( new Dagger() );
-			PackItem (new BagOfReagents ());
 			PackItem (new Bandage (75));
 			PackItem (new SpellBarScroll());
 		}
 
 		private static Item MakeNewbie( Item item )
 		{
-			if ( !Core.AOS )
-				item.LootType = LootType.Newbied;
-
+			if (!Core.AOS) {
+					item.LootType = LootType.Newbied;
+			}
 			return item;
 		}
 

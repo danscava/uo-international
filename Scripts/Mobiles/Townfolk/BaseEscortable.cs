@@ -455,7 +455,7 @@ namespace Server.Mobiles
 				if (cont == null)
 					cont = escorter.BankBox;
 
-				Gold gold = new Gold(2000, 2555);
+				Gold gold = new Gold(1000, 1250);
 
 				if (!cont.TryDropItem(escorter, gold, false))
 					gold.MoveToWorld(escorter.Location, escorter.Map);
