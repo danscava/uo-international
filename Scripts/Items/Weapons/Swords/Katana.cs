@@ -17,9 +17,9 @@ namespace Server.Items
 		public override float MlSpeed{ get{ return 2.50f; } }
 
 		public override int OldStrengthReq{ get{ return 10; } }
-		public override int OldMinDamage{ get{ return 9; } }
-		public override int OldMaxDamage{ get{ return 20; } }
-		public override int OldSpeed{ get{ return 37; } }
+		public override int OldMinDamage{ get{ return 11; } }
+		public override int OldMaxDamage{ get{ return 23; } }
+		public override int OldSpeed{ get{ return 43; } }
 
 		public override int DefHitSound{ get{ return 0x23B; } }
 		public override int DefMissSound{ get{ return 0x23A; } }

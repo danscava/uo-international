@@ -44,11 +44,11 @@ namespace Server.Mobiles
 			VirtualArmor = 50;
 		}
 
-		public override int TreasureMapLevel{ get{ return Core.AOS ? 4 : 0; } }
+		public override int TreasureMapLevel{ get{ return 4; } }
 
 		public override void GenerateLoot()
 		{
-			AddLoot( LootPack.FilthyRich );
+			AddLoot( LootPack.Rich );
 			AddLoot (LootPack.HighScrolls, 2);
 			AddLoot (LootPack.IDWandDropper);
 		}

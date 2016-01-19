@@ -20,7 +20,7 @@ namespace Server.Mobiles
 
 			SetHits( 558, 595 );
 
-			SetDamage( 16, 22 );
+			SetDamage( 22, 26 );
 
 			SetDamageType( ResistanceType.Physical, 100 );
 
@@ -30,8 +30,8 @@ namespace Server.Mobiles
 			SetResistance( ResistanceType.Poison, 25, 35 );
 			SetResistance( ResistanceType.Energy, 35, 45 );
 
-			SetSkill( SkillName.EvalInt, 30.1, 40.0 );
-			SetSkill( SkillName.Magery, 30.1, 40.0 );
+			SetSkill( SkillName.EvalInt, 50.1, 80.0 );
+			SetSkill( SkillName.Magery, 50.1, 80.0 );
 			SetSkill( SkillName.MagicResist, 99.1, 100.0 );
 			SetSkill( SkillName.Tactics, 97.6, 100.0 );
 			SetSkill( SkillName.Wrestling, 90.1, 92.5 );
@@ -43,12 +43,12 @@ namespace Server.Mobiles
 
 			Tamable = true;
 			ControlSlots = 3;
-			MinTameSkill = 93.9;
+			MinTameSkill = 90.9;
 		}
 
 		public override void GenerateLoot()
 		{
-			AddLoot( LootPack.FilthyRich, 2 );
+			AddLoot( LootPack.FilthyRich, 1 );
 			AddLoot( LootPack.Gems, 8 );
 		}
 

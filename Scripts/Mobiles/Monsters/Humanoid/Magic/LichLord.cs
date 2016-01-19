@@ -56,7 +56,7 @@ namespace Server.Mobiles
 
 		public override void GenerateLoot()
 		{
-			AddLoot( LootPack.FilthyRich );
+			AddLoot( LootPack.Rich );
 			AddLoot( LootPack.HighScrolls, 2 );
 			AddLoot( LootPack.IDWandDropper );
 		}

@@ -65,8 +65,8 @@ namespace Server.Mobiles
 
 			Tamable = true;
 			ControlSlots = 2;
-			MinTameSkill = 96.0;
-			MinLoreSkill = 96.0;
+			MinTameSkill = 93.0;
+			MinLoreSkill = 93.0;
 		}
 		public override void OnThink()
 		{

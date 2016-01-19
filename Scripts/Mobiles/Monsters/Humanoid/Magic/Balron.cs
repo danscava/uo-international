@@ -50,7 +50,7 @@ namespace Server.Mobiles
 
 		public override void GenerateLoot()
 		{
-			AddLoot( LootPack.FilthyRich, 2 );
+			AddLoot( LootPack.FilthyRich, 1 );
 			AddLoot( LootPack.Rich );
 			AddLoot( LootPack.MedScrolls, 2 );
 			AddLoot (LootPack.DaemonBloodDrops, 1);

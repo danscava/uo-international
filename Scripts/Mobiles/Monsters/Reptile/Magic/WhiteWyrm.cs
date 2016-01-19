@@ -20,7 +20,7 @@ namespace Server.Mobiles
 
 			SetHits( 658, 711 );
 
-			SetDamage( 17, 25 );
+			SetDamage( 22, 30 );
 
 			SetDamageType( ResistanceType.Physical, 50 );
 			SetDamageType( ResistanceType.Cold, 50 );
@@ -49,7 +49,7 @@ namespace Server.Mobiles
 
 		public override void GenerateLoot()
 		{
-			AddLoot( LootPack.FilthyRich, 2 );
+			AddLoot( LootPack.FilthyRich, 1 );
 			AddLoot( LootPack.Average );
 			AddLoot( LootPack.Gems, Utility.Random( 1, 5 ) );
 		}

@@ -87,6 +87,7 @@ namespace Server.Mobiles
 				Add( new GenericBuyInfo( "1041205", typeof( Multis.SmallBoatDeed ), 20177, 20, 0x14F2, 0 ) );
 
 				Add( new GenericBuyInfo( "1041060", typeof( HairDye ), 60, 20, 0xEFF, 0 ) );
+				Add( new GenericBuyInfo(typeof( HairRestylingDeed ), 60, 20, 0x14F0, 0 ) );
 
 				Add( new GenericBuyInfo( "1016450", typeof( Chessboard ), 2, 20, 0xFA6, 0 ) );
 				Add( new GenericBuyInfo( "1016449", typeof( CheckerBoard ), 2, 20, 0xFA6, 0 ) );
