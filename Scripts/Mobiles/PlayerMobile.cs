@@ -3142,7 +3142,7 @@ namespace Server.Mobiles
 
 		public override void DoSpeech( string text, int[] keywords, MessageType type, int hue )
 		{
-			if( Guilds.Guild.NewGuildSystem && (type == MessageType.Guild || type == MessageType.Alliance) )
+			if (type == MessageType.Guild || type == MessageType.Alliance) 
 			{
 				Guilds.Guild g = this.Guild as Guilds.Guild;
 				if( g == null )
