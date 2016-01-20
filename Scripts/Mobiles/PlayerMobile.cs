@@ -2977,7 +2977,7 @@ namespace Server.Mobiles
 			{
 				for (int i = 0; i < m_StuckMenuUses.Length; ++i)
 				{
-					if ((DateTime.UtcNow - m_StuckMenuUses[i]) > TimeSpan.FromDays(1.0))
+					if ((DateTime.UtcNow - m_StuckMenuUses[i]) > TimeSpan.FromHours(1.0))
 					{
 						return true;
 					}
