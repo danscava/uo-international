@@ -96,7 +96,6 @@ namespace Server.Mobiles
 
 		public void GivePowerScrolls()
 		{
-			return;
 			if ( Map != Map.Felucca )
 				return;
 

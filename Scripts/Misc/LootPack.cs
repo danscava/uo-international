@@ -480,16 +480,16 @@ namespace Server
 			{
 				new LootPackEntry(  true, Gold,			100.00, "10d10+50" ),
 				new LootPackEntry( false, Instruments,	  0.40, 1 ),
-				new LootPackEntry( false, OldMagicItems,  3.00, 1, 1, 20, 80 ),
-				new LootPackEntry( false, OldMagicItems,  4.00, 1, 1, 30, 90 )
+				new LootPackEntry( false, OldMagicItems,  10.00, 1, 1, 20, 80 ),
+				new LootPackEntry( false, OldMagicItems,  9.00, 1, 1, 30, 90 )
 			} );
 
 		public static readonly LootPack OldRich = new LootPack( new LootPackEntry[]
 			{
 				new LootPackEntry(  true, Gold,			100.00, "10d10+250" ),
 				new LootPackEntry( false, Instruments,	  1.00, 1 ),
-				new LootPackEntry( false, OldMagicItems, 8.00, 1, 1, 60, 100 ),
-				new LootPackEntry( false, OldMagicItems, 9.00, 1, 1, 65, 100 ),
+				new LootPackEntry( false, OldMagicItems, 18.00, 1, 1, 60, 100 ),
+				new LootPackEntry( false, OldMagicItems, 19.00, 1, 1, 65, 100 ),
 			} );
 
 		public static readonly LootPack SpecialNeira = new LootPack (new LootPackEntry[] {
@@ -547,8 +547,8 @@ namespace Server
 			{
 				new LootPackEntry(  true, Gold,			100.00, "2d125+400" ),
 				new LootPackEntry( false, Instruments,	  2.00, 1 ),
-				new LootPackEntry( false, OldMagicItems, 13.00, 1, 1, 50, 100 ),
-				new LootPackEntry( false, OldMagicItems, 14.00, 1, 1, 65, 100 )
+				new LootPackEntry( false, OldMagicItems, 22.00, 1, 1, 50, 100 ),
+				new LootPackEntry( false, OldMagicItems, 22.00, 1, 1, 65, 100 )
 			} );
 
 		public static readonly LootPack OldUltraRich = new LootPack( new LootPackEntry[]
@@ -564,6 +564,11 @@ namespace Server
 				new LootPackEntry( false, OldMagicItems,	100.00, 1, 1, 50, 100 ),
 				new LootPackEntry( false, OldMagicItems,	100.00, 1, 1, 60, 100 ),
 				new LootPackEntry( false, OldMagicItems,	100.00, 1, 1, 70, 100 ),
+				new LootPackEntry( false, OldMagicItems,	100.00, 1, 1, 70, 100 ),
+				new LootPackEntry( false, OldMagicItems,	100.00, 1, 1, 60, 100 ),
+				new LootPackEntry( false, OldMagicItems,	100.00, 1, 1, 60, 100 ),
+				new LootPackEntry( false, OldMagicItems,	100.00, 1, 1, 50, 100 ),
+				new LootPackEntry( false, OldMagicItems,	100.00, 1, 1, 60, 100 ),
 				new LootPackEntry( false, OldMagicItems,	100.00, 1, 1, 70, 100 )
 			} );
 

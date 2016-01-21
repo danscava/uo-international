@@ -165,7 +165,7 @@ namespace Server.Misc
 				if (medPoints <= 0)
 					rate = 6.0;
 				else if ( medPoints <= 100 )
-					rate = 5.7 - (239*medPoints/2400) + (19*medPoints*medPoints/48000);
+					rate = 6.0 - (239*medPoints/2400) + (19*medPoints*medPoints/48000);
 				else if ( medPoints < 120 )
 					rate = 1.0;
 				else 
