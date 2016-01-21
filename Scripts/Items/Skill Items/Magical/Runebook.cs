@@ -116,7 +116,7 @@ namespace Server.Items
 			Weight = (Core.SE ? 1.0 : 3.0);
 			LootType = LootType.Blessed;
 			Hue = 0x461;
-
+			maxCharges = 100;
 			Layer = (Core.AOS ? Layer.Invalid : Layer.OneHanded);
 
 			m_Entries = new List<RunebookEntry>();
@@ -464,10 +464,7 @@ namespace Server.Items
 		{
 			int charges = 5 + quality + (int)(from.Skills[SkillName.Inscribe].Value / 30);
 
-			if ( charges > 10 )
-				charges = 10;
-
-			MaxCharges = (Core.SE ? charges * 2 : charges);
+			MaxCharges = 100;
 
 			if ( makersMark )
 				Crafter = from;
