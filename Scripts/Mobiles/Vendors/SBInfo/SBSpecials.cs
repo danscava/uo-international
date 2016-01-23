@@ -17,6 +17,8 @@ namespace Server.Mobiles
 		{
 			public InternalBuyInfo()
 			{
+				Add( new GenericBuyInfo( typeof( RunebookDyeTub ), 200000, 999, 0xFAB, 0x0001 ) );
+				Add( new GenericBuyInfo( typeof( BlazeDyeTub ), 250000, 999, 0xFAB, 0x0001 ) );
 				Add( new GenericBuyInfo( typeof( RewardBlackDyeTub ), 350000, 999, 0xFAB, 0x0001 ) );
 
 				Add( new GenericBuyInfo( typeof( FurnitureDyeTub ), 700000, 999, 0xFAB, 0x0001 ) );

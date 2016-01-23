@@ -944,9 +944,19 @@ namespace Server
 		{
 			return Random( 2201, 24 );
 		}
-		
 		/// <summary>
-		/// Random hue in the range 2301-2318
+		/// Random hue in the range {149, 682, 438, 907, 693};
+		/// </summary>
+		public static int RandomMustangHue()
+		{
+				int[] hues = new int[5] {149, 682, 438, 907, 693};
+				Random rnd = new Random();
+				int randomIndex = rnd.Next(0, hues.Length);
+				return hues[randomIndex];
+		}
+
+		/// <summary>
+		/// Random hue in the range {682, 1109, 149};
 		/// </summary>
 		public static int RandomAnimalHue()
 		{

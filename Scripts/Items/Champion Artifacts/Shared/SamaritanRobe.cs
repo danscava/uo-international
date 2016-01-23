@@ -17,6 +17,7 @@ namespace Server.Items
 		[Constructable]
 		public SamaritanRobe()
 		{
+			Name = "Samaritan Robe";
 			Hue = 0x2a3;
 		}
 

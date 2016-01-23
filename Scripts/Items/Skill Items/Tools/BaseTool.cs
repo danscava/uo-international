@@ -2,6 +2,7 @@ using System;
 using Server;
 using Server.Network;
 using Server.Engines.Craft;
+using Server.Gumps;
 
 namespace Server.Items
 {
@@ -125,7 +126,8 @@ namespace Server.Items
 		}
 
 		public override void OnDoubleClick( Mobile from )
-		{
+		{	
+			
 			if ( IsChildOf( from.Backpack ) || Parent == from )
 			{
 				CraftSystem system = this.CraftSystem;
@@ -140,7 +142,8 @@ namespace Server.Items
 				{
 					CraftContext context = system.GetContext( from );
 
-					from.SendGump( new CraftGump( from, system, this, null ) );
+					Gump cgump = new CraftGump( from, system, this, null );
+					CaptchaGump.sendCaptcha(from, CaptchaGump.SendGumpAfterCaptcha, cgump);
 				}
 			}
 			else

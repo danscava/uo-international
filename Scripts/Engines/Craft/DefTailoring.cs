@@ -233,6 +233,30 @@ namespace Server.Engines.Craft
 			AddRes( index, typeof( GreenScales ), String.Format("green dragon scales"), 45, String.Format("you are missing green dragon scales") );
 			ForceNonExceptional( index );
 
+			index = AddCraft(typeof(RobeOfTheEclipse), 1015283,String.Format("Robe of the Eclipse"),103.0, 107.0,typeof(Cloth),1044286, 150, 1044287);
+			AddSkill (index, SkillName.Magery, 95.0, 100.0);
+			AddRes( index, typeof( YellowScales ), String.Format("yellow dragon scales"), 45, String.Format("you are missing yellow dragon scales") );
+			AddRes( index, typeof( RedScales ), String.Format("red dragon scales"), 45, String.Format("you are missing red dragon scales") );
+			AddRes( index, typeof( PowerCrystal ), String.Format("Power Crystal"), 2, String.Format("you are missing power crystal") );
+			AddRes( index, typeof( DaemonBlood ), String.Format("daemon's blood"), 45, String.Format("you are missing daemon's blood") );
+			ForceNonExceptional( index );
+
+			index = AddCraft(typeof(RobeOfTheEquinox), 1015283,String.Format("Robe of the Equinox"),103.0, 107.0,typeof(Cloth),1044286, 150, 1044287);
+			AddSkill (index, SkillName.Magery, 95.0, 100.0);
+			AddRes( index, typeof( YellowScales ), String.Format("yellow dragon scales"), 45, String.Format("you are missing yellow dragon scales") );
+			AddRes( index, typeof( RedScales ), String.Format("red dragon scales"), 45, String.Format("you are missing red dragon scales") );
+			AddRes( index, typeof( PowerCrystal ), String.Format("Power Crystal"), 2, String.Format("you are missing power crystal") );
+			AddRes( index, typeof( DaemonBlood ), String.Format("daemon's blood"), 45, String.Format("you are missing daemon's blood") );
+			ForceNonExceptional( index );
+
+			index = AddCraft(typeof(EnergyRobe), 1015283,String.Format("Energy Robe"),103.0, 107.0,typeof(Cloth),1044286, 150, 1044287);
+			AddSkill (index, SkillName.Magery, 95.0, 100.0);
+			AddRes( index, typeof( YellowScales ), String.Format("yellow dragon scales"), 45, String.Format("you are missing yellow dragon scales") );
+			AddRes( index, typeof( RedScales ), String.Format("red dragon scales"), 45, String.Format("you are missing red dragon scales") );
+			AddRes( index, typeof( PowerCrystal ), String.Format("Power Crystal"), 2, String.Format("you are missing power crystal") );
+			AddRes( index, typeof( DaemonBlood ), String.Format("daemon's blood"), 45, String.Format("you are missing daemon's blood") );
+			ForceNonExceptional( index );
+
 			if( Core.SE )
 			{
 				index = AddCraft( typeof( GozaMatEastDeed ), 1015283, 1030404, 55.0, 80.0, typeof( Cloth ), 1044286, 25, 1044287 );

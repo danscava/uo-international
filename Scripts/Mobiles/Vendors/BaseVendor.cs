@@ -199,8 +199,8 @@ namespace Server.Mobiles
 		public virtual TimeSpan RestockDelay
 		{
 			get
-			{
-				return TimeSpan.FromHours( 1 );
+			{	
+				return TimeSpan.FromMinutes( 15 );
 			}
 		}
 

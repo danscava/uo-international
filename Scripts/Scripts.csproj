@@ -2495,7 +2495,6 @@
     <Compile Include="Mobiles\Animals\Mounts\FrenziedOstard.cs" />
     <Compile Include="Mobiles\Animals\Mounts\HellSteed.cs" />
     <Compile Include="Mobiles\Animals\Mounts\Hiryu.cs" />
-    <Compile Include="Mobiles\Animals\Mounts\Horse.cs" />
     <Compile Include="Mobiles\Animals\Mounts\Kirin.cs" />
     <Compile Include="Mobiles\Animals\Mounts\LesserHiryu.cs" />
     <Compile Include="Mobiles\Animals\Mounts\Nightmare.cs" />
@@ -3276,6 +3275,9 @@
     <Compile Include="Mobiles\Animals\Mounts\DesertOstard.cs" />
     <Compile Include="Mobiles\Vendors\NPC\Specials.cs" />
     <Compile Include="Mobiles\Vendors\SBInfo\SBSpecials.cs" />
+    <Compile Include="Mobiles\Animals\Mounts\Mustang.cs" />
+    <Compile Include="Mobiles\Animals\Mounts\Horse.cs" />
+    <Compile Include="Items\Special\EnergyRobe.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="SpecialSystems\README.TXT" />

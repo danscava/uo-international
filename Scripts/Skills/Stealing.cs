@@ -225,7 +225,13 @@ namespace Server.SkillHandlers
 					{
 						if ( toSteal.Stackable && toSteal.Amount > 1 )
 						{
-							int maxAmount = (int)((m_Thief.Skills[SkillName.Stealing].Value / 10.0) / toSteal.Weight);
+							int maxAmount = 0;
+							if (toSteal.Weight == 0) {
+								maxAmount = 5000;
+							} else {
+								maxAmount = (int)((m_Thief.Skills[SkillName.Stealing].Value / 10.0) / toSteal.Weight);
+							}
+
 
 							if ( maxAmount < 1 )
 								maxAmount = 1;
