@@ -78,7 +78,14 @@ namespace Server.SkillHandlers
 				double skillVal = m.Skills[SkillName.Meditation].Value;
 				double chance = (50.0 + (( skillVal - ( m.ManaMax - m.Mana ) ) * 2)) / 100;
 
-				if ( chance > Utility.RandomDouble() )
+				if (skillVal == 100.0) {
+					m.SendLocalizedMessage( 501851 ); // You enter a meditative trance.
+					m.Meditating = true;
+					BuffInfo.AddBuff( m, new BuffInfo( BuffIcon.ActiveMeditation, 1075657 ) );
+
+					if ( m.Player || m.Body.IsHuman )
+						m.PlaySound( 0xF9 );
+				}else if ( chance > Utility.RandomDouble() )
 				{
 					m.CheckSkill( SkillName.Meditation, 0.0, 100.0 );
 

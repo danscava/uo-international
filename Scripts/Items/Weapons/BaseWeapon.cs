@@ -1994,11 +1994,11 @@ namespace Server.Items
 
 			switch ( m_DamageLevel )
 			{
-				case WeaponDamageLevel.Ruin:	bonus += 45; break;
-				case WeaponDamageLevel.Might:	bonus += 50; break;
-				case WeaponDamageLevel.Force:	bonus += 55; break;
-				case WeaponDamageLevel.Power:	bonus += 60; break;
-				case WeaponDamageLevel.Vanq:	bonus += 70; break;
+				case WeaponDamageLevel.Ruin:	bonus += 35; break;
+				case WeaponDamageLevel.Might:	bonus += 40; break;
+				case WeaponDamageLevel.Force:	bonus += 60; break;
+				case WeaponDamageLevel.Power:	bonus += 70; break;
+				case WeaponDamageLevel.Vanq:	bonus += 80; break;
 			}
 
 			return bonus;

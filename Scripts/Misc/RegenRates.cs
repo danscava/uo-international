@@ -172,10 +172,10 @@ namespace Server.Misc
 				rate += armorPenalty;
 
 				if ( from.Meditating )
-					rate *= 0.25;
+					rate *= 0.16;
 
-				if ( rate < 0.3 )
-					rate = 0.3;
+				if ( rate < 0.2 )
+					rate = 0.2;
 				else if ( rate > 7.0 )
 					rate = 7.0;
 			}
