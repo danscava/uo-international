@@ -5847,9 +5847,9 @@ namespace Server.Mobiles
 					{
 						c.OwnerAbandonTime = DateTime.MinValue;
 
-						if ( c.Map != Map.Internal )
+						if ( c.Map != Map.Internal && !c.IsStabled)
 						{
-							c.Loyalty = BaseCreature.MaxLoyalty;
+							c.Loyalty -= (BaseCreature.MaxLoyalty / 10);
 
 							if( c.Loyalty < (BaseCreature.MaxLoyalty / 10) )
 							{
