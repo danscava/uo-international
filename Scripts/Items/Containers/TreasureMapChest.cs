@@ -187,7 +187,7 @@ namespace Server.Items
 					};
 				}
 				else
-					numberItems = level * 6;
+					numberItems = level * 1;
 				
 				for ( int i = 0; i < numberItems; ++i )
 				{
