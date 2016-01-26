@@ -16,7 +16,7 @@ namespace Server.Misc
 			int userCount = NetState.Instances.Count;
 			int itemCount = World.Items.Count;
 			int mobileCount = World.Mobiles.Count;
-			userCount += 20;
+
 			Mobile m = args.Mobile;
 
 			m.SendMessage( "Welcome, {0}! There {1} currently {2} user{3} online in the world.",
