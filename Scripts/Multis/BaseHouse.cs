@@ -78,7 +78,7 @@ namespace Server.Multis
 			set{ m_RestrictDecay = value; }
 		}
 
-		public virtual TimeSpan DecayPeriod{ get{ return TimeSpan.FromDays( 5.0 ); } }
+		public virtual TimeSpan DecayPeriod{ get{ return TimeSpan.FromDays( 30.0 ); } }
 
 		public virtual DecayType DecayType
 		{

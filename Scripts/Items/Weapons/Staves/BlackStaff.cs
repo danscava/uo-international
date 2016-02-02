@@ -9,7 +9,11 @@ namespace Server.Items
 	{
 		public override WeaponAbility PrimaryAbility{ get{ return WeaponAbility.WhirlwindAttack; } }
 		public override WeaponAbility SecondaryAbility{ get{ return WeaponAbility.ParalyzingBlow; } }
-
+		public override bool AllowEquipedCast( Mobile from )
+		{
+			return true;
+		}
+		
 		public override int AosStrengthReq{ get{ return 35; } }
 		public override int AosMinDamage{ get{ return 13; } }
 		public override int AosMaxDamage{ get{ return 16; } }
@@ -18,8 +22,8 @@ namespace Server.Items
 
 		public override int OldStrengthReq{ get{ return 35; } }
 		public override int OldMinDamage{ get{ return 11; } }
-		public override int OldMaxDamage{ get{ return 30; } }
-		public override int OldSpeed{ get{ return 22; } }
+		public override int OldMaxDamage{ get{ return 38; } }
+		public override int OldSpeed{ get{ return 25; } }
 
 		public override int InitMinHits{ get{ return 31; } }
 		public override int InitMaxHits{ get{ return 70; } }

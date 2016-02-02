@@ -782,21 +782,21 @@ namespace Server.Items
 			} else if (finalModifier <= 80.0) {
 				return Utility.PercentageBooleanGenerator (75);
 			} else if (finalModifier <= 90.0) {
-				return Utility.PercentageBooleanGenerator (80);
+				return Utility.PercentageBooleanGenerator (77);
 			} else if (finalModifier <= 100.0) {
-				return Utility.PercentageBooleanGenerator (85);
+				return Utility.PercentageBooleanGenerator (78);
 			} else if (finalModifier <= 101.0) {
-				return Utility.PercentageBooleanGenerator (86);
+				return Utility.PercentageBooleanGenerator (79);
 			} else if (finalModifier <= 102.0) {
-				return Utility.PercentageBooleanGenerator (87);
+				return Utility.PercentageBooleanGenerator (80);
 			} else if (finalModifier <= 103.0) {
-				return Utility.PercentageBooleanGenerator (88);
+				return Utility.PercentageBooleanGenerator (82);
 			} else if (finalModifier <= 104.0) {
-				return Utility.PercentageBooleanGenerator (89);
+				return Utility.PercentageBooleanGenerator (84);
 			} else if (finalModifier <= 105.0) {
-				return Utility.PercentageBooleanGenerator (90);
+				return Utility.PercentageBooleanGenerator (86);
 			} else if (finalModifier > 105.0) {
-				return Utility.PercentageBooleanGenerator (90);
+				return Utility.PercentageBooleanGenerator (88);
 			} 
 			else {
 				return false;

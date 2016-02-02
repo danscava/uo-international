@@ -90,8 +90,8 @@ namespace Server.Mobiles
 				level = 15;
 			else
 				level = 10;
-
-			return PowerScroll.CreateRandomNoCraft( level, level );
+		
+			return PowerScroll.CreateRandom( level, level );
 		}
 
 		public void GivePowerScrolls()

@@ -39,7 +39,9 @@ namespace Server.Items
 				SkillName.Musicianship,
 				SkillName.Provocation,
 				SkillName.Discordance,
-				SkillName.Peacemaking
+				SkillName.Peacemaking,
+				SkillName.Veterinary,
+				SkillName.ArmsLore
 			};
 
 		private static SkillName[] m_AOSSkills = new SkillName[]

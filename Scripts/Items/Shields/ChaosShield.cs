@@ -17,7 +17,7 @@ namespace Server.Items
 
 		public override int AosStrReq{ get{ return 95; } }
 
-		public override int ArmorBase{ get{ return 33; } }
+		public override int ArmorBase{ get{ return 40; } }
 
 		[Constructable]
 		public ChaosShield() : base( 0x1BC3 )

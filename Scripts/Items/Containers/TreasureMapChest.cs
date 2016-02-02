@@ -168,7 +168,7 @@ namespace Server.Items
 				//if ( Core.SA )
 				//	cont.DropItem( new Gold( level * 5000 ) );
 				//else					
-					cont.DropItem( new Gold( level * 1000 ) );
+					cont.DropItem( new Gold( level * 1500 ) );
 
 				for ( int i = 0; i < level * 5; ++i )
 					cont.DropItem( Loot.RandomScroll( 0, 63, SpellbookType.Regular ) );
@@ -187,7 +187,7 @@ namespace Server.Items
 					};
 				}
 				else
-					numberItems = level * 1;
+					numberItems = level * 3;
 				
 				for ( int i = 0; i < numberItems; ++i )
 				{
