@@ -1288,7 +1288,7 @@ namespace Server.Items
 
 		public virtual int OnHit( BaseWeapon weapon, int damageTaken )
 		{
-			double HalfAr = ArmorRating / 3.0;
+			double HalfAr = ArmorRating / 2.5;
 			int Absorbed = (int)HalfAr;
 
 			damageTaken -= Absorbed;
