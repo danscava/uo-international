@@ -144,11 +144,11 @@ namespace Server.Items
 					break;
 
 				case TreasureLevel.Level5:
-					this.RequiredSkill = this.LockLevel = 90;
+					this.RequiredSkill = this.LockLevel = 80;
 					break;
 
 				case TreasureLevel.Level6:
-					this.RequiredSkill = this.LockLevel = 100;
+					this.RequiredSkill = this.LockLevel = 95;
 					break;
 			}
 		}

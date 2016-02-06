@@ -598,8 +598,7 @@ namespace Server.Items
 
 					break;
 				}
-			}
-		}
+			}		}
 	}
 
 	public class MonkRobe : BaseOuterTorso
@@ -608,20 +607,80 @@ namespace Server.Items
 		public MonkRobe() : this( 0x21E )
 		{
 		}
+		private int m_Bonus = 20;
+		private SkillMod m_SkillMod;
 
+		[CommandProperty( AccessLevel.GameMaster )]
+		public int Bonus
+		{
+			get
+			{
+				return m_Bonus;
+			}
+			set
+			{
+				InvalidateProperties();
+
+				if ( m_Bonus == 0.0 )
+				{
+					if ( m_SkillMod != null )
+						m_SkillMod.Remove();
+
+					m_SkillMod = null;
+				}
+				else if ( m_SkillMod == null && Parent is Mobile )
+				{
+					m_SkillMod = new DefaultSkillMod( SkillName.Magery, true, m_Bonus );
+					((Mobile)Parent).AddSkillMod( m_SkillMod );
+				}
+				else if ( m_SkillMod != null )
+				{
+					m_SkillMod.Value = m_Bonus;
+				}
+			}
+		}
+
+		public override void OnAdded(IEntity parent)
+		{
+			base.OnAdded( parent );
+
+			if ( m_Bonus != 0 && parent is Mobile )
+			{
+				if ( m_SkillMod != null )
+					m_SkillMod.Remove();
+
+				m_SkillMod = new DefaultSkillMod( SkillName.Magery, true, m_Bonus );
+				((Mobile)parent).AddSkillMod( m_SkillMod );
+			}
+		}
+
+		public override void OnRemoved(IEntity parent)
+		{
+			base.OnRemoved( parent );
+
+			if ( m_SkillMod != null )
+				m_SkillMod.Remove();
+
+			m_SkillMod = null;
+		}
+		public override int Hue {
+			get {
+				return 2111;
+			}
+			set {
+				base.Hue = 2111 ;
+			}
+		}
 		[Constructable]
 		public MonkRobe( int hue ) : base( 0x2687, hue )
 		{
+			Hue = 2111;
 			Weight = 1.0;
 			StrRequirement = 0;
 		}
 		public override int LabelNumber{ get{ return 1076584; } } // A monk's robe
 		public override bool CanBeBlessed { get { return false; } }
-		public override bool Dye( Mobile from, DyeTub sender )
-		{
-			from.SendLocalizedMessage( sender.FailMessage );
-			return false;
-		}
+
 		public MonkRobe( Serial serial ) : base( serial )
 		{
 		}
