@@ -37,7 +37,7 @@ Than you need to set 3 environment variables:
     export UOPASS=masterpassword
 
 
-You are all set time to launch the server:
+You are all set, time to launch the server:
 
     mono RunUO.exe (while debugging)
     nohup mono RunUO.exe &  (process launch it completely in the background)
