@@ -2,6 +2,9 @@ UO-International Repository
 =====
 
 This is a custom fork of the open source RunUO emulator project that i built.
+Unfortunately the server itself is not online anymore :)
+
+Here is the custom ruleset (in general):
 
 * Only Felucca facet.
 * Pre-Aos expansion status, no insurance, no stats on weapons other than Force, Power, Vanq and accuracy bonus etc.
@@ -9,8 +12,6 @@ This is a custom fork of the open source RunUO emulator project that i built.
 * Redone combat system.
 * No Bod. Instead the rewards are craftable.
 * No Factions. Only Order/Chaos.
-
-And many more, to see a general view, visit <http://www.ultimaonline.international>
 
 ###Build
 
